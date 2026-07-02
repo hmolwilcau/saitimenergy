@@ -570,54 +570,10 @@
             activeVideo.onended = function() { moveSlide(1); };
         }
     }
-// 1. Seleccionamos los elementos
-const inputBuscador = document.getElementById('buscador-input');
-const botonBuscar = document.getElementById('btn-buscar');
-
-// 2. Definimos la función que hace la búsqueda
-function realizarBusqueda() {
-    const query = inputBuscador.value.toLowerCase().trim();
-    
-    // Si el input está vacío, no hacemos nada
-    if (query === "") return;
-
-    const paginas = {
-        "renovables": "servicios.html",
-        "automocion": "auto-detalle.html",
-        "matadero": "noticia3.html",
-        "piensos": "noticia4.html",
-        "vigo": "noticia5.html",
-        "contacto": "contacto.html"
-    };
-
-    let encontrada = false;
-    for (let clave in paginas) {
-        if (query.includes(clave)) {
-            window.location.href = paginas[clave];
-            encontrada = true;
-            break;
-        }
-    }
-
-    if (!encontrada) {
-        alert("Lo siento, no he encontrado resultados para: " + query);
-    }
-}
-
-// 3. Listener para el clic del botón
-if (botonBuscar) {
-    botonBuscar.addEventListener('click', realizarBusqueda);
-}
-
-// 4. Listener para la tecla "Enter" dentro del input
-if (inputBuscador) {
-    inputBuscador.addEventListener('keypress', function(event) {
-        if (event.key === 'Enter') {
-            realizarBusqueda();
-        }
-    });
-}
+<script async src="https://cse.google.com/cse.js?cx=461f65c55477f41bb">
 </script>
+<div class="gcse-search"></div>
+
 
 </main>
 </body>
