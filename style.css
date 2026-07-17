@@ -3917,50 +3917,50 @@ position: absolute !important;
     }
 
  }
-
 /* =========================================
-   EL BLOQUE DEFINITIVO DEL CARRUSEL (FUERZA MAYOR)
+   CARRUSEL QUE ABRAZA LA FOTO (FIT-CONTENT)
    ========================================= */
 
+/* 1. La caja principal se encoge al tamaño exacto de la foto y se centra */
 body .hero-carousel-proyectos {
     position: relative !important;
-    width: 100% !important;
-    max-width: 1000px !important; /* Límite en ordenadores */
+    width: fit-content !important; /* LA CLAVE: El ancho se ajusta a la foto */
+    max-width: 100% !important;
     height: auto !important;
-    margin: 0 auto 60px auto !important; /* Centrado absoluto */
+    margin: 0 auto 60px auto !important; /* Centra todo el bloque en la pantalla */
     background: transparent !important;
-    overflow: hidden !important; /* Actúa como valla: nada sale de aquí */
-    border-radius: 12px !important;
-}
-
-body .hero-carousel-proyectos .carousel-slide-project {
-    display: none !important; /* Oculta los inactivos */
-    width: 100% !important;
-}
-
-body .hero-carousel-proyectos .carousel-slide-project.active {
-    display: block !important; /* Muestra el activo */
-}
-
-/* OBLIGAMOS A LA FOTO A RELLENAR LA CAJA COMO UN BLOQUE SÓLIDO */
-body .hero-carousel-proyectos .carousel-slide-project img {
-    width: 100% !important;
-    height: auto !important;
-    aspect-ratio: 16 / 9 !important; /* Fija un rectángulo perfecto para todas las fotos */
-    object-fit: cover !important; /* Rellena el hueco sin huecos blancos */
-    margin: 0 !important;
-    border-radius: 12px !important;
     display: block !important;
 }
 
-/* LAS FLECHAS QUEDAN CLAVADAS EN LOS BORDES */
+/* 2. Control de las capas activas/inactivas */
+body .hero-carousel-proyectos .carousel-slide-project {
+    display: none !important;
+    width: 100% !important; 
+}
+body .hero-carousel-proyectos .carousel-slide-project.active {
+    display: block !important;
+}
+
+/* 3. La foto dicta el tamaño: Alta pero sin ocupar toda la pantalla */
+body .hero-carousel-proyectos .carousel-slide-project img {
+    display: block !important;
+    width: auto !important; /* Su anchura natural... */
+    max-width: 100vw !important; /* ...pero sin salirse del monitor */
+    height: auto !important;
+    max-height: 550px !important; /* Freno para que los silos no sean gigantes */
+    margin: 0 auto !important;
+    border-radius: 12px !important;
+    object-fit: contain !important; /* Muestra la foto entera sin cortes */
+}
+
+/* 4. Flechas pegadas a los lados de la foto (ya no a los lados del monitor) */
 body .hero-carousel-proyectos .carousel-control-project {
     position: absolute !important;
     top: 50% !important;
     transform: translateY(-50%) !important;
     width: 45px !important;
     height: 45px !important;
-    background-color: rgba(0, 64, 71, 0.8) !important; /* Color corporativo semitransparente */
+    background-color: rgba(0, 64, 71, 0.8) !important;
     color: #C4EFF2 !important;
     border-radius: 50% !important;
     border: none !important;
@@ -3974,19 +3974,19 @@ body .hero-carousel-proyectos .carousel-control-project {
 }
 
 body .hero-carousel-proyectos .carousel-control-project.prev {
-    left: 15px !important;
+    left: 10px !important; /* A solo 10px del borde de la foto */
     right: auto !important;
 }
 
 body .hero-carousel-proyectos .carousel-control-project.next {
-    right: 15px !important;
+    right: 10px !important; /* A solo 10px del borde de la foto */
     left: auto !important;
 }
 
-/* PUNTITOS ELEGANTES DENTRO DE LA IMAGEN */
+/* 5. Puntitos debajo de la foto */
 body .hero-carousel-proyectos .carousel-dots {
     position: absolute !important;
-    bottom: 15px !important;
+    bottom: -35px !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
     display: flex !important;
@@ -3996,24 +3996,23 @@ body .hero-carousel-proyectos .carousel-dots {
 }
 
 /* =========================================
-   MÓVILES Y TABLETS
+   ADAPTACIÓN EXCLUSIVA PARA MÓVILES
    ========================================= */
-@media (max-width: 992px) {
+@media (max-width: 768px) {
     body .hero-carousel-proyectos {
-        width: 95% !important; /* Deja un pelín de aire lateral en móvil */
+        width: 95% !important; /* En móvil sí forzamos que ocupe la pantalla (dejando aire) */
     }
-    
     body .hero-carousel-proyectos .carousel-slide-project img {
-        aspect-ratio: 4 / 3 !important; /* Formato más cuadrado y perfecto para móviles */
+        width: 100% !important; 
+        object-fit: cover !important; /* En móvil cortamos un poco para que quede estético */
+        aspect-ratio: 4 / 3 !important; /* Lo hacemos más cuadradito */
+        max-height: none !important;
     }
-    
     body .hero-carousel-proyectos .carousel-control-project {
         width: 35px !important;
         height: 35px !important;
         font-size: 16px !important;
     }
-    
-    /* En móvil pegamos las flechas a 5px del borde */
     body .hero-carousel-proyectos .carousel-control-project.prev { left: 5px !important; }
     body .hero-carousel-proyectos .carousel-control-project.next { right: 5px !important; }
 }

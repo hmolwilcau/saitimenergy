@@ -53,60 +53,59 @@
         .kolibri-title { font-family: 'Bauhaus Light Regular', sans-serif; font-size: 72px !important; margin-top: 0; margin-bottom: 20px; color: #004047; line-height: 1.1; letter-spacing: -2px; }
         .kolibri-text { font-size: 26px !important; line-height: 1.6; color: #333; }
 
-        /* --- 🔥 CARRUSEL ESCRITORIO (LA BALA DE PLATA MATEMÁTICA) 🔥 --- */
-        .hero-carousel-proyectos { 
+        /* --- 🔥 CARRUSEL ESCRITORIO (PROTEGIDO) 🔥 --- */
+        body .hero-carousel-proyectos { 
             position: sticky !important; top: 180px !important; z-index: 1 !important;
             width: 100% !important; 
-            height: calc(100vh - 250px) !important; 
+            height: calc(100vh - 250px) !important; /* Recuperamos la altura real */
             min-height: 450px !important; max-height: 800px !important; 
             border-radius: 24px !important; overflow: hidden !important; 
             background-color: #f5f5f5 !important; 
             transform-origin: top center !important; will-change: transform, opacity;
             display: block !important;
+            margin-bottom: 60px !important; /* EL SALVAVIDAS: Separa la primera tarjeta de la foto */
         }
           
-        .hero-carousel-proyectos .carousel-slide-project { 
+        body .hero-carousel-proyectos .carousel-slide-project { 
             position: absolute !important; top: 0 !important; left: 0 !important; width: 100% !important; 
-            height: calc(100vh - 250px) !important; 
-            min-height: 450px !important; max-height: 800px !important; 
+            height: 100% !important; 
             margin: 0 !important; padding: 0 !important;
             opacity: 0 !important; visibility: hidden !important; z-index: 0 !important; transition: opacity 0.4s ease;
+            display: block !important;
         }
 
-        .hero-carousel-proyectos .carousel-slide-project.active {
+        body .hero-carousel-proyectos .carousel-slide-project.active {
             opacity: 1 !important; visibility: visible !important; z-index: 2 !important;
         }
           
-        .hero-carousel-proyectos .carousel-slide-project img { 
+        body .hero-carousel-proyectos .carousel-slide-project img { 
             position: absolute !important; top: 0 !important; left: 0 !important; width: 100% !important; 
-            height: calc(100vh - 250px) !important; 
-            min-height: 450px !important; max-height: 800px !important; 
+            height: 100% !important; 
             object-fit: cover !important; object-position: center center !important; 
             display: block !important; margin: 0 !important; padding: 0 !important;
+            aspect-ratio: auto !important; /* Desactiva el molde del style.css general */
         }
 
         /* BLINDAJE DE FLECHAS Y PUNTOS */
-        .hero-carousel-proyectos .carousel-control-project {
+        body .hero-carousel-proyectos .carousel-control-project {
             position: absolute !important; top: 50% !important; transform: translateY(-50%) !important; z-index: 100 !important;
         }
-        .hero-carousel-proyectos .carousel-control-project.prev { left: 15px !important; right: auto !important; }
-        .hero-carousel-proyectos .carousel-control-project.next { right: 15px !important; left: auto !important; }
- 
-
-
+        body .hero-carousel-proyectos .carousel-control-project.prev { left: 15px !important; right: auto !important; }
+        body .hero-carousel-proyectos .carousel-control-project.next { right: 15px !important; left: auto !important; }
 
         /* =========================================
            3. MEDIA QUERIES PERFECTOS (LA CASCADA)
            ========================================= */
         @media (max-width: 1400px) {
             .kolibri-title { font-size: 58px !important; letter-spacing: -1.5px !important; }
-            .kolibri-text { font-size: 15px !important; }
+            .kolibri-text { font-size: 18px !important; }
             .split-section { max-width: 1200px; }
+            .sticky-logo { max-width: 180px; height: auto; margin: 40px 180px 50px auto; display: block; }
         }
 
         @media (max-width: 1200px) {
             .kolibri-title { font-size: 48px !important; margin-bottom: 24px !important; letter-spacing: -1px !important; }
-            .kolibri-text { font-size: 14px !important; }
+            .kolibri-text { font-size: 22px !important; }
             .service-card { padding: 30px; }
             .service-card h3 { font-size: 26px !important; }
         }
@@ -115,28 +114,25 @@
         @media (max-width: 1024px) {
             .split-section { flex-direction: column !important; padding: 170px 20px 40px 20px !important; display: flex !important; }
             .left-column { position: static !important; margin-bottom: 30px; text-align: center; width: 100% !important; }
-            .sticky-logo { margin: 0 auto 20px auto !important; max-width: 140px !important; }
+            .sticky-logo { margin: 0 auto 10px auto !important; max-width: 140px !important; }
             
-            /* Textos móviles ya liberados */
             .kolibri-title { font-size: 42px !important; letter-spacing: -1px !important; }
             .kolibri-text { font-size: 20px !important; letter-spacing: -1px !important; }
             
             .right-column { display: flex !important; flex-direction: column !important; width: 100% !important; gap: 20px !important; overflow-x: hidden !important; }
             
-            /* Carrusel móvil reseteado (Altura fija) */
-            .hero-carousel-proyectos { 
+            body .hero-carousel-proyectos { 
                 position: relative !important; top: 0 !important; transform: scale(1) !important; opacity: 1 !important;
                 height: 350px !important; min-height: 350px !important; max-height: 350px !important; 
                 margin-bottom: 20px !important; overflow: hidden !important; 
             }
-            .hero-carousel-proyectos .carousel-slide-project { 
+            body .hero-carousel-proyectos .carousel-slide-project { 
                 height: 100% !important; min-height: 100% !important; max-height: 100% !important; 
             }
-            .hero-carousel-proyectos .carousel-slide-project img { 
+            body .hero-carousel-proyectos .carousel-slide-project img { 
                 height: 100% !important; min-height: 100% !important; max-height: 100% !important; 
             }
             
-            /* Tarjetas reseteadas */
             .service-card { 
                 width: 100% !important; box-sizing: border-box !important; opacity: 1 !important;
                 box-shadow: none !important; margin-top: 0 !important; z-index: 1 !important; 
@@ -145,10 +141,10 @@
 
         /* Teléfonos pequeños */
         @media (max-width: 768px) {
-            .kolibri-title { font-size: 34px !important; }
+            .kolibri-title { font-size: 34px !important; margin: 20px 0px 0px 0px; }
             .kolibri-text { font-size: 15px !important; }
-            .split-section { padding: 70px 20px 40px 20px !important; }
-            .hero-carousel-proyectos { height: 280px !important; min-height: 280px !important; max-height: 280px !important; }
+            .split-section { padding: 90px 20px 40px 20px !important; }
+            body .hero-carousel-proyectos { height: 280px !important; min-height: 280px !important; max-height: 280px !important; }
         }
     </style>
 </head>
@@ -451,14 +447,93 @@
         });
     });
 
-    // 7. BUSCADOR Y CARRUSEL (Mantenemos tu lógica existente)
+  // 7. MENÚS DESPLEGABLES
     document.querySelectorAll('.dropdown-toggle').forEach(t => t.addEventListener('click', function(e) {
         e.preventDefault(); e.stopPropagation();
         const m = document.getElementById(this.getAttribute('data-target'));
         if(m) { m.classList.toggle('show'); this.textContent = m.classList.contains('show') ? '▲' : '▼'; }
     }));
 
-    // (Tu lógica de buscador y carrusel aquí abajo continúa funcionando igual)
+    // --- CARRUSEL TÁCTIL ---
+    const carruseles = document.querySelectorAll('.hero-carousel-proyectos, .hero-carousel');
+    carruseles.forEach(carrusel => {
+        let slideIndex = 1;
+        const slides = carrusel.querySelectorAll('.carousel-slide, .carousel-slide-project');
+        const dots = carrusel.querySelectorAll('.dot');
+        const prevBtn = carrusel.querySelector('.carousel-control.prev, .carousel-control-project.prev');
+        const nextBtn = carrusel.querySelector('.carousel-control.next, .carousel-control-project.next');
+
+        if (!slides || slides.length === 0) return;
+
+        function showSlides(n) {
+            if (n > slides.length) slideIndex = 1;
+            if (n < 1) slideIndex = slides.length;
+
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+
+            slides[slideIndex - 1].classList.add('active');
+            if (dots[slideIndex - 1]) dots[slideIndex - 1].classList.add('active');
+        }
+
+        if (prevBtn) prevBtn.addEventListener('click', () => showSlides(slideIndex -= 1));
+        if (nextBtn) nextBtn.addEventListener('click', () => showSlides(slideIndex += 1));
+        dots.forEach((dot, index) => dot.addEventListener('click', () => showSlides(slideIndex = index + 1)));
+
+        let touchstartX = 0;
+        let touchendX = 0;
+        carrusel.addEventListener('touchstart', e => { touchstartX = e.changedTouches[0].screenX; }, { passive: true });
+        carrusel.addEventListener('touchend', e => {
+            touchendX = e.changedTouches[0].screenX;
+            if (touchstartX - touchendX > 50) showSlides(slideIndex += 1); 
+            if (touchendX - touchstartX > 50) showSlides(slideIndex -= 1); 
+        }, { passive: true });
+
+        showSlides(slideIndex);
+    });   
+        
+    // --- ANIMACIÓN DE CARRUSEL (KOLIBRI) ---
+    const rightColumn = document.querySelector('.right-column');
+    const carruselKolibri = document.querySelector('.hero-carousel-proyectos');
+    const tarjetasKolibri = document.querySelectorAll('.service-card');
+
+    window.addEventListener('scroll', () => {
+        if (window.innerWidth > 1024 && rightColumn && carruselKolibri) {
+            const rect = rightColumn.getBoundingClientRect();
+            if (rect.top <= 180) {
+                let scrolledPast = 180 - rect.top; 
+                let progress = scrolledPast / 500;
+                progress = Math.max(0, Math.min(1, progress)); 
+                let scale = 1 - (progress * 0.2);
+                let opacity = 1 - progress;
+                
+                carruselKolibri.style.transform = `scale(${scale})`;
+                carruselKolibri.style.opacity = opacity;
+            } else {
+                carruselKolibri.style.transform = `scale(1)`;
+                carruselKolibri.style.opacity = 1;
+            }
+
+            tarjetasKolibri.forEach(tarjeta => {
+                const tRect = tarjeta.getBoundingClientRect();
+                if (tRect.top < 250) {
+                    let cardOpacity = (tRect.top - 80) / 170; 
+                    tarjeta.style.opacity = Math.max(0, Math.min(1, cardOpacity));
+                } else {
+                    tarjeta.style.opacity = 1;
+                }
+            });
+        } else {
+            if (carruselKolibri) {
+                carruselKolibri.style.transform = 'scale(1)';
+                carruselKolibri.style.opacity = 1;
+            }
+            if (tarjetasKolibri) {
+                tarjetasKolibri.forEach(t => t.style.opacity = 1);
+            }
+        }
+    });
+
 </script>
 </body>
 </html>
