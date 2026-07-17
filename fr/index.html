@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="fr-FR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Inicio - Saitim Energy S.L.  </title>
+    <title>Accueil - Saitim Energy S.L.</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="images/logo.png">
-    
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" type="image/png" href="/images/logo.png">
+
     <style>
         #preloader {
             position: fixed;
@@ -57,9 +57,17 @@
             opacity: 0;
             visibility: hidden;
         }
+        
         @media (min-width:768px) {
             .tewa-hero {
-            padding-top:110px;
+            padding-top:60px;
+                
+                }
+            }
+        
+        @media (max-height:700px) {
+            .tewa-hero {
+            padding-top:50px;
                 
                 }
             }
@@ -70,7 +78,7 @@
 
    <div id="preloader">
         <div class="preloader-content">
-            <img src="images/Saitim-blanco.png" alt="Cargando Saitim Energy" class="loader-logo">
+            <img src="/images/Saitim-blanco.png" alt="Chargement Saitim Energy" class="loader-logo">
             <div class="progress-container-loader">
                 <div class="progress-bar-fill" id="loader-progress"></div>
             </div>
@@ -80,29 +88,29 @@
 <header class="site-header">
     <div class="header-container">
         <a href="#" class="logo-link">
-    <img class="logo" src="images/Saitim-sincolor.png" alt="Saitim Energy" width="211" height="72" />
+    <img class="logo" src="/images/Saitim-sincolor.png" alt="Saitim Energy" width="211" height="72" />
 </a>
         <nav class="site-nav">
             <ul>
-                <li><a href="#">Inicio</a></li>
-                <li class="navbar"><a class="link navbar" href="sectores.html">Sectores</a></li>
-                <li class="navbar"><a class="link navbar" href="servicios.html">Servicios</a></li>
-                <li class="navbar"><a class="link navbar" href="proyectos.html">Proyectos</a></li>
-                <li class="navbar"><a class="link navbar" href="equipo.html">Nuestro equipo</a></li>                
-                <li class="navbar"><a class="link navbar" href="contacto.html">Contacto</a></li>
+                <li><a href="#">Accueil</a></li>
+                <li class="navbar"><a class="link navbar" href="/fr/sectores.html">Secteurs</a></li>
+                <li class="navbar"><a class="link navbar" href="/fr/servicios.html">Services</a></li>
+                <li class="navbar"><a class="link navbar" href="/proyectos.html">Projets</a></li>
+                <li class="navbar"><a class="link navbar" href="/fr/equipo.html">Notre équipe</a></li>                
+                <li class="navbar"><a class="link navbar" href="/fr/contacto.html">Contact</a></li>
             </ul>
         </nav>
         <div class="header-icons">
 <div class="language-selector">
-    <a href="index.html" class="lang-active">ES</a>
+    <a href="/index.html">ES</a>
     <span class="lang-divider">|</span> 
-    <a href="en/index.html">EN</a>
+    <a href="/en/index.html">EN</a>
     <span class="lang-divider">|</span> 
-    <a href="fr/index.html">FR</a>    
+    <a href="/fr/index.html" class="lang-active">FR</a>    
        
 </div>
             <div class="search-container">
-                <input type="text" class="search-input" id="buscador-input" placeholder="Buscar...">
+                <input type="text" class="search-input" id="buscador-input" placeholder="Rechercher...">
                 <button id="btn-buscar" class="search-btn minimal-search-btn">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="search-icon-svg">
                 <circle cx="11" cy="11" r="8"></circle>
@@ -128,7 +136,7 @@
     <section class="tewa-hero">
         
         <video id="tewa-video" class="tewa-bg-video" autoplay loop muted playsinline>
-            <source src="videos/saitimvideo.mp4" type="video/mp4">
+            <source src="/videos/saitimvideo.mp4" type="video/mp4">
         </video>
         
         <div class="tewa-overlay"></div>
@@ -143,111 +151,111 @@
         
         <div class="carousel-slide active">
             <video class="bg-video" muted playsinline preload="none">
-                <source src="videos/1.mp4" type="video/mp4">
+                <source src="/videos/1.mp4" type="video/mp4">
             </video>
             <div class="slide-overlay"></div>
             <div class="slide-content-box">
                 <div class="progress-bar-container"><div class="progress-bar"></div></div>
                 <div class="text-content">
-                    <h2 class="slide-title">Energías renovables</h2>
-                    <p class="slide-text">Somos pioneros a nivel nacional en el desarrollo de sistemas de monitorización para plantas fotovoltaicas</p>
+                    <h2 class="slide-title">Énergies renouvelables</h2>
+                    <p class="slide-text">Nous sommes pionniers au niveau national dans le développement de systèmes de surveillance pour les centrales photovoltaïques</p>
                 </div>
             </div>
         </div> 
 
         <div class="carousel-slide">
             <video class="bg-video" muted playsinline preload="none">
-                <source src="videos/2.mp4" type="video/mp4">
+                <source src="/videos/2.mp4" type="video/mp4">
             </video>
             <div class="slide-overlay"></div>
             <div class="slide-content-box">
                 <div class="progress-bar-container"><div class="progress-bar"></div></div>
                 <div class="text-content">
-                    <h2 class="slide-title">Agroalimentación</h2>
-                    <p class="slide-text">Ofrecemos proyectos “llaves en mano” del sistema eléctrico de B.T A.T y del sistema de automatización para fábricas de piensos compuestos y correctores.</p>
+                    <h2 class="slide-title">Agroalimentaire</h2>
+                    <p class="slide-text">Nous proposons des projets "clé en main" pour les systèmes électriques BT/HT et les systèmes d'automatisation pour les usines d'aliments composés et de correcteurs.</p>
                 </div>
-            </div>    
+            </div>  
         </div>                
                 
         <div class="carousel-slide">
             <video class="bg-video" muted playsinline preload="none">
-                <source src="videos/3.mp4" type="video/mp4">
+                <source src="/videos/3.mp4" type="video/mp4">
             </video>
             <div class="slide-overlay"></div>
             <div class="slide-content-box">
                 <div class="progress-bar-container"><div class="progress-bar"></div></div>
                 <div class="text-content">
-                    <h2 class="slide-title">Automoción</h2>
-                    <p class="slide-text">Automatización de líneas de producción; realización de software para producción trazabilidad y calidad; mantenimientos eléctricos y de programación.</p>
+                    <h2 class="slide-title">Automobile</h2>
+                    <p class="slide-text">Automatisation des lignes de production ; développement de logiciels pour la production, la traçabilité et la qualité ; maintenance électrique et de programmation.</p>
                 </div>
             </div>
         </div>
             
         <div class="carousel-slide">
             <video class="bg-video" muted playsinline preload="none">
-                <source src="videos/4.mp4" type="video/mp4">
+                <source src="/videos/4.mp4" type="video/mp4">
             </video>
             <div class="slide-overlay"></div>
             <div class="slide-content-box">
                 <div class="progress-bar-container"><div class="progress-bar"></div></div>
                 <div class="text-content">
-                    <h2 class="slide-title">Alimentación</h2>
-                    <p class="slide-text">texto alimentación</p>
+                    <h2 class="slide-title">Alimentation</h2>
+                    <p class="slide-text">Spécialistes de l'automatisation d'usines d'aliments et de correcteurs. Nous optimisons votre production et garantissons une traçabilité totale, de la réception des matières premières à la ferme.</p>
                 </div>
             </div>
         </div>
             
         <div class="carousel-slide">
             <video class="bg-video" muted playsinline preload="none">
-                <source src="videos/5.mp4" type="video/mp4">
+                <source src="/videos/5.mp4" type="video/mp4">
             </video>
             <div class="slide-overlay"></div>
             <div class="slide-content-box">
                 <div class="progress-bar-container"><div class="progress-bar"></div></div>
                 <div class="text-content">
-                    <h2 class="slide-title">Medio ambiente</h2>
-                    <p class="slide-text">Procesos industriales para la transformación de la materia orgánica.</p>
+                    <h2 class="slide-title">Environnement</h2>
+                    <p class="slide-text">Processus industriels pour la transformation de la matière organique.</p>
                 </div>
             </div>
         </div>  
             
         <div class="carousel-slide">
             <video class="bg-video" muted playsinline preload="none">
-                <source src="videos/6.mp4" type="video/mp4">
+                <source src="/videos/6.mp4" type="video/mp4">
             </video>
             <div class="slide-overlay"></div>
             <div class="slide-content-box">
                 <div class="progress-bar-container"><div class="progress-bar"></div></div>
                 <div class="text-content">
-                    <h2 class="slide-title">Cerámicas y áridos</h2>
-                    <p class="slide-text">Programación para la total automatización de las plantas de fabricación de ladrillos tejas y molturación de arcillas. Presentes en España Argelia Colombia y Venezuela. En el sector de los áridos, controlamos plantas de mortero y hormigón basado en PLC y Scada comercial.</p>
+                    <h2 class="slide-title">Céramiques et Granulats</h2>
+                    <p class="slide-text">Programmation pour l'automatisation totale des usines de fabrication de briques et de tuiles et le broyage de l'argile. Présents en Espagne, Algérie, Colombie et Venezuela. Dans le secteur des granulats, nous contrôlons les centrales à mortier et à béton basées sur des API et des SCADA commerciaux.</p>
                 </div>
             </div>
         </div>
              
         <div class="carousel-slide">
             <video class="bg-video" muted playsinline preload="none">
-                <source src="videos/7.mp4" type="video/mp4">
+                <source src="/videos/7.mp4" type="video/mp4">
             </video>
             <div class="slide-overlay"></div>
             <div class="slide-content-box">
                 <div class="progress-bar-container"><div class="progress-bar"></div></div>
                 <div class="text-content">
-                    <h2 class="slide-title">Elevación y bienes de equipo</h2>
-                    <p class="slide-text">Desarrollo de proyectos eléctricos para cualquier tipo de maquinaría o aplicación.</p>
+                    <h2 class="slide-title">Levage et biens d'équipement</h2>
+                    <p class="slide-text">Développement de projets électriques pour tout type de machine ou d'application.</p>
                 </div>
             </div>
         </div>
          <div class="carousel-slide">
             <video class="bg-video" muted playsinline preload="none">
-                <source src="videos/8.mp4" type="video/mp4">
+                <source src="/videos/8.mp4" type="video/mp4">
             </video>
             <div class="slide-overlay"></div>
             <div class="slide-content-box">
                 <div class="progress-bar-container"><div class="progress-bar"></div></div>
                 <div class="text-content">
-                    <h2 class="slide-title">Recicladora y RCV</h2>
-                    <p class="slide-text">texto recicladora y rcv</p>
+                    <h2 class="slide-title">Recyclage et RCV</h2>
+                    <p class="slide-text">Nous automatisons les usines de recyclage et de traitement des déchets. Nous mettons en œuvre des systèmes SCADA sur mesure pour contrôler en toute sécurité les processus de traitement des déchets, les bandes transporteuses et les grues.</p>
                 </div>
             </div>
         </div>
@@ -274,54 +282,54 @@
     <div class="contact-container">
         
         <div class="contact-header">
-            <h2>Contacto</h2>
+            <h2>Contact</h2>
         </div>
 
         <div class="contact-grid">
             <div class="contact-form-col">
                 <form action="https://formsubmit.co/hmolwilcau@gmail.com" method="POST">
-                    <input type="text" name="nombre" placeholder="Nombre de la Empresa" required>
+                    <input type="text" name="nombre" placeholder="Nom de l'entreprise" required>
                     <input type="email" name="email" placeholder="Email" required>
-                    <input type="text" name="asunto" placeholder="Asunto" required>
+                    <input type="text" name="asunto" placeholder="Sujet" required>
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_next" value="https://saitim.netlify.app/gracias-form.html">
                     <div class="radio-group">
-                        <label><input type="radio" name="tipo" value="energias-renovables" checked>Energías renovables</label>
-                        <label><input type="radio" name="tipo" value="agroalimentacion">Agroalimentación</label>
-                        <label><input type="radio" name="tipo" value="automocion"> Automoción</label>
-                        <label><input type="radio" name="tipo" value="alimentacion"> Alimentación</label>
+                        <label><input type="radio" name="tipo" value="energias-renovables" checked>Énergies renouvelables</label>
+                        <label><input type="radio" name="tipo" value="agroalimentacion">Agroalimentaire</label>
+                        <label><input type="radio" name="tipo" value="automocion"> Automobile</label>
+                        <label><input type="radio" name="tipo" value="alimentacion"> Alimentation</label>
                      
                     </div>
 
-                    <textarea name="mensaje" placeholder="Mensaje..." rows="6" required></textarea>
+                    <textarea name="mensaje" placeholder="Message..." rows="6" required></textarea>
                     
-                     <button type="submit" class="btn-solid-nwhite">Enviar</button>
+                     <button type="submit" class="btn-solid-nwhite">Envoyer</button>
                     
                     </form>
             </div>
 
             <div class="contact-info-col">
                 <div class="info-block">
-                    <h3>Ubicación</h3>
+                    <h3>Location</h3>
                     Plataforma Logística Plaza <br>
                     C/ Castillo de Capua, Nº 10 Nave 2<br>
                     50197 Zaragoza
                 </div>
                 
                 <div class="info-block">
-                    <h3>Teléfono</h3>
+                    <h3>Phone</h3>
                     <p>Tel.  +34 876 246 161</p>
                     <p>Fax.  +34 876 246 159</p>
                 </div>
 
                 <div class="info-block no-border">
-                            <h3>Redes Sociales</h3>
-                            <p>Correo electrónico: saitim@saitim.com </p>
+                            <h3>Social Media</h3>
+                            <p>Email: saitim@saitim.com </p>
                  
                             <a href="https://www.youtube.com/watch?v=4eRTi04gtao" class="social-icon youtube">
                                 <svg viewBox="0 0 24 24" fill="#056976" width="24" height="24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
                               </a> 
-                                <a href="https://www.linkedin.com/company/saitim-s-l/posts/?feedView=all" class="social-icon linkedin">    
+                                <a href="https://www.linkedin.com/company/saitim-s-l/posts/?feedView=all" class="social-icon linkedin">   
                                 <svg href="#" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#34ACB4" width="24" height="24"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
                     </a>
                 </div>   
@@ -335,34 +343,34 @@
         <div class="footer-grid">
             
             <div class="footer-col about-col">
-                <img src="images/Saitim-sincolor.png" alt="Logo Footer" class="footer-logo">
-                <p> Diseñamos, construimos y apoyamos proyectos y aplicaciones para clientes de todo el mundo. <br> Ayudamos a que su negocio funcione.<br> ¿Interesado?<br> Llámenos. </p>
-                <a href="#contacto" class="btn-outline-white">Contacto</a>
+                <img src="/images/Saitim-sincolor.png" alt="Logo Footer" class="footer-logo">
+                <p> Nous concevons, construisons et soutenons des projets et des applications pour des clients du monde entier. <br> Nous aidons votre entreprise à fonctionner.<br> Intéressé(e) ?<br> Appelez-nous. </p>
+                <a href="/fr/contacto.html" class="btn-outline-white">Contact</a>
             </div>
 
-            <div class="footer-col">
-                <h4><a href="proyectos.html">Proyectos</a></h4>
+                 <div class="footer-col">
+                <h4><a href="/proyectos.html">Projets</a></h4>
                 <ul>
-                   
-                    <li><a href="meda-detalle.html">Proyecto Medio Ambiente</a></li>
-                    <li><a href="auto-detalle.html">Proyecto Automoción</a></li>
-                    <li><a href="fabpi-detalle.html">Proyecto Agroalimentario</a></li>
-                    <li><a href="foto-detalle.html">Proyecto Fotovoltaico</a></li>
+                    
+                    <li><a href="/fr/meda-detalle.html">Projet Environnement</a></li>
+                    <li><a href="/fr/auto-detalle.html">Projet Automobile</a></li>
+                    <li><a href="/fr/fabpi-detalle.html">Projet Agroalimentaire</a></li>
+                    <li><a href="/fr/foto-detalle.html">Projet Photovoltaïque</a></li>
                  
                 </ul>
             </div>
-
-            <div class="footer-col">
-              <h4><a href="sectores.html">Sectores</a></h4>
+                    
+             <div class="footer-col">
+              <h4><a href="/fr/sectores.html">Secteurs</a></h4>
                 <ul>
-                      <li><a href="sectores.html#energias-renovables">Energías renovables</a></li>
-                    <li><a href="sectores.html#reciclaje">Reciclaje y RCV</a></li>
-                    <li><a href="sectores.html#meda">Medio ambiente</a></li>
-                    <li><a href="sectores.html#agroalimentacion">Agroalimentación</a></li>
-                    <li><a href="sectores.html#alimentacion">Alimentación</a></li>
-                <li><a href="sectores.html#ceraridos">Ceramicas y Áridos</a></li>
-                    <li><a href="sectores.html#automocion">Automoción</a></li>
-                    <li><a href="sectores.html#elbe">Elevación y bienes de equipos</a></li>
+                      <li><a href="/fr/sectores.html#energias-renovables">Énergies renouvelables</a></li>
+                    <li><a href="/fr/sectores.html#reciclaje">Recyclage et RCV</a></li>
+                    <li><a href="/fr/sectores.html#meda">Environnement</a></li>
+                    <li><a href="/fr/sectores.html#agroalimentacion">Agroalimentaire</a></li>
+                    <li><a href="/fr/sectores.html#alimentacion">Alimentation</a></li>
+                <li><a href="/fr/sectores.html#ceraridos">Céramiques et Granulats</a></li>
+                    <li><a href="/fr/sectores.html#automocion">Automobile</a></li>
+                    <li><a href="/fr/sectores.html#elbe">Levage et biens d'équipement</a></li>
                     
                 
                 </ul>
@@ -371,27 +379,27 @@
              
     
           <div class="footer-col form-col">
-                        <h4>¿Nos necesitas?</h4>
+                        <h4>Besoin de nous ?</h4>
                           <form action="https://formsubmit.co/hmolwilcau@gmail.com" method="POST">
-                    <input type="text" name="nombre" placeholder="Nombre de la Empresa" required>
+                    <input type="text" name="nombre" placeholder="Nom de l'entreprise" required>
                     <input type="email" name="email" placeholder="Email" required>
-                     <textarea placeholder="¿Cómo podemos ayudarte?" rows="3" required></textarea>
+                     <textarea placeholder="Comment pouvons-nous vous aider ?" rows="3" required></textarea>
                     <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_next" value="https://saitim.netlify.app/gracias-form.html">
-                      <button type="submit" class="btn-outline-white">Enviar</button>
+                   <input type="hidden" name="_next" value="https://saitim.netlify.app/gracias-form.html">
+                      <button type="submit" class="btn-outline-white">Envoyer</button>
                     
                     </form>
                     </div>
                 
             <div class="footer-col">
-                <h4>Mapa Web</h4>
+                <h4>Plan du Site</h4>
                 <ul>
-                     <li><a href="#">Inicio</a></li>
-                    <li><a href="sectores.html">Sectores</a></li>
-                    <li><a href="servicios.html">Servicios</a></li>
-                    <li><a href="proyectos.html">Proyectos</a></li>
-                    <li><a href="equipo.html">Nuestro equipo</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
+                     <li><a href="/fr/index.html">Accueil</a></li>
+                    <li><a href="/fr/sectores.html">Secteurs</a></li>
+                    <li><a href="/fr/servicios.html">Services</a></li>
+                    <li><a href="/proyectos.html">Projets</a></li>
+                    <li><a href="/fr/equipo.html">Notre équipe</a></li>
+                    <li><a href="/fr/contacto.html">Contact</a></li>
                 </ul>
             </div>
 
@@ -404,7 +412,7 @@
           <div class="row row-15 justify-content-lg-between">
             <div class="col-lg-6 col-xl-6 text-lg-left">
             <p class="rights" style="margin-bottom: 25px;"><span>&copy;&nbsp;</span><span class="copyright-year"></span> Saitim Energy S.L.</p>
-           
+            
         </div>
     </div>
             </div>
@@ -416,11 +424,11 @@
 <div id="search-modal" class="search-modal-hidden">
     <div class="search-modal-content">
         <div class="search-header">
-            <h3>Resultados de la búsqueda</h3>
+            <h3>Résultats de la recherche</h3>
             <button id="close-search" class="close-btn">&times;</button>
         </div>
         <div id="search-results-container">
-            <!-- Los resultados aparecerán aquí -->
+            <!-- Los résultats apparaîtront ici -->
         </div>
     </div>
 </div>
@@ -432,11 +440,10 @@
     
     
     <!-- 1. LLAMAMOS AL ARCHIVO DE DATOS QUE HAS CREADO -->
-    <script src="buscador-datos.js"></script>
-
-    <!-- 2. SCRIPT PRINCIPAL LIMPIO Y ORDENADO -->
-    <script>
-        // ==========================================
+    
+    <script src="/buscador-datos.js"></script>
+<script>
+  // ==========================================
         // RESTAURACIÓN DE SCROLL
         // ==========================================
         if ('scrollRestoration' in history) {
@@ -478,6 +485,10 @@
                     preloader.classList.add('preloader-hidden');
                     setTimeout(() => {
                         preloader.style.display = 'none';
+                        // 🔥 AQUÍ ESTÁ LA MAGIA: Arrancamos el vigía solo cuando la carga termina 🔥
+                        if (typeof iniciarVigilanteCarrusel === 'function') {
+                            iniciarVigilanteCarrusel();
+                        }
                     }, 500);
                 }
             }, 400);
@@ -498,10 +509,10 @@
                 let triggerHeight = heroSection ? heroSection.offsetHeight - 80 : 50;
                 if (window.scrollY > triggerHeight) {
                     header.classList.add('scrolled'); 
-                    if (logoImg) logoImg.src = 'images/Saitim-blanco.png'; 
+                    if (logoImg) logoImg.src = '/images/Saitim-blanco.png'; 
                 } else {
                     header.classList.remove('scrolled'); 
-                    if (logoImg) logoImg.src = 'images/Saitim-sincolor.png'; 
+                    if (logoImg) logoImg.src = '/images/Saitim-sincolor.png'; 
                 }
             });
         }
@@ -545,28 +556,57 @@
             }
         }
 
-
       // ==========================================
         // 3. CARRUSEL DE VIDEOS INFERIOR (INTELIGENTE)
         // ==========================================
         let slideIndex = 1;
-        let carruselIniciado = false; // Variable para saber si ya arrancó
+        let carruselIniciado = false; 
         const contenedorCarrusel = document.querySelector('.hero-carousel');
+        let slides = document.getElementsByClassName("carousel-slide");
+        let dots = document.getElementsByClassName("dot");
+
+        // TRUCO ANTI-NEGRO: Cargamos el primer fotograma del vídeo en pausa
+        if (slides.length > 0) {
+            let primerVideo = slides[0].querySelector(".bg-video");
+            if (primerVideo) {
+                primerVideo.preload = "metadata"; 
+                primerVideo.pause();
+            }
+        }
 
         function moveSlide(n) { showSlides(slideIndex += n); }
         function currentSlide(n) { showSlides(slideIndex = n); }
 
+        function reproducirVideoActivo() {
+            if (!slides[slideIndex-1]) return;
+            let activeVideo = slides[slideIndex-1].querySelector(".bg-video");
+            let activeBar = slides[slideIndex-1].querySelector(".progress-bar");
+
+            if (activeVideo) {
+                activeVideo.preload = "auto"; // Descarga el vídeo ahora que lo vamos a ver
+                let playPromise = activeVideo.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(error => { console.log("Autoplay bloqueado por el navegador"); });
+                }
+
+                activeVideo.ontimeupdate = function() {
+                    if(activeVideo.duration && activeBar) {
+                        let percentage = (activeVideo.currentTime / activeVideo.duration) * 100;
+                        activeBar.style.width = percentage + "%";
+                    }
+                };
+
+                activeVideo.onended = function() { moveSlide(1); };
+            }
+        }
+
         function showSlides(n) {
-            let i;
-            let slides = document.getElementsByClassName("carousel-slide");
-            let dots = document.getElementsByClassName("dot");
-            
             if (!slides || slides.length === 0) return; 
             
             if (n > slides.length) {slideIndex = 1}
             if (n < 1) {slideIndex = slides.length}
             
-            for (i = 0; i < slides.length; i++) {
+            for (let i = 0; i < slides.length; i++) {
                 slides[i].classList.remove("active");
                 if(dots[i]) dots[i].classList.remove("active");
                 
@@ -584,138 +624,137 @@
             slides[slideIndex-1].classList.add("active");
             if(dots[slideIndex-1]) dots[slideIndex-1].classList.add("active");
 
-            let activeVideo = slides[slideIndex-1].querySelector(".bg-video");
-            let activeBar = slides[slideIndex-1].querySelector(".progress-bar");
-
-            if (activeVideo) {
-                let playPromise = activeVideo.play();
-                if (playPromise !== undefined) {
-                    playPromise.catch(error => { console.log("Autoplay bloqueado"); });
-                }
-
-                activeVideo.ontimeupdate = function() {
-                    if(activeVideo.duration && activeBar) {
-                        let percentage = (activeVideo.currentTime / activeVideo.duration) * 100;
-                        activeBar.style.width = percentage + "%";
-                    }
-                };
-
-                activeVideo.onended = function() { moveSlide(1); };
+            // Si el vigilante ya dio luz verde, reproducimos
+            if (carruselIniciado) {
+                reproducirVideoActivo();
             }
         }
 
-        // EL "VIGILANTE": Arranca el carrusel solo cuando se ve en pantalla
-        if (contenedorCarrusel) {
-            const observer = new IntersectionObserver((entradas) => {
-                // Si el carrusel entra al menos un 30% en la pantalla y no ha empezado
-                if (entradas[0].isIntersecting && !carruselIniciado) {
-                    carruselIniciado = true;
-                    showSlides(slideIndex); // ¡Damos al Play!
-                }
-            }, { threshold: 0.3 }); // 0.3 significa 30% visible
-            
-            observer.observe(contenedorCarrusel);
-        }
-
-       const inputBuscador = document.getElementById('buscador-input');
-    const botonBuscar = document.getElementById('btn-buscar');
-    const modalBuscador = document.getElementById('search-modal');
-    const cerrarModalBtn = document.getElementById('close-search');
-    const contenedorResultados = document.getElementById('search-results-container');
-
-    function realizarBusqueda() {
-        // Si no existe el buscador en esta página, no hacemos nada
-        if (!inputBuscador) return; 
-
-        const query = inputBuscador.value.toLowerCase().trim();
-        if (query === "") return; 
-
-        contenedorResultados.innerHTML = '';
-
-        if (typeof baseDatosBuscador !== 'undefined') {
-            const resultados = baseDatosBuscador.filter(item => 
-                item.titulo.toLowerCase().includes(query) || 
-                item.contenido.toLowerCase().includes(query)
-            );
-
-            modalBuscador.classList.remove('search-modal-hidden');
-
-            if (resultados.length > 0) {
-                resultados.forEach(res => {
-                    const resultHtml = `
-                        <div class="search-result-item">
-                            <a href="${res.url}">${res.titulo}</a>
-                            <p>${res.contenido}</p>
-                        </div>
-                    `;
-                    contenedorResultados.innerHTML += resultHtml;
-                });
-            } else {
-                contenedorResultados.innerHTML = `<p class="no-results">No se encontraron resultados para "<b>${query}</b>". Prueba con palabras como 'piensos' o 'renovables'.</p>`;
+        // 🔥 LA FUNCIÓN DEL VIGÍA 🔥
+        function iniciarVigilanteCarrusel() {
+            if (contenedorCarrusel) {
+                setTimeout(() => {
+                    const observer = new IntersectionObserver((entradas) => {
+                        if (entradas[0].isIntersecting) {
+                            if (!carruselIniciado) {
+                                carruselIniciado = true;
+                            }
+                            reproducirVideoActivo(); // ¡Damos al Play!
+                        } else {
+                            if (carruselIniciado && slides[slideIndex-1]) {
+                                let activeVideo = slides[slideIndex-1].querySelector(".bg-video");
+                                if (activeVideo) activeVideo.pause(); // Pausa si se sale de la pantalla
+                            }
+                        }
+                    }, { threshold: 0.3 }); 
+                    
+                    observer.observe(contenedorCarrusel);
+                }, 500);
             }
         }
-    }
 
-    if (botonBuscar) {
-        botonBuscar.addEventListener('click', realizarBusqueda);
-    }
-
-    if (inputBuscador) {
-        inputBuscador.addEventListener('keypress', function(event) {
-            if (event.key === 'Enter') {
-                realizarBusqueda();
-            }
-        });
-    }
-
-    if (cerrarModalBtn) {
-        cerrarModalBtn.addEventListener('click', () => {
-            modalBuscador.classList.add('search-modal-hidden');
-        });
-    }
-
-    window.addEventListener('click', (e) => {
-        if (e.target === modalBuscador) {
-            modalBuscador.classList.add('search-modal-hidden');
-        }
-    });
-        
         // ==========================================
-        // 5. MENÚ MÓVIL (BOTÓN HAMBURGUESA)
+        // BOTÓN VOLVER ARRIBA Y BÚSQUEDA
         // ==========================================
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileNav = document.querySelector('.site-nav');
-
-        if (mobileMenuBtn && mobileNav) {
-            mobileMenuBtn.addEventListener('click', () => {
-                mobileNav.classList.toggle('menu-abierto');
+        const backToTopBtn = document.getElementById('back-to-top-btn');
+        if (backToTopBtn) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 900) {
+                    backToTopBtn.classList.add('visible');
+                } else {
+                    backToTopBtn.classList.remove('visible');
+                }
+            });
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             });
         }
-// ==========================================
-// BOTÓN VOLVER ARRIBA (SCROLL TO TOP)
-// ==========================================
-const backToTopBtn = document.getElementById('back-to-top-btn');
 
-if (backToTopBtn) {
-    // 1. Vigilar el scroll para mostrar/ocultar el botón
-    window.addEventListener('scroll', () => {
-        // Si el usuario baja más de 400 píxeles, aparece el botón
-        if (window.scrollY > 900) {
-            backToTopBtn.classList.add('visible');
-        } else {
-            backToTopBtn.classList.remove('visible');
+        const inputBuscador = document.getElementById('buscador-input');
+        const botonBuscar = document.getElementById('btn-buscar');
+        const modalBuscador = document.getElementById('search-modal');
+        const cerrarModalBtn = document.getElementById('close-search');
+        const contenedorResultados = document.getElementById('search-results-container');
+
+        function réaliserRecherche() {
+            if (!inputBuscador) return; 
+            const query = inputBuscador.value.toLowerCase().trim();
+            if (query === "") return; 
+            contenedorResultados.innerHTML = '';
+            if (typeof baseDatosBuscador !== 'undefined') {
+                const résultats = baseDatosBuscador.filter(item => 
+                    item.titulo.toLowerCase().includes(query) || 
+                    item.contenido.toLowerCase().includes(query)
+                );
+                modalBuscador.classList.remove('search-modal-hidden');
+                if (résultats.length > 0) {
+                    résultats.forEach(res => {
+                        contenedorResultados.innerHTML += `
+                            <div class="search-result-item">
+                                <a href="${res.url}">${res.titulo}</a>
+                                <p>${res.contenido}</p>
+                            </div>
+                        `;
+                    });
+                } else {
+                    contenedorResultados.innerHTML = `<p class="no-results">Aucun résultat trouvé pour "<b>${query}</b>". Essayez des mots comme 'aliments' ou 'renouvelables'.</p>`;
+                }
+            }
         }
-    });
 
-    // 2. Acción de subir suavemente al hacer clic
-    backToTopBtn.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth' // Esto hace que la subida sea fluida, no un salto brusco
+        if (botonBuscar) botonBuscar.addEventListener('click', réaliserRecherche);
+        if (inputBuscador) inputBuscador.addEventListener('keypress', function(e) { if (e.key === 'Enter') réaliserRecherche(); });
+        if (cerrarModalBtn) cerrarModalBtn.addEventListener('click', () => modalBuscador.classList.add('search-modal-hidden'));
+        window.addEventListener('click', (e) => { if (e.target === modalBuscador) modalBuscador.classList.add('search-modal-hidden'); });
+
+        // =================================================================
+        // SISTEMA INTELIGENTE DE MENÚS
+        // =================================================================
+        const btnMenuMovil = document.getElementById('mobile-menu-btn');
+        const navSuperior = document.querySelector('.site-nav');
+        const btnMenuLateral = document.getElementById('lateral-menu-btn');
+        const navLateral = document.getElementById('lateral-dropdown');
+        const btnCerrarLateral = document.getElementById('close-menu-btn');
+
+        if (btnMenuMovil && navSuperior) {
+            btnMenuMovil.addEventListener('click', (e) => {
+                e.stopPropagation(); 
+                navSuperior.classList.toggle('menu-abierto');
+                if (navLateral && navLateral.classList.contains('open')) navLateral.classList.remove('open');
+            });
+        }
+
+        if (btnMenuLateral && navLateral) {
+            btnMenuLateral.addEventListener('click', (e) => {
+                e.stopPropagation();
+                navLateral.classList.add('open');
+                if (navSuperior && navSuperior.classList.contains('menu-abierto')) navSuperior.classList.remove('menu-abierto');
+            });
+        }
+
+        if (btnCerrarLateral && navLateral) btnCerrarLateral.addEventListener('click', () => navLateral.classList.remove('open'));
+
+        document.addEventListener('click', (e) => {
+            if (navSuperior && navSuperior.classList.contains('menu-abierto')) {
+                if (!navSuperior.contains(e.target) && !btnMenuMovil.contains(e.target)) navSuperior.classList.remove('menu-abierto');
+            }
+            if (navLateral && navLateral.classList.contains('open')) {
+                if (!navLateral.contains(e.target) && !btnMenuLateral.contains(e.target)) navLateral.classList.remove('open');
+            }
         });
-    });
-}
-    </script>
+
+        window.addEventListener('scroll', () => {
+            if (navSuperior && navSuperior.classList.contains('menu-abierto')) navSuperior.classList.remove('menu-abierto');
+            if (navLateral && navLateral.classList.contains('open')) navLateral.classList.remove('open');
+        }, { passive: true });
+
+        const enlacesMenus = document.querySelectorAll('.site-nav a, .lateral-nav a:not(.dropdown-toggle)');
+        enlacesMenus.forEach(enlace => {
+            enlace.addEventListener('click', () => {
+                if (navSuperior) navSuperior.classList.remove('menu-abierto');
+                if (navLateral) navLateral.classList.remove('open');
+            });
+        });
+</script>
 </body>
 </html>
-

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="fr-FR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyectos - Saitim Energy S.L. </title>
+    <title>Projets - Saitim Energy S.L.</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" type="image/png" href="/images/logo.png">
     
        <style>
  
@@ -18,7 +18,39 @@
            site-header-contact { 
         position: fixed; top: 0; width: 100%; background: white; z-index: 1000;
         transition: transform 0.4s ease-in-out !important; 
+               
     }
+    .conoce::after {
+    content: "";      
+    display: block;
+    position: absolute;
+    bottom: 5px; 
+    left: 0;
+    width: 100%; 
+    height: 25px; 
+    background-color: #C4EFF2 !important; 
+    z-index: -1; 
+    transition: width 0.5s cubic-bezier(0.25, 1, 0.5, 1); 
+}
+
+/* El efecto al pasar el ratón (Hover) */
+.conoce:hover::after {
+    width: 110%; 
+}
+
+/* =========================================
+   MÓVILES: ACHICAR EL TÍTULO Y LA LÍNEA
+   ========================================= */
+@media (max-width: 768px) {
+    .conoce {
+        font-size: 36px;
+        margin-bottom: 25px;
+    }
+    .conoce::after {
+        height: 15px; 
+        bottom: 2px;
+    }
+}
     .header-hidden { transform: translateY(-100%) !important; }
     </style> 
     
@@ -32,30 +64,30 @@
             
 <header class="site-header-contact">
     <div class="header-container-contact">
-       <a href="index.html">
-    <img class="logo" src="images/Saitim-sincolor.png" alt="Saitim Energy" width="211" height="72" />
+       <a href="/fr/index.html">
+    <img class="logo" src="/images/Saitim-sincolor.png" alt="Saitim Energy" width="211" height="72" />
 </a>
         <nav class="site-nav">
             <ul>
-                 <li class="navbar"><a class="link navbar" href="index.html">Inicio</a></li>
-                <li class="navbar"><a class="link navbar" href="sectores.html">Sectores</a></li>
-                <li class="navbar"><a class="link navbar" href="servicios.html">Servicios</a></li>
-                <li><a href="#">Proyectos</a></li>
-                <li class="navbar"><a class="link navbar" href="equipo.html">Nuestro equipo</a></li>
-                <li class="navbar"><a class="link navbar" href="contacto.html">Contacto</a></li>
+                 <li class="navbar"><a class="link navbar" href="/fr/index.html">Accueil</a></li>
+                <li class="navbar"><a class="link navbar" href="/fr/sectores.html">Secteurs</a></li>
+                <li class="navbar"><a class="link navbar" href="/fr/servicios.html">Services</a></li>
+                <li><a href="#">Projets</a></li>
+                <li class="navbar"><a class="link navbar" href="/fr/equipo.html">Notre équipe</a></li>
+                <li class="navbar"><a class="link navbar" href="/fr/contacto.html">Contact</a></li>
             </ul>
         </nav>
          <div class="header-icons">
 <div class="language-selector">
-    <a href="proyectos.html" class="lang-active">ES</a>
+    <a href="/proyectos.html">ES</a>
     <span class="lang-divider">|</span> 
-    <a href="en/proyectos.html">EN</a>
+    <a href="/en/proyectos.html">EN</a>
     <span class="lang-divider">|</span> 
-    <a href="fr/proyectos.html">FR</a>    
+    <a href="/fr/proyectos.html" class="lang-active">FR</a>    
        
 </div>
             <div class="search-container">
-                <input type="text" class="search-input" id="buscador-input" placeholder="Buscar...">
+                <input type="text" class="search-input" id="buscador-input" placeholder="Rechercher...">
                 <button id="btn-buscar" class="search-btn minimal-search-btn">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="search-icon-svg">
                 <circle cx="11" cy="11" r="8"></circle>
@@ -87,51 +119,51 @@
     <div class="contact-container">
         
         <div class="contact-header-proyectos">
-            <h2 class="conoce">Conoce nuestros proyectos</h2>
+            <h2 class="conoce">Découvrez nos projets</h2>
        <section class="minimal-quote-section-proyectos">
         <div class="minimal-quote-container-proyectos">
-            <p class="minimal-quote-text">Estamos
-                <span class="text-highlight">orgullosos</span> de nuestro
-               <span class="text-highlight">trabajo. </span>
+            <p class="minimal-quote-text">Nous sommes
+                <span class="text-highlight">fiers</span> de notre
+               <span class="text-highlight">travail. </span>
             </p>
         </div>
     </section>      
           <section class="tarjetas-hover-seccion">
     <div class="tarjetas-contenedor">
         
-        <div class="tarjeta-hover" onclick="window.location.href='meda-detalle.html';">
-            <img src="images/portadama.jpg" alt="Medio Ambiente" class="tarjeta-img">
+        <div class="tarjeta-hover" onclick="window.location.href='/fr/meda-detalle.html';">
+            <img src="/images/portadama.jpg" alt="Environnement" class="tarjeta-img">
             <div class="tarjeta-overlay"></div> 
             <div class="tarjeta-contenido">
-                <h3>Medio Ambiente</h3>
-                <p>Control de procesos para transformar materia orgánica, optimizando la eficiencia energética y la sostenibilidad de la planta.</p>
+                <h3>Environnement</h3>
+                <p>Contrôle des processus pour transformer la matière organique, en optimisant l'efficacité énergétique et la durabilité de l'usine.</p>
             </div>
         </div>
 
-        <div class="tarjeta-hover" onclick="window.location.href='auto-detalle.html';">
-            <img src="images/automocion3.jpg" alt="Automoción" class="tarjeta-img">
+        <div class="tarjeta-hover" onclick="window.location.href='/fr/auto-detalle.html';">
+            <img src="/images/automocion3.jpg" alt="Automobile" class="tarjeta-img">
             <div class="tarjeta-overlay"></div>
             <div class="tarjeta-contenido">
-                <h3>Automoción</h3>
-                <p>Automatización de líneas de ensamblaje y software a medida para asegurar la calidad y una producción ininterrumpida.</p>
+                <h3>Automobile</h3>
+                <p>Automatisation des lignes d'assemblage et logiciels sur mesure pour assurer la qualité et une production ininterrompue.</p>
             </div>
         </div>
 
-        <div class="tarjeta-hover" onclick="window.location.href='fabpi-detalle.html';">
-            <img src="images/pienso4.jpg" alt="Agroalimentario" class="tarjeta-img">
+        <div class="tarjeta-hover" onclick="window.location.href='/fr/fabpi-detalle.html';">
+            <img src="/images/pienso4.jpg" alt="Agroalimentaire" class="tarjeta-img">
             <div class="tarjeta-overlay"></div>
             <div class="tarjeta-contenido">
-                <h3>Agroalimentario</h3>
-                <p>Automatización y proyectos eléctricos "llaves en mano" para maximizar la producción y garantizar la trazabilidad total.</p>
+                <h3>Agroalimentaire</h3>
+                <p>Automatisation et projets électriques "clé en main" pour maximiser la production et assurer une traçabilité totale.</p>
             </div>
         </div>
         
-            <div class="tarjeta-hover" onclick="window.location.href='foto-detalle.html';">
-            <img src="images/fotovoltaico.jpg" alt="Fotovoltaico" class="tarjeta-img">
+            <div class="tarjeta-hover" onclick="window.location.href='/fr/foto-detalle.html';">
+            <img src="/images/fotovoltaico.jpg" alt="Photovoltaïque" class="tarjeta-img">
             <div class="tarjeta-overlay"></div>
             <div class="tarjeta-contenido">
-                <h3>Fotovoltaico</h3>
-                <p>Ejecutamos la infraestructura eléctrica y de comunicaciones para plantas solares en todo el mundo, integrando la fabricación de cuadros y su monitorización completa.</p>
+                <h3>Photovoltaïque</h3>
+                <p>Nous réalisons l'infrastructure électrique et de communication pour les centrales solaires dans le monde entier, en intégrant la fabrication des panneaux et leur surveillance complète.</p>
             </div>
         </div>
         
@@ -147,34 +179,34 @@
         <div class="footer-grid">
             
             <div class="footer-col about-col">
-                <img src="images/Saitim-sincolor.png" alt="Logo Footer" class="footer-logo">
-                <p> Diseñamos, construimos y apoyamos proyectos y aplicaciones para clientes de todo el mundo. <br> Ayudamos a que su negocio funcione.<br> ¿Interesado?<br> Llámenos. </p>
-                <a href="#contacto" class="btn-outline-white">Contacto</a>
+                <img src="/images/Saitim-sincolor.png" alt="Logo Footer" class="footer-logo">
+                <p> Nous concevons, construisons et soutenons des projets et des applications pour des clients du monde entier. <br> Nous aidons votre entreprise à fonctionner.<br> Intéressé(e) ?<br> Appelez-nous. </p>
+                <a href="/fr/contacto.html" class="btn-outline-white">Contact</a>
             </div>
 
                  <div class="footer-col">
-                <h4><a href="proyectos.html">Proyectos</a></h4>
+                <h4><a href="/proyectos.html">Projets</a></h4>
                 <ul>
-                   
-                    <li><a href="meda-detalle.html">Proyecto Medio Ambiente</a></li>
-                    <li><a href="auto-detalle.html">Proyecto Automoción</a></li>
-                    <li><a href="fabpi-detalle.html">Proyecto Agroalimentario</a></li>
-                    <li><a href="foto-detalle.html">Proyecto Fotovoltaico</a></li>
+                    
+                    <li><a href="/fr/meda-detalle.html">Projet Environnement</a></li>
+                    <li><a href="/fr/auto-detalle.html">Projet Automobile</a></li>
+                    <li><a href="/fr/fabpi-detalle.html">Projet Agroalimentaire</a></li>
+                    <li><a href="/fr/foto-detalle.html">Projet Photovoltaïque</a></li>
                  
                 </ul>
             </div>
 
              <div class="footer-col">
-              <h4><a href="sectores.html">Sectores</a></h4>
+              <h4><a href="/sectores.html">Secteurs</a></h4>
                 <ul>
-                      <li><a href="sectores.html#energias-renovables">Energías renovables</a></li>
-                    <li><a href="sectores.html#reciclaje">Reciclaje y RCV</a></li>
-                    <li><a href="sectores.html#meda">Medio ambiente</a></li>
-                    <li><a href="sectores.html#agroalimentacion">Agroalimentación</a></li>
-                    <li><a href="sectores.html#alimentacion">Alimentación</a></li>
-                <li><a href="sectores.html#ceraridos">Ceramicas y Áridos</a></li>
-                    <li><a href="sectores.html#automocion">Automoción</a></li>
-                    <li><a href="sectores.html#elbe">Elevación y bienes de equipos</a></li>
+                      <li><a href="/fr/sectores.html#energias-renovables">Énergies renouvelables</a></li>
+                    <li><a href="/fr/sectores.html#reciclaje">Recyclage et RCV</a></li>
+                    <li><a href="/fr/sectores.html#meda">Environnement</a></li>
+                    <li><a href="/fr/sectores.html#agroalimentacion">Agroalimentaire</a></li>
+                    <li><a href="/fr/sectores.html#alimentacion">Alimentation</a></li>
+                <li><a href="/fr/sectores.html#ceraridos">Céramiques et Granulats</a></li>
+                    <li><a href="/fr/sectores.html#automocion">Automobile</a></li>
+                    <li><a href="/fr/sectores.html#elbe">Levage et biens d'équipement</a></li>
                     
                 
                 </ul>
@@ -183,27 +215,27 @@
 
 
             <div class="footer-col form-col">
-                <h4>¿Nos necesitas?</h4>
+                <h4>Besoin de nous ?</h4>
                   <form action="https://formsubmit.co/hmolwilcau@gmail.com" method="POST">
-                    <input type="text" name="nombre" placeholder="Nombre de la Empresa" required>
+                    <input type="text" name="nombre" placeholder="Nom de l'entreprise" required>
                     <input type="email" name="email" placeholder="Email" required>
-                     <textarea placeholder="¿Cómo podemos ayudarte?" rows="3" required></textarea>
+                     <textarea placeholder="Comment pouvons-nous vous aider ?" rows="3" required></textarea>
                     <input type="hidden" name="_captcha" value="false">
                  <input type="hidden" name="_next" value="https://saitim.netlify.app/gracias-form.html">
-                      <button type="submit" class="btn-outline-white">Enviar</button>
+                      <button type="submit" class="btn-outline-white">Envoyer</button>
                     
                     </form>
             </div>
 
             <div class="footer-col">
-                <h4>Mapa Web</h4>
+                <h4>Plan du Site</h4>
                 <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="sectores.html">Sectores</a></li>
-                    <li><a href="servicios.html">Servicios</a></li>
-                    <li><a href="#">Proyectos</a></li>
-                    <li><a href="equipo.html">Nuestro equipo</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="/fr/index.html">Accueil</a></li>
+                    <li><a href="/fr/sectores.html">Secteurs</a></li>
+                    <li><a href="/fr/servicios.html">Services</a></li>
+                    <li><a href="#">Projets</a></li>
+                    <li><a href="/fr/iequipo.html">Notre équipe</a></li>
+                    <li><a href="/fr/contacto.html">Contact</a></li>
                 
                 </ul>
             </div>
@@ -217,7 +249,7 @@
           <div class="row row-15 justify-content-lg-between">
             <div class="col-lg-6 col-xl-6 text-lg-left">
             <p class="rights" style="margin-bottom: 25px;"><span>&copy;&nbsp;</span><span class="copyright-year"></span> Saitim Energy S.L.</p>
-           
+            
         </div>
     </div>
             </div>
@@ -229,11 +261,11 @@
 <div id="search-modal" class="search-modal-hidden">
     <div class="search-modal-content">
         <div class="search-header">
-            <h3>Resultados de la búsqueda</h3>
+            <h3>Résultats de la recherche</h3>
             <button id="close-search" class="close-btn">&times;</button>
         </div>
         <div id="search-results-container">
-            <!-- Los resultados aparecerán aquí -->
+            <!-- Los résultats apparaîtront ici -->
         </div>
     </div>
 </div>
@@ -245,26 +277,26 @@
         <button class="close-menu-btn" id="close-menu-btn">&times;</button>
         <nav class="lateral-nav">
             <ul>
-                <li><a href="index.html">Inicio</a></li>
-                 <li><a href="sectores.html">Sectores</a></li>
-                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="/fr/index.html">Accueil</a></li>
+                 <li><a href="/fr/sectores.html">Secteurs</a></li>
+                <li><a href="/fr/servicios.html">Services</a></li>
 
                 <li class="has-dropdown">
                     <div class="nav-link-container">
-                    <a href="proyectos.html">Proyectos</a>
+                    <a href="#">Projets</a>
                     <button class="dropdown-toggle" data-target="menu-proyectos">▼</button>
                     </div>
                     <ul class="dropdown-menu" id="menu-proyectos">
-                    <li><a href="meda-detalle.html">Proyecto Medio Ambiente</a></li>
-                    <li><a href="auto-detalle.html">Proyecto Automoción</a></li>
-                    <li><a href="fabpi-detalle.html">Proyecto Agroalimentario</a></li>
-                    <li><a href="foto-detalle.html">Proyecto Fotovoltaico</a></li>
+                    <li><a href="/fr/meda-detalle.html">Projet Environnement</a></li>
+                    <li><a href="/fr/auto-detalle.html">Projet Automobile</a></li>
+                    <li><a href="/fr/fabpi-detalle.html">Projet Agroalimentaire</a></li>
+                    <li><a href="/fr/foto-detalle.html">Projet Photovoltaïque</a></li>
                  
                 </ul>
 
 
-                <li><a href="equipo.html">Nuestro equipo</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="/fr/equipo.html">Notre équipe</a></li>
+                <li><a href="/fr/contacto.html">Contact</a></li>
             </ul>
         </nav>
     </div>
@@ -276,7 +308,7 @@
     
     
     <!-- 1. LLAMAMOS AL ARCHIVO DE DATOS QUE HAS CREADO -->
-    <script src="buscador-datos.js"></script>
+    <script src="/buscador-datos.js"></script>
     <script>
               // --- 2. VARIABLES DE ELEMENTOS FLOTANTES ---
     const btnMenu = document.getElementById('lateral-menu-btn');
@@ -284,23 +316,35 @@
     const navProyectos = document.getElementById('floating-project-nav');
     const header = document.querySelector('.site-header-contact');
          // --- 3. LÓGICA DE SCROLL (Mostrar todo al bajar) ---
+  // 3. LÓGICA DE SCROLL (CON RETRASO PARA MEJORAR LA UX)
     window.addEventListener('scroll', () => {
-        const isScrolled = window.scrollY > 30; // Verdadero si bajamos más de 150px
+        
+        // A) Ocultar la cabecera superior rápido (a los 30px)
+        if (header) {
+            if (window.scrollY > 30) {
+                header.classList.add('header-hidden');
+            } else {
+                header.classList.remove('header-hidden');
+            }
+        }
 
-        // Toggle aplica la clase si es verdadero, y la quita si es falso. ¡Súper limpio!
-        if (header) header.classList.toggle('header-hidden', isScrolled);
-        if (btnMenu) btnMenu.classList.toggle('visible', isScrolled);
-        if (btnTop) btnTop.classList.toggle('visible', isScrolled);
-        if (navProyectos) navProyectos.classList.toggle('visible', isScrolled);
-    });
-          if (btnMenu) {
-        btnMenu.addEventListener('click', () => document.getElementById('lateral-dropdown').classList.add('open'));
-    }
-    
-    const btnClose = document.getElementById('close-menu-btn');
-    if (btnClose) {
-        btnClose.addEventListener('click', () => document.getElementById('lateral-dropdown').classList.remove('open'));
-    }
+        // B) Mostrar los botones flotantes MUCHO más abajo (Cambia el 400 por el número que prefieras)
+        const mostrarFlotantes = window.scrollY > 250;
+        
+        if (typeof btnMenuLateral !== 'undefined' && btnMenuLateral) btnMenuLateral.classList.toggle('visible', mostrarFlotantes);
+        
+        const btnTop = document.getElementById('back-to-top-btn');
+        if (btnTop) btnTop.classList.toggle('visible', mostrarFlotantes);
+        
+        const navProyectos = document.getElementById('floating-project-nav');
+        if (navProyectos) navProyectos.classList.toggle('visible', mostrarFlotantes);
+
+        // C) Auto-cierre de los menús al hacer scroll
+        if (window.scrollY > 30) {
+            if (typeof navSuperior !== 'undefined' && navSuperior) navSuperior.classList.remove('menu-abierto');
+            if (typeof navLateral !== 'undefined' && navLateral) navLateral.classList.remove('open');
+        }
+    }, { passive: true });
 
     if (btnTop) {
         btnTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
@@ -334,7 +378,7 @@
     const cerrarModalBtn = document.getElementById('close-search');
     const contenedorResultados = document.getElementById('search-results-container');
 
-    function realizarBusqueda() {
+    function réaliserRecherche() {
         // Si no existe el buscador en esta página, no hacemos nada
         if (!inputBuscador) return; 
 
@@ -344,15 +388,15 @@
         contenedorResultados.innerHTML = '';
 
         if (typeof baseDatosBuscador !== 'undefined') {
-            const resultados = baseDatosBuscador.filter(item => 
+            const résultats = baseDatosBuscador.filter(item => 
                 item.titulo.toLowerCase().includes(query) || 
                 item.contenido.toLowerCase().includes(query)
             );
 
             modalBuscador.classList.remove('search-modal-hidden');
 
-            if (resultados.length > 0) {
-                resultados.forEach(res => {
+            if (résultats.length > 0) {
+                résultats.forEach(res => {
                     const resultHtml = `
                         <div class="search-result-item">
                             <a href="${res.url}">${res.titulo}</a>
@@ -362,19 +406,19 @@
                     contenedorResultados.innerHTML += resultHtml;
                 });
             } else {
-                contenedorResultados.innerHTML = `<p class="no-results">No se encontraron resultados para "<b>${query}</b>". Prueba con palabras como 'piensos' o 'renovables'.</p>`;
+                contenedorResultados.innerHTML = `<p class="no-results">Aucun résultat trouvé pour "<b>${query}</b>". Essayez des mots comme 'aliments' ou 'renouvelables'.</p>`;
             }
         }
     }
 
     if (botonBuscar) {
-        botonBuscar.addEventListener('click', realizarBusqueda);
+        botonBuscar.addEventListener('click', réaliserRecherche);
     }
 
     if (inputBuscador) {
         inputBuscador.addEventListener('keypress', function(event) {
             if (event.key === 'Enter') {
-                realizarBusqueda();
+                réaliserRecherche();
             }
         });
     }
@@ -401,7 +445,7 @@
             mobileMenuBtn.addEventListener('click', () => {
                 mobileNav.classList.toggle('menu-abierto');
             });
-        }    
+        }   
         
       // ==========================================
 // BOTÓN VOLVER ARRIBA (SCROLL TO TOP)
@@ -427,9 +471,89 @@ if (backToTopBtn) {
         });
     });
 }
+        // =================================================================
+        // SISTEMA INTELIGENTE DE MENÚS (Evita colisiones y auto-cierre)
+        // =================================================================
+        
+        // 1. Seleccionamos todos los elementos implicados
+        const btnMenuMovil = document.getElementById('mobile-menu-btn');
+        const navSuperior = document.querySelector('.site-nav');
+        
+        const btnMenuLateral = document.getElementById('lateral-menu-btn');
+        const navLateral = document.getElementById('lateral-dropdown');
+        const btnCerrarLateral = document.getElementById('close-menu-btn');
+
+        // 2. Función para abrir el menú superior (y cerrar el lateral si estuviera abierto)
+        if (btnMenuMovil && navSuperior) {
+            btnMenuMovil.addEventListener('click', (e) => {
+                e.stopPropagation(); // Evita que el clic se propague al documento
+                navSuperior.classList.toggle('menu-abierto');
+                
+                // Si el menú lateral está abierto, lo cerramos
+                if (navLateral && navLateral.classList.contains('open')) {
+                    navLateral.classList.remove('open');
+                }
+            });
+        }
+
+        // 3. Función para abrir el menú lateral (y cerrar el superior si estuviera abierto)
+        if (btnMenuLateral && navLateral) {
+            btnMenuLateral.addEventListener('click', (e) => {
+                e.stopPropagation();
+                navLateral.classList.add('open');
+                
+                // Si el menú superior está abierto, lo cerramos
+                if (navSuperior && navSuperior.classList.contains('menu-abierto')) {
+                    navSuperior.classList.remove('menu-abierto');
+                }
+            });
+        }
+
+        // 4. Botón físico (la X) para cerrar el menú lateral
+        if (btnCerrarLateral && navLateral) {
+            btnCerrarLateral.addEventListener('click', () => {
+                navLateral.classList.remove('open');
+            });
+        }
+
+        // 5. CERRAR AL HACER CLIC FUERA DE LOS MENÚS
+        document.addEventListener('click', (e) => {
+            // Comprobamos el menú superior
+            if (navSuperior && navSuperior.classList.contains('menu-abierto')) {
+                // Si el clic NO fue dentro del menú ni en su botón, lo cerramos
+                if (!navSuperior.contains(e.target) && !btnMenuMovil.contains(e.target)) {
+                    navSuperior.classList.remove('menu-abierto');
+                }
+            }
+            
+            // Comprobamos el menú lateral
+            if (navLateral && navLateral.classList.contains('open')) {
+                if (!navLateral.contains(e.target) && !btnMenuLateral.contains(e.target)) {
+                    navLateral.classList.remove('open');
+                }
+            }
+        });
+
+        // 6. CERRAR AL HACER SCROLL (Bajar o subir por la página)
+        window.addEventListener('scroll', () => {
+            if (navSuperior && navSuperior.classList.contains('menu-abierto')) {
+                navSuperior.classList.remove('menu-abierto');
+            }
+            if (navLateral && navLateral.classList.contains('open')) {
+                navLateral.classList.remove('open');
+            }
+        }, { passive: true });
+
+        // 7. CERRAR AL HACER CLIC EN CUALQUIER ENLACE DEL MENÚ
+        // Seleccionamos todos los enlaces de ambos menús, excluyendo los botones desplegables de "Proyectos"
+        const enlacesMenus = document.querySelectorAll('.site-nav a, .lateral-nav a:not(.dropdown-toggle)');
+        enlacesMenus.forEach(enlace => {
+            enlace.addEventListener('click', () => {
+                if (navSuperior) navSuperior.classList.remove('menu-abierto');
+                if (navLateral) navLateral.classList.remove('open');
+            });
+        });
     </script>
     
     </body>
 </html>
-
- 
