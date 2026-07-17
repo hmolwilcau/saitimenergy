@@ -149,7 +149,7 @@
     <section>
     <div class="hero-carousel">
         
-        <div class="carousel-slide active">
+        <div class="carousel-slide">
             <video class="bg-video" muted playsinline preload="none">
                 <source src="videos/1.mp4" type="video/mp4">
             </video>
@@ -553,28 +553,26 @@
             }
         }
 
-
-      // ==========================================
+// ==========================================
         // 3. CARRUSEL DE VIDEOS INFERIOR (INTELIGENTE)
         // ==========================================
         let slideIndex = 1;
-        let carruselIniciado = false; // Variable para saber si ya arrancó
+        let carruselIniciado = false; 
         const contenedorCarrusel = document.querySelector('.hero-carousel');
+        let slides = document.getElementsByClassName("carousel-slide");
+        let dots = document.getElementsByClassName("dot");
 
         function moveSlide(n) { showSlides(slideIndex += n); }
         function currentSlide(n) { showSlides(slideIndex = n); }
 
         function showSlides(n) {
-            let i;
-            let slides = document.getElementsByClassName("carousel-slide");
-            let dots = document.getElementsByClassName("dot");
-            
             if (!slides || slides.length === 0) return; 
             
             if (n > slides.length) {slideIndex = 1}
             if (n < 1) {slideIndex = slides.length}
             
-            for (i = 0; i < slides.length; i++) {
+            // Pausar y resetear todos los vídeos
+            for (let i = 0; i < slides.length; i++) {
                 slides[i].classList.remove("active");
                 if(dots[i]) dots[i].classList.remove("active");
                 
@@ -589,6 +587,10 @@
                 if (bar) bar.style.width = "0%";
             }
             
+            // Si el carrusel no ha sido iniciado por el vigilante, no hacemos nada más
+            if (!carruselIniciado) return;
+
+            // Mostrar el activo y reproducir
             slides[slideIndex-1].classList.add("active");
             if(dots[slideIndex-1]) dots[slideIndex-1].classList.add("active");
 
@@ -615,79 +617,28 @@
         // EL "VIGILANTE": Arranca el carrusel solo cuando se ve en pantalla
         if (contenedorCarrusel) {
             const observer = new IntersectionObserver((entradas) => {
-                // Si el carrusel entra al menos un 30% en la pantalla y no ha empezado
-                if (entradas[0].isIntersecting && !carruselIniciado) {
-                    carruselIniciado = true;
-                    showSlides(slideIndex); // ¡Damos al Play!
+                // Si el carrusel asoma un 30% en pantalla
+                if (entradas[0].isIntersecting) {
+                    if (!carruselIniciado) {
+                        // Es la primera vez que lo vemos: ¡Arranca!
+                        carruselIniciado = true;
+                        showSlides(slideIndex);
+                    } else {
+                        // Ya estaba iniciado pero volvimos a bajar: ¡Reanuda el vídeo!
+                        let activeVideo = slides[slideIndex-1].querySelector(".bg-video");
+                        if (activeVideo) activeVideo.play().catch(()=>{});
+                    }
+                } else {
+                    // Si el usuario hace scroll y deja de ver el carrusel: ¡Pausa!
+                    if (carruselIniciado && slides[slideIndex-1]) {
+                        let activeVideo = slides[slideIndex-1].querySelector(".bg-video");
+                        if (activeVideo) activeVideo.pause();
+                    }
                 }
-            }, { threshold: 0.3 }); // 0.3 significa 30% visible
+            }, { threshold: 0.3 }); 
             
             observer.observe(contenedorCarrusel);
         }
-
-       const inputBuscador = document.getElementById('buscador-input');
-    const botonBuscar = document.getElementById('btn-buscar');
-    const modalBuscador = document.getElementById('search-modal');
-    const cerrarModalBtn = document.getElementById('close-search');
-    const contenedorResultados = document.getElementById('search-results-container');
-
-    function realizarBusqueda() {
-        // Si no existe el buscador en esta página, no hacemos nada
-        if (!inputBuscador) return; 
-
-        const query = inputBuscador.value.toLowerCase().trim();
-        if (query === "") return; 
-
-        contenedorResultados.innerHTML = '';
-
-        if (typeof baseDatosBuscador !== 'undefined') {
-            const resultados = baseDatosBuscador.filter(item => 
-                item.titulo.toLowerCase().includes(query) || 
-                item.contenido.toLowerCase().includes(query)
-            );
-
-            modalBuscador.classList.remove('search-modal-hidden');
-
-            if (resultados.length > 0) {
-                resultados.forEach(res => {
-                    const resultHtml = `
-                        <div class="search-result-item">
-                            <a href="${res.url}">${res.titulo}</a>
-                            <p>${res.contenido}</p>
-                        </div>
-                    `;
-                    contenedorResultados.innerHTML += resultHtml;
-                });
-            } else {
-                contenedorResultados.innerHTML = `<p class="no-results">No se encontraron resultados para "<b>${query}</b>". Prueba con palabras como 'piensos' o 'renovables'.</p>`;
-            }
-        }
-    }
-
-    if (botonBuscar) {
-        botonBuscar.addEventListener('click', realizarBusqueda);
-    }
-
-    if (inputBuscador) {
-        inputBuscador.addEventListener('keypress', function(event) {
-            if (event.key === 'Enter') {
-                realizarBusqueda();
-            }
-        });
-    }
-
-    if (cerrarModalBtn) {
-        cerrarModalBtn.addEventListener('click', () => {
-            modalBuscador.classList.add('search-modal-hidden');
-        });
-    }
-
-    window.addEventListener('click', (e) => {
-        if (e.target === modalBuscador) {
-            modalBuscador.classList.add('search-modal-hidden');
-        }
-    });
-        
        
 // ==========================================
 // BOTÓN VOLVER ARRIBA (SCROLL TO TOP)
