@@ -149,7 +149,7 @@
     <section>
     <div class="hero-carousel">
         
-        <div class="carousel-slide">
+        <div class="carousel-slide active">
             <video class="bg-video" muted playsinline preload="none">
                 <source src="videos/1.mp4" type="video/mp4">
             </video>
@@ -555,7 +555,7 @@
             }
         }
 
-        // ==========================================
+      // ==========================================
         // 3. CARRUSEL DE VIDEOS INFERIOR (INTELIGENTE)
         // ==========================================
         let slideIndex = 1;
@@ -564,8 +564,40 @@
         let slides = document.getElementsByClassName("carousel-slide");
         let dots = document.getElementsByClassName("dot");
 
+        // TRUCO ANTI-NEGRO: Cargamos el primer fotograma del vídeo en pausa
+        if (slides.length > 0) {
+            let primerVideo = slides[0].querySelector(".bg-video");
+            if (primerVideo) {
+                primerVideo.preload = "metadata"; 
+                primerVideo.pause();
+            }
+        }
+
         function moveSlide(n) { showSlides(slideIndex += n); }
         function currentSlide(n) { showSlides(slideIndex = n); }
+
+        function reproducirVideoActivo() {
+            if (!slides[slideIndex-1]) return;
+            let activeVideo = slides[slideIndex-1].querySelector(".bg-video");
+            let activeBar = slides[slideIndex-1].querySelector(".progress-bar");
+
+            if (activeVideo) {
+                activeVideo.preload = "auto"; // Descarga el vídeo ahora que lo vamos a ver
+                let playPromise = activeVideo.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(error => { console.log("Autoplay bloqueado por el navegador"); });
+                }
+
+                activeVideo.ontimeupdate = function() {
+                    if(activeVideo.duration && activeBar) {
+                        let percentage = (activeVideo.currentTime / activeVideo.duration) * 100;
+                        activeBar.style.width = percentage + "%";
+                    }
+                };
+
+                activeVideo.onended = function() { moveSlide(1); };
+            }
+        }
 
         function showSlides(n) {
             if (!slides || slides.length === 0) return; 
@@ -588,53 +620,32 @@
                 if (bar) bar.style.width = "0%";
             }
             
-            // Freno de seguridad: no hacer nada si el vigía no ha dado la orden
-            if (!carruselIniciado) return;
-
             slides[slideIndex-1].classList.add("active");
             if(dots[slideIndex-1]) dots[slideIndex-1].classList.add("active");
 
-            let activeVideo = slides[slideIndex-1].querySelector(".bg-video");
-            let activeBar = slides[slideIndex-1].querySelector(".progress-bar");
-
-            if (activeVideo) {
-                let playPromise = activeVideo.play();
-                if (playPromise !== undefined) {
-                    playPromise.catch(error => { console.log("Autoplay bloqueado por el navegador"); });
-                }
-
-                activeVideo.ontimeupdate = function() {
-                    if(activeVideo.duration && activeBar) {
-                        let percentage = (activeVideo.currentTime / activeVideo.duration) * 100;
-                        activeBar.style.width = percentage + "%";
-                    }
-                };
-
-                activeVideo.onended = function() { moveSlide(1); };
+            // Si el vigilante ya dio luz verde, reproducimos
+            if (carruselIniciado) {
+                reproducirVideoActivo();
             }
         }
 
-        // 🔥 LA FUNCIÓN DEL VIGÍA (Solo se ejecuta al acabar la pantalla de carga) 🔥
+        // 🔥 LA FUNCIÓN DEL VIGÍA 🔥
         function iniciarVigilanteCarrusel() {
             if (contenedorCarrusel) {
-                // Pequeño retraso extra de medio segundo para que la página asiente las alturas
                 setTimeout(() => {
                     const observer = new IntersectionObserver((entradas) => {
                         if (entradas[0].isIntersecting) {
                             if (!carruselIniciado) {
                                 carruselIniciado = true;
-                                showSlides(slideIndex); // ¡Luz verde, arranca el vídeo!
-                            } else {
-                                let activeVideo = slides[slideIndex-1].querySelector(".bg-video");
-                                if (activeVideo) activeVideo.play().catch(()=>{});
                             }
+                            reproducirVideoActivo(); // ¡Damos al Play!
                         } else {
                             if (carruselIniciado && slides[slideIndex-1]) {
                                 let activeVideo = slides[slideIndex-1].querySelector(".bg-video");
                                 if (activeVideo) activeVideo.pause(); // Pausa si se sale de la pantalla
                             }
                         }
-                    }, { threshold: 0.4 }); // 0.4 = Arranca cuando vemos el 40% del carrusel
+                    }, { threshold: 0.3 }); 
                     
                     observer.observe(contenedorCarrusel);
                 }, 500);
