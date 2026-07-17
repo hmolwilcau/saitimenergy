@@ -417,16 +417,18 @@
         const alturaVentana = window.innerHeight;
 
         // A. Ocultar Cabecera y Mostrar Botones Flotantes
-        if (currentScroll > 150) {
-            if (header) header.classList.add('header-hidden');
-            if (btnMenu) btnMenu.classList.add('visible');
-            if (btnTop) btnTop.classList.add('visible');
-        } else {
-            if (header) header.classList.remove('header-hidden');
-            if (btnMenu) btnMenu.classList.remove('visible');
-            if (btnTop) btnTop.classList.remove('visible');
+        if (header) {
+            if (currentScroll > 30) {
+                header.classList.add('header-hidden');
+            } else {
+                header.classList.remove('header-hidden');
+            }
         }
 
+        // 2. Botones flotantes (esperan a los 400px para aparecer)
+        const mostrarFlotantes = currentScroll > 250;
+        if (btnMenu) btnMenu.classList.toggle('visible', mostrarFlotantes);
+        if (btnTop) btnTop.classList.toggle('visible', mostrarFlotantes);
         // B. Parallax Hero Principal (La foto de arriba del todo)
         if (imgPrincipal) {
             imgPrincipal.style.transform = `translateY(${currentScroll * 0.3}px)`;

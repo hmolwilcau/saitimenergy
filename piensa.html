@@ -394,7 +394,7 @@
     const yearSpan = document.querySelector('.copyright-year');
     if (yearSpan) yearSpan.textContent = new Date().getFullYear();
 
-    // 2. ELEMENTOS
+   // 2. ELEMENTOS
     const header = document.querySelector('.site-header-proyectos');
     const btnMenuMovil = document.getElementById('mobile-menu-btn');
     const navSuperior = document.querySelector('.site-nav');
@@ -402,16 +402,30 @@
     const navLateral = document.getElementById('lateral-dropdown');
     const btnCerrarLateral = document.getElementById('close-menu-btn');
     const btnTop = document.getElementById('back-to-top-btn');
+    // Añadimos el botón de proyectos para que también respete la regla de los 400px
+    const navProyectos = document.getElementById('floating-project-nav'); 
 
-    // 3. LÓGICA DE SCROLL
+    // 3. LÓGICA DE SCROLL (MEJORADA PARA UX)
     window.addEventListener('scroll', () => {
-        const isScrolled = window.scrollY > 30;
-        if (header) header.classList.toggle('header-hidden', isScrolled);
-        if (btnMenuLateral) btnMenuLateral.classList.toggle('visible', isScrolled);
-        if (btnTop) btnTop.classList.toggle('visible', isScrolled);
         
-        // Auto-cierre al hacer scroll
-        if (isScrolled) {
+        // A) Ocultar la cabecera superior rápido (a los 30px)
+        if (header) {
+            if (window.scrollY > 30) {
+                header.classList.add('header-hidden');
+            } else {
+                header.classList.remove('header-hidden');
+            }
+        }
+
+        // B) Mostrar los botones flotantes MUCHO más abajo (a los 400px)
+        const mostrarFlotantes = window.scrollY > 250;
+        
+        if (btnMenuLateral) btnMenuLateral.classList.toggle('visible', mostrarFlotantes);
+        if (btnTop) btnTop.classList.toggle('visible', mostrarFlotantes);
+        if (navProyectos) navProyectos.classList.toggle('visible', mostrarFlotantes);
+
+        // C) Auto-cierre de los menús al hacer scroll
+        if (window.scrollY > 30) {
             if (navSuperior) navSuperior.classList.remove('menu-abierto');
             if (navLateral) navLateral.classList.remove('open');
         }

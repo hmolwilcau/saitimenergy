@@ -18,7 +18,39 @@
            site-header-contact { 
         position: fixed; top: 0; width: 100%; background: white; z-index: 1000;
         transition: transform 0.4s ease-in-out !important; 
+               
     }
+    .conoce::after {
+    content: "";      
+    display: block;
+    position: absolute;
+    bottom: 5px; 
+    left: 0;
+    width: 100%; 
+    height: 25px; 
+    background-color: #C4EFF2 !important; 
+    z-index: -1; 
+    transition: width 0.5s cubic-bezier(0.25, 1, 0.5, 1); 
+}
+
+/* El efecto al pasar el ratón (Hover) */
+.conoce:hover::after {
+    width: 110%; 
+}
+
+/* =========================================
+   MÓVILES: ACHICAR EL TÍTULO Y LA LÍNEA
+   ========================================= */
+@media (max-width: 768px) {
+    .conoce {
+        font-size: 36px;
+        margin-bottom: 25px;
+    }
+    .conoce::after {
+        height: 15px; 
+        bottom: 2px;
+    }
+}
     .header-hidden { transform: translateY(-100%) !important; }
     </style> 
     
@@ -284,15 +316,35 @@
     const navProyectos = document.getElementById('floating-project-nav');
     const header = document.querySelector('.site-header-contact');
          // --- 3. LÓGICA DE SCROLL (Mostrar todo al bajar) ---
+  // 3. LÓGICA DE SCROLL (CON RETRASO PARA MEJORAR LA UX)
     window.addEventListener('scroll', () => {
-        const isScrolled = window.scrollY > 30; // Verdadero si bajamos más de 150px
+        
+        // A) Ocultar la cabecera superior rápido (a los 30px)
+        if (header) {
+            if (window.scrollY > 30) {
+                header.classList.add('header-hidden');
+            } else {
+                header.classList.remove('header-hidden');
+            }
+        }
 
-        // Toggle aplica la clase si es verdadero, y la quita si es falso. ¡Súper limpio!
-        if (header) header.classList.toggle('header-hidden', isScrolled);
-         if (btnMenu) btnMenu.classList.toggle('visible', isScrolled);
-        if (navProyectos) navProyectos.classList.toggle('visible', isScrolled);
-    });
-         
+        // B) Mostrar los botones flotantes MUCHO más abajo (Cambia el 400 por el número que prefieras)
+        const mostrarFlotantes = window.scrollY > 250;
+        
+        if (btnMenuLateral) btnMenuLateral.classList.toggle('visible', mostrarFlotantes);
+        
+        const btnTop = document.getElementById('back-to-top-btn');
+        if (btnTop) btnTop.classList.toggle('visible', mostrarFlotantes);
+        
+        const navProyectos = document.getElementById('floating-project-nav');
+        if (navProyectos) navProyectos.classList.toggle('visible', mostrarFlotantes);
+
+        // C) Auto-cierre de los menús al hacer scroll
+        if (window.scrollY > 30) {
+            if (typeof navSuperior !== 'undefined' && navSuperior) navSuperior.classList.remove('menu-abierto');
+            if (typeof navLateral !== 'undefined' && navLateral) navLateral.classList.remove('open');
+        }
+    }, { passive: true });
 
     if (btnTop) {
         btnTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
@@ -393,7 +445,7 @@ if (backToTopBtn) {
     // 1. Vigilar el scroll para mostrar/ocultar el botón
     window.addEventListener('scroll', () => {
         // Si el usuario baja más de 400 píxeles, aparece el botón
-        if (window.scrollY > 60) {
+        if (window.scrollY > 250) {
             backToTopBtn.classList.add('visible');
            
         } else {

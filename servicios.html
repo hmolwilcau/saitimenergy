@@ -294,15 +294,35 @@
     const navProyectos = document.getElementById('floating-project-nav');
     const header = document.querySelector('.site-header-proyectos');
          // --- 3. LÓGICA DE SCROLL (Mostrar todo al bajar) ---
+   // 3. LÓGICA DE SCROLL (CON RETRASO PARA MEJORAR LA UX)
     window.addEventListener('scroll', () => {
-        const isScrolled = window.scrollY > 30; // Verdadero si bajamos más de 150px
+        
+        // A) Ocultar la cabecera superior rápido (a los 30px)
+        if (header) {
+            if (window.scrollY > 30) {
+                header.classList.add('header-hidden');
+            } else {
+                header.classList.remove('header-hidden');
+            }
+        }
 
-        // Toggle aplica la clase si es verdadero, y la quita si es falso. ¡Súper limpio!
-        if (header) header.classList.toggle('header-hidden', isScrolled);
-        if (btnMenu) btnMenu.classList.toggle('visible', isScrolled);
-        if (btnTop) btnTop.classList.toggle('visible', isScrolled);
-        if (navProyectos) navProyectos.classList.toggle('visible', isScrolled);
-    });
+        // B) Mostrar los botones flotantes MUCHO más abajo (Cambia el 400 por el número que prefieras)
+        const mostrarFlotantes = window.scrollY > 250;
+        
+        if (btnMenuLateral) btnMenuLateral.classList.toggle('visible', mostrarFlotantes);
+        
+        const btnTop = document.getElementById('back-to-top-btn');
+        if (btnTop) btnTop.classList.toggle('visible', mostrarFlotantes);
+        
+        const navProyectos = document.getElementById('floating-project-nav');
+        if (navProyectos) navProyectos.classList.toggle('visible', mostrarFlotantes);
+
+        // C) Auto-cierre de los menús al hacer scroll
+        if (window.scrollY > 30) {
+            if (typeof navSuperior !== 'undefined' && navSuperior) navSuperior.classList.remove('menu-abierto');
+            if (typeof navLateral !== 'undefined' && navLateral) navLateral.classList.remove('open');
+        }
+    }, { passive: true });
          
 
     if (btnTop) {
@@ -404,7 +424,7 @@ if (backToTopBtn) {
     // 1. Vigilar el scroll para mostrar/ocultar el botón
     window.addEventListener('scroll', () => {
         // Si el usuario baja más de 400 píxeles, aparece el botón
-        if (window.scrollY > 30) {
+        if (window.scrollY > 250) {
             backToTopBtn.classList.add('visible');
         } else {
             backToTopBtn.classList.remove('visible');

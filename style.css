@@ -2192,14 +2192,14 @@ a:hover {
     grid-template-columns: repeat(3, 1fr); /* Crea exactamente 3 columnas del mismo tamaño */
     gap: 30px; /* Separación entre las tarjetas */
     max-width: 1200px;
-    min-height: fit-content;
+    max-height: auto;
     margin: 0 auto;
 }
 
 /* La tarjeta contenedora */
 .tarjeta-hover {
     position: relative;
-    height: 420px; /* Altura de los recuadros, ajústala a tu gusto */
+    height: 250px; /* Altura de los recuadros, ajústala a tu gusto */
     border-radius: 4px; /* Bordes ligeramente redondeados */
     overflow: hidden; /* Evita que la imagen se salga al hacer zoom */
     cursor: pointer;
@@ -2233,6 +2233,7 @@ a:hover {
     position: absolute;
     bottom: 0;
     left: 0;
+    height: auto;
     width: 100%;
     padding: 40px 30px;
     color: #ffffff;
@@ -3986,7 +3987,7 @@ body .hero-carousel-proyectos .carousel-control-project.next {
 /* 5. Puntitos debajo de la foto */
 body .hero-carousel-proyectos .carousel-dots {
     position: absolute !important;
-    bottom: -35px !important;
+    bottom: 30px !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
     display: flex !important;
