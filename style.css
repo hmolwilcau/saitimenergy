@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'Bauhaus Light Regular'; 
-    src: url('fonts/bauhaus light regular.ttf') format('truetype'); 
+    font-family: 'bauhaus-light'; 
+    src: url('fonts/bauhaus-light.ttf') format('truetype'); 
     font-weight: normal;
     font-style: normal;
 }  
@@ -114,7 +114,7 @@ a:hover {
 }
 
 .hero-text-container h1 {
-    font-family: 'Bauhaus Light Regular', 'Montserrat', sans-serif;
+    font-family: 'bauhaus-light', 'Montserrat', sans-serif;
     font-size: 70px;
     font-weight: 700;
     color: #ffffff; 
@@ -422,7 +422,7 @@ a:hover {
 
 .slide-title {
     /* Aquí aplicamos tu fuente Bauhaus descargada */
-    font-family: 'Bauhaus Light Regular', sans-serif;
+    font-family: 'bauhaus-light', sans-serif;
     font-size: 32px;
     font-weight: 700;
     color: white; /* Blanco para que se lea sobre el verde oscuro */
@@ -569,7 +569,7 @@ a:hover {
 .contact-header h2 {
     font-size: 56px;
     font-weight: 800 ;
-    font-family: Bauhaus Light Regular;
+    font-family: bauhaus-light;
     color: #000000;
     display: inline-block; 
     position: relative;    
@@ -596,7 +596,7 @@ a:hover {
 .contact-header-contact h2 {
     font-size: 56px;
     font-weight: 800 ;
-    font-family: Bauhaus Light Regular;
+    font-family: bauhaus-light;
     letter-spacing: 2px; 
     color: #000000;
     display: inline-block; 
@@ -620,7 +620,7 @@ a:hover {
 .contact-header-proyectos h2 {
     font-size: 56px;
     font-weight: 800 ;
-    font-family: Bauhaus Light Regular;
+    font-family: bauhaus-light;
     letter-spacing: 2px; 
     color: #000000;
     display: inline-block; 
@@ -645,7 +645,7 @@ a:hover {
 .contact-header-indv h2 {
     font-size: 56px;
     font-weight: 800;
-    font-family: 'Bauhaus Light Regular', sans-serif;
+    font-family: 'bauhaus-light', sans-serif;
     letter-spacing: 2px; 
     color: #000000;
     
@@ -744,7 +744,7 @@ a:hover {
     font-weight: 700px;
     margin-bottom: 10px;
     color: #000000;
-    font-family: Bauhaus Light Regular;
+    font-family: bauhaus-light;
     letter-spacing: 2px; 
 }
 
@@ -1197,7 +1197,7 @@ a:hover {
 }
 
 .minimal-quote-text {
-    font-family: 'Bauhaus Light Regular', sans-serif;
+    font-family: 'bauhaus-light', sans-serif;
   
     font-size: 26px; /* Tamaño del texto */
     font-weight: 600; /* Letra gordita/negrita */
@@ -1365,7 +1365,7 @@ a:hover {
 
 /* --- 4. Textos de la tarjeta --- */
 .team-card h3 {
-    font-family: 'Bauhaus Light Regular', sans-serif;
+    font-family: 'bauhaus-light', sans-serif;
     font-size: 20px;
     color: #004047;
     margin-bottom: 8px;
@@ -1429,7 +1429,7 @@ a:hover {
 }
 
 .leaders-title {
-    font-family: 'Bauhaus Light Regular', sans-serif;
+    font-family: 'bauhaus-light', sans-serif;
     font-size: 36px;
     color: #ffffff;
     text-transform: uppercase;
@@ -1475,7 +1475,7 @@ a:hover {
     right: 15px;
     background-color: #0093A3; /* Fondo color corporativo */
     color: #ffffff;
-    font-family: 'Bauhaus Light Regular', sans-serif;
+    font-family: 'bauhaus-light', sans-serif;
     font-size: 11px;
     font-weight: 700;
     text-transform: uppercase;
@@ -1667,7 +1667,7 @@ a:hover {
 
 
 .leader-name-text {
-    font-family: 'Bauhaus Light Regular', sans-serif;
+    font-family: 'bauhaus-light', sans-serif;
     font-size: 26px;
     font-weight: 700;
     color: #C4EFF2; /* Color rosa de la imagen de referencia */
@@ -1753,7 +1753,7 @@ a:hover {
 .content-block h3 {
     font-size: 45px;
     margin-bottom: 20px;
-    font-family: Bauhaus Light Regular;
+    font-family: bauhaus-light;
      font-weight: bold;
 
 }
@@ -1811,7 +1811,7 @@ a:hover {
 
 /* --- Estilos compartidos para los textos --- */
 .titulo-cyan {
-    font-family: 'Bauhaus Light Regular', sans-serif; /* Tu fuente de los títulos */
+    font-family: 'bauhaus-light', sans-serif; /* Tu fuente de los títulos */
     color: #0093A3;
     font-size: 45px;
     font-weight: bold;
@@ -1863,7 +1863,7 @@ a:hover {
     font-size: 45px;
     margin-bottom: 20px;
     color: #ffffff;
-    font-family: 'Bauhaus Light Regular', sans-serif;
+    font-family: 'bauhaus-light', sans-serif;
      font-weight: bold;
 }
 
@@ -1951,7 +1951,7 @@ a:hover {
 }
 
 .hacemos-texto h2 {
-    font-family: 'Bauhaus Light Regular', sans-serif;
+    font-family: 'bauhaus-light', sans-serif;
     font-size: 45px;
     color: white;
     margin-top: 0;
@@ -2087,7 +2087,7 @@ a:hover {
 
 /* El Título (Automoción) */
 .contenido-encima h2 { /* o h1, dependiendo de lo que uses en tu HTML */
-    font-family: 'Bauhaus Light Regular', sans-serif;
+    font-family: 'bauhaus-light', sans-serif;
     font-size: 55px;
     color: white;
     margin-top: 0;
@@ -2164,7 +2164,7 @@ a:hover {
     font-size: 38px;
     text-align: center;
         color: #004047;
-    font-family: 'Bauhaus Light Regular';
+    font-family: 'bauhaus-light';
     
 
     }
@@ -2246,7 +2246,7 @@ a:hover {
 }
 
 .tarjeta-contenido h3 {
-    font-family: 'Bauhaus Light Regular', sans-serif;
+    font-family: 'bauhaus-light', sans-serif;
     font-size: 32px;
     margin-bottom: 15px;
     color: #C4EFF2; /* Cyan clarito de tu paleta */
@@ -2405,7 +2405,7 @@ a:hover {
 .badge.text { background: none; color: #555555; padding: 0; }
 
 .project-main-title {
-    font-family: 'Bauhaus Light Regular', sans-serif;
+    font-family: 'bauhaus-light', sans-serif;
     font-size: 52px;
     color: #004047;
     margin-bottom: 40px;
@@ -2413,7 +2413,7 @@ a:hover {
 }
 
 .project-main-title-piensa {
-    font-family: 'Bauhaus Light Regular', sans-serif;
+    font-family: 'bauhaus-light', sans-serif;
     font-size: 52px;
     color: #004047;
     margin-bottom: 40px;
@@ -2497,7 +2497,7 @@ a:hover {
 }
 
 .info-card h3 {
-    font-family: 'Bauhaus Light Regular', sans-serif;
+    font-family: 'bauhaus-light', sans-serif;
     font-size: 26px;
     color: #004047;
     margin-bottom: 25px;
@@ -2671,7 +2671,7 @@ position: absolute !important;
 
 .text-card h2 {
     /* Nombre exacto de tu fuente sin espacios extra */
-    font-family: 'Bauhaus Light Regular', sans-serif;
+    font-family: 'bauhaus-light', sans-serif;
     font-size: 45px;
     font-weight: 700;
     margin-bottom: 20px;
@@ -3307,7 +3307,7 @@ position: absolute !important;
 }
 
 .panel-text-col h2 {
-    font-family: 'Bauhaus Light Regular', sans-serif;
+    font-family: 'bauhaus-light', sans-serif;
     font-size: 42px;
     color: #004047;
     margin-top: 0;
@@ -3388,7 +3388,7 @@ position: absolute !important;
 }
 
 .dynamic-tabs-title {
-    font-family: 'Bauhaus Light Regular', sans-serif;
+    font-family: 'bauhaus-light', sans-serif;
     font-size: 55px;
     color: #004047; 
     margin-top: 0;
@@ -3485,7 +3485,7 @@ position: absolute !important;
     row-gap: 50px; /* Separación vertical entre el título y los círculos */
 }
 .circular-section-title {
-    font-family: 'Bauhaus Light Regular', sans-serif;
+    font-family: 'bauhaus-light', sans-serif;
     font-size: 50px;
     color: #004047; /* Tu azul oscuro corporativo */
     margin-top: 0;
@@ -3572,7 +3572,7 @@ position: absolute !important;
     }
 /* El título debajo del círculo */
 .circle-title {
-    font-family: 'Bauhaus Light Regular', sans-serif;
+    font-family: 'bauhaus-light', sans-serif;
     font-size: 26px;
     color: #004047; /* Tu azul corporativo oscuro */
     margin: 0;
@@ -3783,7 +3783,7 @@ position: absolute !important;
         }
 
 .service-card h3 { 
-    font-family: 'Bauhaus Light Regular', sans-serif !important; 
+    font-family: 'bauhaus-light', sans-serif !important; 
     font-size: 32px !important; 
     margin-top: 0 !important; margin-bottom: 25px !important; 
     color: #004047 !important; 
