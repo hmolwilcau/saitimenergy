@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sectores - Saitim Energy S.L.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+        <link rel="icon" type="image/png" href="images/logo.png">
+    
+    
+    <style>
+        
+       body { font-family: 'Montserrat', sans-serif;}
+        /* Asegúrate de tener esto en tu CSS para que el menú funcione */
+      .dropdown-menu { display: none; list-style: none; padding-left: 20px; margin-top: 10px; }
+        .dropdown-menu.show { display: block; }
+        .has-dropdown { display: flex; flex-direction: column; align-items: flex-start; }
+        .dropdown-toggle { background: none; border: none; color: white; cursor: pointer; font-size: 12px; padding: 5px 10px; margin-left: auto; }
+        .dropdown-toggle:hover { color: #C4EFF2; }
+        .nav-link-container { display: flex; align-items: center; width: 100%; justify-content: space-between; }
+        .lateral-nav ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 25px; }
+        .lateral-nav ul li a { color: white; font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 500; text-decoration: none; transition: color 0.3s ease; }
+        .dropdown-menu li a { font-size: 14px !important; color: #C4EFF2 !important; }
+        /* Solo necesitamos el CSS de la imagen, tu cabecera ya tiene su estilo en tu style.css */
+      margin: 0; 
+        padding: 0; 
+        font-family: 'Montserrat', sans-serif;
+
+        .parallax-hero {
+            height: 100vh; /* Ocupa toda la altura de la pantalla */
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            background-color: #000; /* Fondo negro por si la imagen tarda en cargar */
+        }
+
+        #parallax-img {
+            width: 100%;
+            height: 120%; /* Más grande que el contenedor para poder moverse */
+            object-fit: cover;
+            display: block;
+            position: absolute; /* Para que el transform funcione perfecto */
+            top: 0;
+            left: 0;
+        }
+    h1 {
+        font-family:'Bauhaus  Light Regular ', sans-serif;
+         }
+    </style>
+    
+   
+</head>
+
+<body>
+    <!-- =========================================
+         ELEMENTOS LATERALES FLOTANTES
+         ========================================= -->
+    <!-- Botón para abrir el menú -->
+    <div class="lateral-menu-btn" id="lateral-menu-btn">
+        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    </div>
+
+    <!-- Panel del menú desplegable -->
+    <div class="lateral-dropdown" id="lateral-dropdown">
+        <button class="close-menu-btn" id="close-menu-btn">&times;</button>
+        <nav class="lateral-nav">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="sectores.html">Sectores</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li class="has-dropdown">
+                    <div class="nav-link-container">
+                    <a href="proyectos.html">Proyectos</a>
+                    <button class="dropdown-toggle" data-target="menu-proyectos">▼</button>
+                    </div>
+                    <ul class="dropdown-menu" id="menu-proyectos">
+           
+                    <li><a href="meda-detalle.html">Proyecto Medio Ambiente</a></li>
+                    <li><a href="auto-detalle.html">Proyecto Automoción</a></li>
+                    <li><a href="fabpi-detalle.html">Proyecto Agroalimentario</a></li>
+                    <li><a href="foto-detalle.html">Proyecto Fotovoltaico</a></li>
+
+                    </ul>
+                </li>
+
+                <li><a href="equipo.html">Nuestro equipo</a></li>
+
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="back-to-top-btn" id="back-to-top-btn">
+        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+    </div>
+
+   
+    
+    <header class="site-header-eqp">
+        <div class="header-container">
+            <a href="index.html" class="logo-link">
+                <img class="logo" src="images/Saitim-sincolor.png" alt="Saitim Energy" width="211" height="72" />
+            </a>
+            <nav class="site-nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li class="navbar"><a class="link navbar" href="#">Sectores</a></li>
+                    <li class="navbar"><a class="link navbar" href="servicios.html">Servicios</a></li>
+                    <li class="navbar"><a class="link navbar" href="proyectos.html">Proyectos</a></li>
+                    <li class="navbar"><a class="link navbar" href="equipo.html">Nuestro equipo</a></li>
+                    <li class="navbar"><a class="link navbar" href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+       <div class="header-icons">
+<div class="language-selector">
+    <a href="sectores.html" class="lang-active">ES</a>
+    <span class="lang-divider">|</span> 
+    <a href="en/sectores.html">EN</a>
+    <span class="lang-divider">|</span> 
+    <a href="fr/sectores.html">FR</a>    
+       
+</div>
+            <div class="search-container">
+                <input type="text" class="search-input" id="buscador-input" placeholder="Buscar...">
+                <button id="btn-buscar" class="search-btn minimal-search-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="search-icon-svg">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                </button>
+            </div>
+            
+            <button id="mobile-menu-btn" class="mobile-menu-btn">
+                <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        </div>
+
+</header>
+   
+    <section class="parallax-hero">
+        
+        <img src="images/servicios.jpg" alt="Servicios" id="parallax-img">
+
+        <div class="hero-text-container">
+            <h1>Sectores
+            </h1>
+        </div>
+        
+    </section>
+    
+     <section class="circular-links-section">
+         
+    <div class="circular-links-container">
+        <h2 class="circular-section-title">Nuestro software</h2>
+        <a href="piensa.html" class="circle-item">
+            <div class="circle-image-wrapper">
+                <img src="images/piensa.png" alt="Piensa">
+            </div>
+            <h3 class="circle-title">Piensa</h3>
+        </a>
+
+        <a href="piensa-solar.html" class="circle-item">
+            <div class="circle-image-wrapper">
+                <img src="images/piensasolar.png" alt="Sector 2">
+            </div>
+            <h3 class="circle-title">Piensa Solar</h3>
+        </a>
+
+    </div>
+</section>
+
+
+    
+    <!-- Mitad Izquierda: Imagen pegada al borde -->
+   <section id="energias-renovables" class="hacemos-cosas-sangre">
+    
+    <div class="hacemos-imagen" style="line-height: 0; font-size: 0;">
+        
+        <img src="images/energias.jpg" alt="Energías" class="img-parallax-suave" style="display: block;">
+        
+    </div>
+  
+
+    <!-- Mitad Derecha: Fondo blanco y textos -->
+    <div class="hacemos-texto">
+        <h2>Energías renovables</h2>
+        <p>SAITIM fue una compañía pionera a nivel nacional en el desarrollo de sistemas de monitorización para plantas fotovoltaicas dado que apostamos por dicho sector en el año 2007. En la actualidad SAITIM S.L. tiene implantado su sistema “PIENSA SOLAR” en más de 150 MW distribuidos en 30 proyectos en el continente europeo y americano (España Alemania Italia Francia Eslovaquia Ucrania Reino Unido Portugal y Brasil).</p>
+    </div>
+
+</section>
+  
+     <section id="automocion" class="seccion-video-fondo">
+    <!-- El vídeo como fondo -->
+    <video class="video-fondo" autoplay loop muted playsinline>
+        <source src="videos/recicladora.mp4" type="video/mp4">
+    </video>
+    
+    <!-- El contenido que irá encima -->
+    <div class="contenido-encima">
+        <h2>Reciclaje y RCV</h2>
+    
+        <p class="parrafo-encima"> Texto reciclaje RCV</p>
+    </div>
+      </section>
+    
+     <section id="meda" class="cta-section">
+        <h2>Medio Ambiente</h2>
+      <p> Los trabajos realizados por SAITIM en el sector del medio ambiente se basan fundamentalmente en procesos industriales para la transformación de la materia orgánica. </p>
+    </section>
+    
+    <section id="agroalimentacion" class="divisor-raton-container">
+    
+    <div class="raton-columna izquierda">
+        <img src="images/agroalimentacion.jpg" alt="Agroalimentación" class="raton-img-izq">
+    </div>
+
+    <div class="raton-columna derecha">
+        <img src="images/alimentacion.jpg" alt="Alimentación" class="raton-img-der">
+    </div>
+
+</section>
+
+  <section class="seccion-textos-divididos">
+    
+    <div class="columna-izq">
+        <h2 class="titulo-cyan">Agroalimentación</h2>
+        <p>Uno de nuestros sectores estratégico con mayor relevancia en el momento actual donde podemos ofrecer proyectos “llaves en mano” del sistema eléctrico de B.T A.T y del sistema de automatización para fábricas de piensos compuestos y correctores.</p>
+    </div>
+
+    <div class="columna-der">
+        <h2 class="titulo-cyan">Alimentación</h2>
+        <p> info alimentación </p>
+    </div>
+
+</section>
+
+      <section id="ceraridos" class="content-block bg-dark">
+    
+        <div class="text-container">
+            <h3>Ceramicas y Áridos</h3>
+            <p>El sector cerámico y de áridos es otra de las áreas de negocio en la que SAITIM ha desarrollado la programación para la total automatización de las mismas principalmente plantas de fabricación de ladrillos tejas y molturación de arcillas. En este área de negocio disponemos de plantas en servicio en España, Argelia, Colombia y Venezuela. En el sector de los áridos trabajamos para nuestros clientes realizando el control de plantas de mortero y hormigón basado en PLC y Scada comercial. </p>
+        </div>
+    </section>
+  <section id="reciclaje" class="seccion-video-fondo">
+    <!-- El vídeo como fondo -->
+    <video class="video-fondo" autoplay loop muted playsinline>
+        <source src="videos/automocion.mp4" type="video/mp4">
+    </video>
+    
+    <!-- El contenido que irá encima -->
+    <div class="contenido-encima">
+        <h2>Automoción</h2>
+    
+        <p class="parrafo-encima"> En la industria de la automoción realizamos trabajos tales cómo: automatización de líneas de producción; realización de software para producción trazabilidad y calidad; mantenimientos eléctricos y de programación.</p>
+    </div>
+      
+
+        
+    </section>
+     <section id="elbe" class="elevacion-cosas-sangre">
+    
+    <!-- Mitad Derecha: Imagen pegada al borde -->
+    <div class="elevacion-imagen">
+    <img src="images/elevacion.jpg" alt="Energías" class="img-parallax-suave-elevacion">
+   
+       
+    </div>
+
+    <!-- Mitad Derecha: Fondo blanco y textos -->
+    <div class="elevacion-texto">
+        <h2>Elevación y bienes de equipo</h2>
+        <p class="elevacion-texto-parrafo">Nuestra experiencia industrial nos permite desarrollar proyectos eléctricos para cualquier tipo de maquinaría o aplicación por compleja que resulte. Los proyectos más simbólicos y destacables en este área van desde dos grúas orbitales en el complejo científico de CELLS a diversas grúas de coque para plantas de refinado en Turquía México o EAU.</p>
+    </div>
+
+</section>
+    
+    <footer class="site-footer">
+    <div class="footer-top">
+        <div class="footer-grid">
+            
+            <div class="footer-col about-col">
+                <img src="images/Saitim-sincolor.png" alt="Logo Footer" class="footer-logo">
+                <p> Diseñamos, construimos y apoyamos proyectos y aplicaciones para clientes de todo el mundo. <br> Ayudamos a que su negocio funcione.<br> ¿Interesado?<br> Llámenos. </p>
+                <a href="contacto.html" class="btn-outline-white">Contacto</a>
+            </div>
+
+                 <div class="footer-col">
+                <h4><a href="proyectos.html">Proyectos</a></h4>
+                <ul>
+                   
+                    <li><a href="meda-detalle.html">Proyecto Medio Ambiente</a></li>
+                    <li><a href="auto-detalle.html">Proyecto Automoción</a></li>
+                    <li><a href="fabpi-detalle.html">Proyecto Agroalimentario</a></li>
+                    <li><a href="foto-detalle.html">Proyecto Fotovoltaico</a></li>
+                 
+                </ul>
+            </div>
+
+             <div class="footer-col">
+              <h4><a href="sectores.html">Sectores</a></h4>
+                <ul>
+                      <li><a href="sectores.html#energias-renovables">Energías renovables</a></li>
+                    <li><a href="sectores.html#reciclaje">Reciclaje y RCV</a></li>
+                    <li><a href="sectores.html#meda">Medio ambiente</a></li>
+                    <li><a href="sectores.html#agroalimentacion">Agroalimentación</a></li>
+                    <li><a href="sectores.html#alimentacion">Alimentación</a></li>
+                <li><a href="sectores.html#ceraridos">Ceramicas y Áridos</a></li>
+                    <li><a href="sectores.html#automocion">Automoción</a></li>
+                    <li><a href="sectores.html#elbe">Elevación y bienes de equipos</a></li>
+                    
+                
+                </ul>
+            </div>
+
+
+
+            <div class="footer-col form-col">
+                <h4>¿Nos necesitas?</h4>
+                <form action="https://formsubmit.co/hmolwilcau@gmail.com" method="POST">
+                    <input type="text" name="nombre" placeholder="Nombre de la Empresa" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                     <textarea placeholder="¿Cómo podemos ayudarte?" rows="3" required></textarea>
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://saitim.netlify.app/gracias-form.html">
+                     <button type="submit" class="btn-outline-white">Enviar</button>
+                    
+                    </form>
+            </div>
+
+            <div class="footer-col">
+                <h4>Mapa Web</h4>
+                <ul>
+                     <li><a href="index.html">Inicio</a></li>
+                    <li><a href="sectores.html">Sectores</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="proyectos.html">Proyectos</a></li>
+                    <li><a href="equipo.html">Nuestro equipo</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="bottom-container">
+           <div class="container">
+          <div class="row row-15 justify-content-lg-between">
+            <div class="col-lg-6 col-xl-6 text-lg-left">
+            <p class="rights" style="margin-bottom: 25px;"><span>&copy;&nbsp;</span><span class="copyright-year"></span> Saitim Energy S.L.</p>
+           
+        </div>
+    </div>
+            </div>
+             </div>
+         </div>
+</footer>
+    
+       <!-- 1. LLAMAMOS AL ARCHIVO DE DATOS QUE HAS CREADO -->
+    <script src="buscador-datos.js"></script>
+
+    <!-- 2. SCRIPT PRINCIPAL LIMPIO Y ORDENADO -->
+    <script>
+        // ==========================================
+        // RESTAURACIÓN DE SCROLL
+        // ==========================================
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+
+
+    // ==========================================
+    // 1. AÑO DE COPYRIGHT AUTOMÁTICO
+    // ==========================================
+    const yearSpan = document.querySelector('.copyright-year');
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+    }
+
+    // =================================================================
+    // 2. LÓGICA DE CLICS (Abrir panel y Subir arriba)
+    // =================================================================
+    const btnMenu = document.getElementById('lateral-menu-btn');
+    if (btnMenu) {
+        btnMenu.addEventListener('click', function() {
+            document.getElementById('lateral-dropdown').classList.add('open');
+        });
+    }
+
+    const btnClose = document.getElementById('close-menu-btn');
+    if (btnClose) {
+        btnClose.addEventListener('click', function() {
+            document.getElementById('lateral-dropdown').classList.remove('open');
+        });
+    }
+
+    const btnTop = document.getElementById('back-to-top-btn');
+    if (btnTop) {
+        btnTop.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+    // =================================================================
+    // 3. VARIABLES PARA LOS EFECTOS PARALLAX
+    // =================================================================
+    const header = document.querySelector('.site-header-eqp');
+    const imgPrincipal = document.getElementById('parallax-img');
+    
+    const contenedorDoble = document.querySelector('.divisor-raton-container');
+    const imgIzq = document.querySelector('.raton-img-izq');
+    const imgDer = document.querySelector('.raton-img-der');
+    
+    const seccionHacemos = document.querySelector('.hacemos-cosas-sangre');
+    const imgHacemos = document.querySelector('.img-parallax-suave');
+
+    // =================================================================
+    // 4. UN SOLO EVENTO DE SCROLL PARA TODO (Más rápido y sin errores)
+    // =================================================================
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.scrollY;
+        const alturaVentana = window.innerHeight;
+
+        // A. Ocultar Cabecera y Mostrar Botones Flotantes
+        if (currentScroll > 150) {
+            if (header) header.classList.add('header-hidden');
+            if (btnMenu) btnMenu.classList.add('visible');
+            if (btnTop) btnTop.classList.add('visible');
+        } else {
+            if (header) header.classList.remove('header-hidden');
+            if (btnMenu) btnMenu.classList.remove('visible');
+            if (btnTop) btnTop.classList.remove('visible');
+        }
+
+        // B. Parallax Hero Principal (La foto de arriba del todo)
+        if (imgPrincipal) {
+            imgPrincipal.style.transform = `translateY(${currentScroll * 0.3}px)`;
+        }
+
+        // C. Parallax Doble Imagen (Divisor de Áridos y Software)
+        if (contenedorDoble && imgIzq && imgDer) {
+            const rectDoble = contenedorDoble.getBoundingClientRect();
+            if (rectDoble.top < alturaVentana && rectDoble.bottom > 0) {
+                let progresoDoble = (alturaVentana - rectDoble.top) / (alturaVentana + rectDoble.height);
+                let movimientoDoble = progresoDoble * 80; 
+                imgIzq.style.transform = `translateX(-${movimientoDoble}px)`;
+                imgDer.style.transform = `translateY(-${movimientoDoble}px)`;
+            }
+        }
+
+     
+        if (seccionHacemos && imgHacemos) {
+            const rectHacemos = seccionHacemos.getBoundingClientRect();
+            if (rectHacemos.top < alturaVentana && rectHacemos.bottom > 0) {
+                let progresoHacemos = (alturaVentana - rectHacemos.top) / (alturaVentana + rectHacemos.height);
+                let movimientoY = (progresoHacemos - 0.5) * 60; // 60 es la intensidad del salto
+                imgHacemos.style.transform = `translateY(${movimientoY}px)`;
+            }
+        }
+
+// 1. Cambiamos los selectores para que busquen las nuevas clases
+const seccionElevacion = document.querySelector('.elevacion-cosas-sangre');
+const imgElevacion = document.querySelector('.img-parallax-suave-elevacion');
+
+// 2. Dentro de tu event listener de scroll, usamos estas variables:
+if (seccionElevacion && imgElevacion) {
+    const rectElevacion = seccionElevacion.getBoundingClientRect();
+    const alturaVentana = window.innerHeight;
+
+    // Si la sección es visible en la pantalla
+    if (rectElevacion.top < alturaVentana && rectElevacion.bottom > 0) {
+        
+        // Calculamos el progreso del scroll de 0 a 1
+        let progreso = (alturaVentana - rectElevacion.top) / (alturaVentana + rectElevacion.height);
+        
+        // Intensidad del movimiento (ajusta a 60, 80, etc.)
+        let intensidad = 60; 
+        
+        // Calculamos el desplazamiento exacto
+        let movimientoY = (progreso - 0.5) * intensidad;
+
+        // Aplicamos el movimiento a la nueva clase
+        imgElevacion.style.transform = `translateY(${movimientoY}px)`;
+    }
+}
+    });
+             const lateralBtn = document.getElementById('lateral-menu-btn');
+        const closeBtn = document.getElementById('close-menu-btn');
+        const lateralDropdown = document.getElementById('lateral-dropdown');
+
+        if (lateralBtn) {
+            lateralBtn.addEventListener('click', () => lateralDropdown.classList.add('open'));
+        }
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => lateralDropdown.classList.remove('open'));
+        }
+
+        // 2. Desplegables de Proyectos y Noticias
+        document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+            toggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const targetId = this.getAttribute('data-target');
+                const menu = document.getElementById(targetId);
+                
+                if (menu) {
+                    menu.classList.toggle('show');
+                    this.textContent = menu.classList.contains('show') ? '▲' : '▼';
+                }
+            });
+        });
+    
+        const inputBuscador = document.getElementById('buscador-input');
+        const botonBuscar = document.getElementById('btn-buscar');
+        const modalBuscador = document.getElementById('search-modal');
+        const cerrarModalBtn = document.getElementById('close-search');
+        const contenedorResultados = document.getElementById('search-results-container');
+
+        function realizarBusqueda() {
+            const query = inputBuscador.value.toLowerCase().trim();
+            if (query === "") return; 
+
+            contenedorResultados.innerHTML = '';
+
+            // Comprobamos si el archivo de la base de datos se ha cargado bien
+            if (typeof baseDatosBuscador !== 'undefined') {
+                const resultados = baseDatosBuscador.filter(item => 
+                    item.titulo.toLowerCase().includes(query) || 
+                    item.contenido.toLowerCase().includes(query)
+                );
+
+                modalBuscador.classList.remove('search-modal-hidden');
+
+                if (resultados.length > 0) {
+                    resultados.forEach(res => {
+                        const resultHtml = `
+                            <div class="search-result-item">
+                                <a href="${res.url}">${res.titulo}</a>
+                                <p>${res.contenido}</p>
+                            </div>
+                        `;
+                        contenedorResultados.innerHTML += resultHtml;
+                    });
+                } else {
+                    contenedorResultados.innerHTML = `<p class="no-results">No se encontraron resultados para "<b>${query}</b>". Prueba con otras palabras.</p>`;
+                }
+            } else {
+                console.error("ERROR: No se encuentra la base de datos. Verifica el archivo buscador-datos.js");
+            }
+        }
+
+        if (botonBuscar) {
+            botonBuscar.addEventListener('click', realizarBusqueda);
+        }
+
+        if (inputBuscador) {
+            inputBuscador.addEventListener('keypress', function(event) {
+                if (event.key === 'Enter') {
+                    realizarBusqueda();
+                }
+            });
+        }
+
+        if (cerrarModalBtn) {
+            cerrarModalBtn.addEventListener('click', () => {
+                modalBuscador.classList.add('search-modal-hidden');
+            });
+        }
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modalBuscador) {
+                modalBuscador.classList.add('search-modal-hidden');
+            }
+        });
+        
+        // ==========================================
+        // 5. MENÚ MÓVIL (BOTÓN HAMBURGUESA)
+        // ==========================================
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileNav = document.querySelector('.site-nav');
+
+        if (mobileMenuBtn && mobileNav) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileNav.classList.toggle('menu-abierto');
+            });
+        }
+</script>
+</body>
+</html>

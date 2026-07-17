@@ -34,25 +34,43 @@
         <nav class="site-nav">
             <ul>
                  <li class="navbar"><a class="link navbar" href="index.html">Inicio</a></li>
+                 <li class="navbar"><a class="link navbar" href="sectores.html">Sectores</a></li>
                 <li class="navbar"><a class="link navbar" href="servicios.html">Servicios</a></li>
                 <li class="navbar"><a class="link navbar" href="proyectos.html">Proyectos</a></li>
                 <li class="navbar"><a class="link navbar" href="equipo.html">Nuestro equipo</a></li>
-                <li class="navbar"><a class="link navbar" href="noticias.html">Noticias</a></li>
                 <li class="navbar"><a class="link navbar" href="contacto.html">Contacto</a></li>
             </ul>
         </nav>
-        <div class="header-icons">
+          <div class="header-icons">
+<div class="language-selector">
+    <a href="index.html" class="lang-active">ES</a>
+    <span class="lang-divider">|</span> 
+    <a href="en/index.html">EN</a>
+    <span class="lang-divider">|</span> 
+    <a href="fr/index.html">FR</a>    
+       
+</div>
             <div class="search-container">
-                <input type="text" class="search-input" placeholder="Buscar...">
-                <button class="search-btn minimal-search-btn">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="search-icon-svg">
-                        <circle cx="11" cy="11" r="8"></circle>
-                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                    </svg>
+                <input type="text" class="search-input" id="buscador-input" placeholder="Buscar...">
+                <button id="btn-buscar" class="search-btn minimal-search-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="search-icon-svg">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
                 </button>
             </div>
+            
+            <button id="mobile-menu-btn" class="mobile-menu-btn">
+                <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
         </div>
-    </div>
+        </div>
+
+
     <!-- =========================================
          BARRA SECUNDARIA (VOLVER A PROYECTOS)
          ========================================= -->
@@ -86,28 +104,25 @@
             <div class="project-badges">
                 <span class="badge dark">Agroalimentario</span>
                 <span class="badge light">Completado</span>
-                <span class="badge text">2019</span>
+                <span class="badge text">2025</span>
             </div>
 
-            <h1 class="project-main-title">Fábricas de pienso</h1>
+            <h1 class="project-main-title">Cooperativa D'Ivars</h1>
 
             <div class="project-meta-grid">
                 <div class="meta-item">
-                    <span class="meta-label">Capacidad</span>
-                    <span class="meta-value"> MW |  MWh</span>
+                    <span class="meta-label">Trabajo a realizar</span>
+                    <span class="meta-value"> Elaboración de cuadros eléctricos</span>
                 </div>
                 <div class="meta-item">
                     <span class="meta-label">Ubicación</span>
-                    <span class="meta-value">Soria, España</span>
+                    <span class="meta-value">Ivars d'Urgell, Lleida, España.</span>
                 </div>
-                <div class="meta-item">
-                    <span class="meta-label">Cliente</span>
-                    <span class="meta-value">Copiso</span>
-                </div>
+             
             </div>
 
             <p class="project-description">
-                Automatización, control y gestión completa en fábrica de piensos Copiso (Soria). Instalación y fabricación de cuadros de control y potencia. Cableado de potencia, control, red e iluminación de toda la planta. Instalación de nuestro sistema Piensa Gestión y Piensa Control.
+                info proyecto agroalimentario
             </p>
         </div>
             </section>
@@ -116,24 +131,20 @@
        <section>
     <div class="hero-carousel-proyectos">
         
-        <div class="carousel-slide active"><img src="images/pienso1.jpg" alt="Fábricas de pienso 1"></div>
-        <div class="carousel-slide"><img src="images/pienso2.jpg" alt="Fábricas de pienso 2"></div>
-        <div class="carousel-slide"><img src="images/pienso3.jpg" alt="Fábricas de pienso 3"></div>
-        <div class="carousel-slide"><img src="images/pienso4.jpg" alt="Fábricas de pienso 4"></div>
-         <div class="carousel-slide"><img src="images/pienso5.jpg" alt="Fábricas de pienso 5"></div>
+        <div class="carousel-slide-project active"><img src="images/agro%20(2).jpg" alt="Fábricas de pienso 1"></div>
+        <div class="carousel-slide-project"><img src="images/agro%20(1).jpg" alt="Fábricas de pienso 2"></div>
+        <div class="carousel-slide-project"><img src="images/agro4.jpg" alt="Fábricas de pienso 3"></div>
+        
       
 
-        <button class="carousel-control prev" onclick="moveSlide(-1)">&#10094;</button>
-        <button class="carousel-control next" onclick="moveSlide(1)">&#10095;</button>
+        <button class="carousel-control-project prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="carousel-control-project next" onclick="moveSlide(1)">&#10095;</button>
 
         <div class="carousel-dots">
             <span class="dot active" onclick="currentSlide(1)"></span>
             <span class="dot" onclick="currentSlide(2)"></span>
             <span class="dot" onclick="currentSlide(3)"></span>
-            <span class="dot" onclick="currentSlide(4)"></span>
-            <span class="dot" onclick="currentSlide(5)"></span>
-            <span class="dot" onclick="currentSlide(6)"></span>
-            <span class="dot" onclick="currentSlide(7)"></span>
+        
         </div>
     </div>
 </section>     
@@ -162,7 +173,15 @@
                     <li>Ahorro energético del 35% en planta</li>
                 </ul>
             </div>
-
+<div class="info-card">
+                <h3>Software utilizado</h3>
+    <a href="piensa.html" class="circle-item">
+                <div class="circle-image-wrapper">
+                <img src="images/piensa.png" alt="Piensa">
+            </div>
+            <h3 class="circle-title">Piensa</h3>
+        </a>
+            </div>
         </div>
     </section>
     
@@ -195,7 +214,8 @@
         <nav class="lateral-nav">
             <ul>
                 <li><a href="index.html">Inicio</a></li>
-                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="sectores.html">Sectores</a></li>
+                 <li><a href="servicios.html">Servicios</a></li>
 
                 <li class="has-dropdown">
                     <div class="nav-link-container">
@@ -203,29 +223,15 @@
                     <button class="dropdown-toggle" data-target="menu-proyectos">▼</button>
                     </div>
                     <ul class="dropdown-menu" id="menu-proyectos">
-                        <li><a href="piensa.html">Proyecto Piensa</a></li>
-                        <li><a href="piensa-solar.html">Proyecto Piensa Solar</a></li>
-                        <li><a href="meda-detalle.html">Proyecto Medio Ambiente</a></li>
+                     <li><a href="meda-detalle.html">Proyecto Medio Ambiente</a></li>
                         <li><a href="auto-detalle.html">Proyecto Automoción</a></li>
                         <li><a href="fabpi-detalle.html">Proyecto Agroalimentario</a></li>
+                        <li><a href="foto-detalle.html">Proyecto Fotovoltaico</a></li>
+
                     </ul>
                 </li>
 
                 <li><a href="equipo.html">Nuestro equipo</a></li>
-
-                <li class="has-dropdown">
-                    <div class="nav-link-container">
-                    <a href="noticias.html">Noticias</a>
-                    <button class="dropdown-toggle" data-target="menu-noticias">▼</button>
-                    </div>
-                    <ul class="dropdown-menu" id="menu-noticias">
-                        <li><a href="noticia1.html">Planta Solar en Burundi</a></li>
-                        <li><a href="noticia2.html">SAITIM está en FIGAN</a></li>
-                        <li><a href="noticia3.html">Sistemas de Control Matadero</a></li> 
-                        <li><a href="noticia4.html">Automatización Piensos Ulises </a></li> 
-                        <li><a href="noticia5.html">Automatización planta de piensos en Vigo</a></li>
-                    </ul>
-                </li>
                 <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </nav>
@@ -246,31 +252,34 @@
                 <a href="contacto.html" class="btn-outline-white">Contacto</a>
             </div>
 
-                 <div class="footer-col">
+              <div class="footer-col">
                 <h4><a href="proyectos.html">Proyectos</a></h4>
                 <ul>
-                    <li><a href="piensa.html">Proyecto Piensa</a></li>
-                    <li><a href="piensa-solar.html">Proyecto Piensa Solar</a></li>
+                   
                     <li><a href="meda-detalle.html">Proyecto Medio Ambiente</a></li>
                     <li><a href="auto-detalle.html">Proyecto Automoción</a></li>
                     <li><a href="fabpi-detalle.html">Proyecto Agroalimentario</a></li>
+                    <li><a href="foto-detalle.html">Proyecto Fotovoltaico</a></li>
                  
                 </ul>
             </div>
 
             <div class="footer-col">
-              <h4><a href="servicios.html">Servicios</a></h4>
+              <h4><a href="sectores.html">Sectores</a></h4>
                 <ul>
-                      <li><a href="servicios.html">Energías renovables</a></li>
-                    <li><a href="servicios.html">Sector agroalimentario</a></li>
-                    <li><a href="servicios.html">Automoción</a></li>
-                    <li><a href="servicios.html">Software a medida</a></li>
-                    <li><a href="servicios.html">Medio ambiente</a></li>
-                    <li><a href="servicios.html">Ceramicas y Áridos</a></li>
-                    <li><a href="servicios.html">Elevación y bienes de equipo</a></li>
+                      <li><a href="sectores.html#energias-renovables">Energías renovables</a></li>
+                    <li><a href="sectores.html#reciclaje">Reciclaje y RCV</a></li>
+                    <li><a href="sectores.html#meda">Medio ambiente</a></li>
+                    <li><a href="sectores.html#agroalimentacion">Agroalimentación</a></li>
+                    <li><a href="sectores.html#alimentacion">Alimentación</a></li>
+                <li><a href="sectores.html#ceraridos">Ceramicas y Áridos</a></li>
+                    <li><a href="sectores.html#automocion">Automoción</a></li>
+                    <li><a href="sectores.html#elbe">Elevación y bienes de equipos</a></li>
+                    
                 
                 </ul>
             </div>
+
 
 
             <div class="footer-col form-col">
@@ -290,10 +299,10 @@
                 <h4>Mapa Web</h4>
                 <ul>
                     <li><a href="index.html">Inicio</a></li>
+                     <li><a href="sectores.html">Sectores</a></li>
                     <li><a href="servicios.html">Servicios</a></li>
                     <li><a href="proyectos.html">Proyectos</a></li>
                     <li><a href="equipo.html">Nuestro equipo</a></li>
-                    <li><a href="noticias.html">Noticias</a></li>
                     <li><a href="contacto.html">Contacto</a></li>
                 
                 </ul>
@@ -314,7 +323,23 @@
             </div>
              </div>
          </div>
-</footer>
+    </footer>
+
+    <!-- VENTANA FLOTANTE DE RESULTADOS DE BÚSQUEDA -->
+<div id="search-modal" class="search-modal-hidden">
+    <div class="search-modal-content">
+        <div class="search-header">
+            <h3>Resultados de la búsqueda</h3>
+            <button id="close-search" class="close-btn">&times;</button>
+        </div>
+        <div id="search-results-container">
+            <!-- Los resultados aparecerán aquí -->
+        </div>
+    </div>
+</div>
+       
+    <!-- 1. LLAMAMOS AL ARCHIVO DE DATOS QUE HAS CREADO -->
+    <script src="buscador-datos.js"></script>
     
     <script>
 
@@ -345,15 +370,7 @@
     });
 
     // --- 4. LÓGICA DE CLICS ---
-    if (btnMenu) {
-        btnMenu.addEventListener('click', () => document.getElementById('lateral-dropdown').classList.add('open'));
-    }
-    
-    const btnClose = document.getElementById('close-menu-btn');
-    if (btnClose) {
-        btnClose.addEventListener('click', () => document.getElementById('lateral-dropdown').classList.remove('open'));
-    }
-
+   
     if (btnTop) {
         btnTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
     }
@@ -365,7 +382,7 @@
     function currentSlide(n) { showSlides(slideIndex = n); }
 
     function showSlides(n) {
-        let slides = document.getElementsByClassName("carousel-slide");
+        let slides = document.getElementsByClassName("carousel-slide-project");
         let dots = document.getElementsByClassName("dot");
         
         // Si no hay slides en la página, detenemos la función para evitar errores
@@ -385,21 +402,13 @@
 
     // Inicializar carrusel
     showSlides(slideIndex);
-        // ==========================================
-    // NAVEGACIÓN AUTOMÁTICA DE PROYECTOS
-    // ==========================================
-    
- // ==========================================
-    // NAVEGACIÓN AUTOMÁTICA DE PROYECTOS (CORREGIDO)
-    // ==========================================
-    
-    // 1. Escribe aquí el nombre EXACTO de tus archivos
+     // 1. Escribe aquí el nombre EXACTO de tus archivos
     const listaProyectos = [
-        'piensa.html',
-        'piensa-solar.html',
+       
         'meda-detalle.html',
         'auto-detalle.html',
-        'fabpi-detalle.html'
+        'fabpi-detalle.html',
+        'foto-detalle.html'
     ];
 
     // 2. Extraemos el nombre real del archivo limpiando rastros raros de la URL (como # o ?)
@@ -461,6 +470,188 @@
                     menu.classList.toggle('show');
                     this.textContent = menu.classList.contains('show') ? '▲' : '▼';
                 }
+            });
+        });
+        
+       const inputBuscador = document.getElementById('buscador-input');
+    const botonBuscar = document.getElementById('btn-buscar');
+    const modalBuscador = document.getElementById('search-modal');
+    const cerrarModalBtn = document.getElementById('close-search');
+    const contenedorResultados = document.getElementById('search-results-container');
+
+    function realizarBusqueda() {
+        // Si no existe el buscador en esta página, no hacemos nada
+        if (!inputBuscador) return; 
+
+        const query = inputBuscador.value.toLowerCase().trim();
+        if (query === "") return; 
+
+        contenedorResultados.innerHTML = '';
+
+        if (typeof baseDatosBuscador !== 'undefined') {
+            const resultados = baseDatosBuscador.filter(item => 
+                item.titulo.toLowerCase().includes(query) || 
+                item.contenido.toLowerCase().includes(query)
+            );
+
+            modalBuscador.classList.remove('search-modal-hidden');
+
+            if (resultados.length > 0) {
+                resultados.forEach(res => {
+                    const resultHtml = `
+                        <div class="search-result-item">
+                            <a href="${res.url}">${res.titulo}</a>
+                            <p>${res.contenido}</p>
+                        </div>
+                    `;
+                    contenedorResultados.innerHTML += resultHtml;
+                });
+            } else {
+                contenedorResultados.innerHTML = `<p class="no-results">No se encontraron resultados para "<b>${query}</b>". Prueba con palabras como 'piensos' o 'renovables'.</p>`;
+            }
+        }
+    }
+
+    if (botonBuscar) {
+        botonBuscar.addEventListener('click', realizarBusqueda);
+    }
+
+    if (inputBuscador) {
+        inputBuscador.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                realizarBusqueda();
+            }
+        });
+    }
+
+    if (cerrarModalBtn) {
+        cerrarModalBtn.addEventListener('click', () => {
+            modalBuscador.classList.add('search-modal-hidden');
+        });
+    }
+
+    window.addEventListener('click', (e) => {
+        if (e.target === modalBuscador) {
+            modalBuscador.classList.add('search-modal-hidden');
+        }
+    });
+        
+   
+        // ==========================================
+        // 4. GESTOS TÁCTILES (SWIPE) PARA EL CARRUSEL
+        // ==========================================
+        let touchstartX = 0;
+        let touchendX = 0;
+
+        // Seleccionamos los carruseles (el principal y el de proyectos si lo hubiera)
+        const carruseles = document.querySelectorAll('.hero-carousel, .hero-carousel-proyectos');
+
+        carruseles.forEach(carrusel => {
+            // Cuando el usuario pone el dedo en la pantalla
+            carrusel.addEventListener('touchstart', function(event) {
+                touchstartX = event.changedTouches[0].screenX;
+            }, {passive: true});
+
+            // Cuando el usuario levanta el dedo
+            carrusel.addEventListener('touchend', function(event) {
+                touchendX = event.changedTouches[0].screenX;
+                gestionarSwipe();
+            }, {passive: true});
+        });
+
+        function gestionarSwipe() {
+            const umbral = 50; // Píxeles mínimos que debe arrastrar el dedo para que cuente
+            
+            // Si arrastra el dedo hacia la IZQUIERDA (Avanzar)
+            if (touchstartX - touchendX > umbral) {
+                moveSlide(1);
+            }
+            
+            // Si arrastra el dedo hacia la DERECHA (Retroceder)
+            if (touchendX - touchstartX > umbral) {
+                moveSlide(-1);
+            }
+        }
+        // =================================================================
+        // SISTEMA INTELIGENTE DE MENÚS (Evita colisiones y auto-cierre)
+        // =================================================================
+        
+        // 1. Seleccionamos todos los elementos implicados
+        const btnMenuMovil = document.getElementById('mobile-menu-btn');
+        const navSuperior = document.querySelector('.site-nav');
+        
+        const btnMenuLateral = document.getElementById('lateral-menu-btn');
+        const navLateral = document.getElementById('lateral-dropdown');
+        const btnCerrarLateral = document.getElementById('close-menu-btn');
+
+        // 2. Función para abrir el menú superior (y cerrar el lateral si estuviera abierto)
+        if (btnMenuMovil && navSuperior) {
+            btnMenuMovil.addEventListener('click', (e) => {
+                e.stopPropagation(); // Evita que el clic se propague al documento
+                navSuperior.classList.toggle('menu-abierto');
+                
+                // Si el menú lateral está abierto, lo cerramos
+                if (navLateral && navLateral.classList.contains('open')) {
+                    navLateral.classList.remove('open');
+                }
+            });
+        }
+
+        // 3. Función para abrir el menú lateral (y cerrar el superior si estuviera abierto)
+        if (btnMenuLateral && navLateral) {
+            btnMenuLateral.addEventListener('click', (e) => {
+                e.stopPropagation();
+                navLateral.classList.add('open');
+                
+                // Si el menú superior está abierto, lo cerramos
+                if (navSuperior && navSuperior.classList.contains('menu-abierto')) {
+                    navSuperior.classList.remove('menu-abierto');
+                }
+            });
+        }
+
+        // 4. Botón físico (la X) para cerrar el menú lateral
+        if (btnCerrarLateral && navLateral) {
+            btnCerrarLateral.addEventListener('click', () => {
+                navLateral.classList.remove('open');
+            });
+        }
+
+        // 5. CERRAR AL HACER CLIC FUERA DE LOS MENÚS
+        document.addEventListener('click', (e) => {
+            // Comprobamos el menú superior
+            if (navSuperior && navSuperior.classList.contains('menu-abierto')) {
+                // Si el clic NO fue dentro del menú ni en su botón, lo cerramos
+                if (!navSuperior.contains(e.target) && !btnMenuMovil.contains(e.target)) {
+                    navSuperior.classList.remove('menu-abierto');
+                }
+            }
+            
+            // Comprobamos el menú lateral
+            if (navLateral && navLateral.classList.contains('open')) {
+                if (!navLateral.contains(e.target) && !btnMenuLateral.contains(e.target)) {
+                    navLateral.classList.remove('open');
+                }
+            }
+        });
+
+        // 6. CERRAR AL HACER SCROLL (Bajar o subir por la página)
+        window.addEventListener('scroll', () => {
+            if (navSuperior && navSuperior.classList.contains('menu-abierto')) {
+                navSuperior.classList.remove('menu-abierto');
+            }
+            if (navLateral && navLateral.classList.contains('open')) {
+                navLateral.classList.remove('open');
+            }
+        }, { passive: true });
+
+        // 7. CERRAR AL HACER CLIC EN CUALQUIER ENLACE DEL MENÚ
+        // Seleccionamos todos los enlaces de ambos menús, excluyendo los botones desplegables de "Proyectos"
+        const enlacesMenus = document.querySelectorAll('.site-nav a, .lateral-nav a:not(.dropdown-toggle)');
+        enlacesMenus.forEach(enlace => {
+            enlace.addEventListener('click', () => {
+                if (navSuperior) navSuperior.classList.remove('menu-abierto');
+                if (navLateral) navLateral.classList.remove('open');
             });
         });
 </script>

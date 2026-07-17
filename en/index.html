@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Inicio - Saitim Energy S.L.  </title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    
+    <style>
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff; 
+            z-index: 999999; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        /* Contenedor central para agrupar logo y barra */
+        .preloader-content {
+            text-align: center;
+            width: 100%;
+            max-width: 250px; /* Controla el ancho de la barra respecto al logo */
+        }
+
+        .loader-logo {
+            width: 100%;
+            height: auto;
+            margin-bottom: 25px; /* Espacio entre el logo y la barra */
+        }
+
+        /* El carril gris claro de la barra */
+        .progress-container-loader {
+            width: 100%;
+            height: 3px; /* Grosor de la línea */
+            background-color: #f0f0f0; 
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        /* El progreso rojo que se va llenando */
+        .progress-bar-fill {
+            width: 0%;
+            height: 100%;
+            background-color: #0E3D40; /* Tu rojo corporativo */
+            transition: width 0.3s ease; /* Movimiento fluido */
+        }
+
+        .preloader-hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        @media (min-width:768px) {
+            .tewa-hero {
+            padding-top:110px;
+                
+                }
+            }
+    </style>
+</head>
+    
+<body>
+
+   <div id="preloader">
+        <div class="preloader-content">
+            <img src="images/Saitim-blanco.png" alt="Cargando Saitim Energy" class="loader-logo">
+            <div class="progress-container-loader">
+                <div class="progress-bar-fill" id="loader-progress"></div>
+            </div>
+        </div>
+    </div>
+        
+<header class="site-header">
+    <div class="header-container">
+        <a href="#" class="logo-link">
+    <img class="logo" src="images/Saitim-sincolor.png" alt="Saitim Energy" width="211" height="72" />
+</a>
+        <nav class="site-nav">
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li class="navbar"><a class="link navbar" href="sectores.html">Sectores</a></li>
+                <li class="navbar"><a class="link navbar" href="servicios.html">Servicios</a></li>
+                <li class="navbar"><a class="link navbar" href="proyectos.html">Proyectos</a></li>
+                <li class="navbar"><a class="link navbar" href="equipo.html">Nuestro equipo</a></li>                
+                <li class="navbar"><a class="link navbar" href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="header-icons">
+<div class="language-selector">
+    <a href="index.html" class="lang-active">ES</a>
+    <span class="lang-divider">|</span> 
+    <a href="en/index.html">EN</a>
+    <span class="lang-divider">|</span> 
+    <a href="fr/index.html">FR</a>    
+       
+</div>
+            <div class="search-container">
+                <input type="text" class="search-input" id="buscador-input" placeholder="Buscar...">
+                <button id="btn-buscar" class="search-btn minimal-search-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="search-icon-svg">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                </button>
+            </div>
+            
+            <button id="mobile-menu-btn" class="mobile-menu-btn">
+                <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        </div>
+
+</header>
+
+<main>
+    
+    <section class="tewa-hero">
+        
+        <video id="tewa-video" class="tewa-bg-video" autoplay loop muted playsinline>
+            <source src="videos/saitimvideo.mp4" type="video/mp4">
+        </video>
+        
+        <div class="tewa-overlay"></div>
+
+
+
+   
+    </section>
+    
+    <section>
+    <div class="hero-carousel">
+        
+        <div class="carousel-slide active">
+            <video class="bg-video" muted playsinline preload="none">
+                <source src="videos/1.mp4" type="video/mp4">
+            </video>
+            <div class="slide-overlay"></div>
+            <div class="slide-content-box">
+                <div class="progress-bar-container"><div class="progress-bar"></div></div>
+                <div class="text-content">
+                    <h2 class="slide-title">Energías renovables</h2>
+                    <p class="slide-text">Somos pioneros a nivel nacional en el desarrollo de sistemas de monitorización para plantas fotovoltaicas</p>
+                </div>
+            </div>
+        </div> 
+
+        <div class="carousel-slide">
+            <video class="bg-video" muted playsinline preload="none">
+                <source src="videos/2.mp4" type="video/mp4">
+            </video>
+            <div class="slide-overlay"></div>
+            <div class="slide-content-box">
+                <div class="progress-bar-container"><div class="progress-bar"></div></div>
+                <div class="text-content">
+                    <h2 class="slide-title">Agroalimentación</h2>
+                    <p class="slide-text">Ofrecemos proyectos “llaves en mano” del sistema eléctrico de B.T A.T y del sistema de automatización para fábricas de piensos compuestos y correctores.</p>
+                </div>
+            </div>    
+        </div>                
+                
+        <div class="carousel-slide">
+            <video class="bg-video" muted playsinline preload="none">
+                <source src="videos/3.mp4" type="video/mp4">
+            </video>
+            <div class="slide-overlay"></div>
+            <div class="slide-content-box">
+                <div class="progress-bar-container"><div class="progress-bar"></div></div>
+                <div class="text-content">
+                    <h2 class="slide-title">Automoción</h2>
+                    <p class="slide-text">Automatización de líneas de producción; realización de software para producción trazabilidad y calidad; mantenimientos eléctricos y de programación.</p>
+                </div>
+            </div>
+        </div>
+            
+        <div class="carousel-slide">
+            <video class="bg-video" muted playsinline preload="none">
+                <source src="videos/4.mp4" type="video/mp4">
+            </video>
+            <div class="slide-overlay"></div>
+            <div class="slide-content-box">
+                <div class="progress-bar-container"><div class="progress-bar"></div></div>
+                <div class="text-content">
+                    <h2 class="slide-title">Alimentación</h2>
+                    <p class="slide-text">texto alimentación</p>
+                </div>
+            </div>
+        </div>
+            
+        <div class="carousel-slide">
+            <video class="bg-video" muted playsinline preload="none">
+                <source src="videos/5.mp4" type="video/mp4">
+            </video>
+            <div class="slide-overlay"></div>
+            <div class="slide-content-box">
+                <div class="progress-bar-container"><div class="progress-bar"></div></div>
+                <div class="text-content">
+                    <h2 class="slide-title">Medio ambiente</h2>
+                    <p class="slide-text">Procesos industriales para la transformación de la materia orgánica.</p>
+                </div>
+            </div>
+        </div>  
+            
+        <div class="carousel-slide">
+            <video class="bg-video" muted playsinline preload="none">
+                <source src="videos/6.mp4" type="video/mp4">
+            </video>
+            <div class="slide-overlay"></div>
+            <div class="slide-content-box">
+                <div class="progress-bar-container"><div class="progress-bar"></div></div>
+                <div class="text-content">
+                    <h2 class="slide-title">Cerámicas y áridos</h2>
+                    <p class="slide-text">Programación para la total automatización de las plantas de fabricación de ladrillos tejas y molturación de arcillas. Presentes en España Argelia Colombia y Venezuela. En el sector de los áridos, controlamos plantas de mortero y hormigón basado en PLC y Scada comercial.</p>
+                </div>
+            </div>
+        </div>
+             
+        <div class="carousel-slide">
+            <video class="bg-video" muted playsinline preload="none">
+                <source src="videos/7.mp4" type="video/mp4">
+            </video>
+            <div class="slide-overlay"></div>
+            <div class="slide-content-box">
+                <div class="progress-bar-container"><div class="progress-bar"></div></div>
+                <div class="text-content">
+                    <h2 class="slide-title">Elevación y bienes de equipo</h2>
+                    <p class="slide-text">Desarrollo de proyectos eléctricos para cualquier tipo de maquinaría o aplicación.</p>
+                </div>
+            </div>
+        </div>
+         <div class="carousel-slide">
+            <video class="bg-video" muted playsinline preload="none">
+                <source src="videos/8.mp4" type="video/mp4">
+            </video>
+            <div class="slide-overlay"></div>
+            <div class="slide-content-box">
+                <div class="progress-bar-container"><div class="progress-bar"></div></div>
+                <div class="text-content">
+                    <h2 class="slide-title">Recicladora y RCV</h2>
+                    <p class="slide-text">texto recicladora y rcv</p>
+                </div>
+            </div>
+        </div>
+
+        <button class="carousel-control prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="carousel-control next" onclick="moveSlide(1)">&#10095;</button>
+
+        <div class="carousel-dots">
+            <span class="dot active" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+            <span class="dot" onclick="currentSlide(6)"></span>
+            <span class="dot" onclick="currentSlide(7)"></span>
+            <span class="dot" onclick="currentSlide(8)"></span>
+        </div>
+         </div>
+        </section>
+        
+
+    <div class="massive-divider"></div>
+        <section class="contact-section" id="contacto">
+    <div class="contact-container">
+        
+        <div class="contact-header">
+            <h2>Contacto</h2>
+        </div>
+
+        <div class="contact-grid">
+            <div class="contact-form-col">
+                <form action="https://formsubmit.co/hmolwilcau@gmail.com" method="POST">
+                    <input type="text" name="nombre" placeholder="Nombre de la Empresa" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="text" name="asunto" placeholder="Asunto" required>
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://saitim.netlify.app/gracias-form.html">
+                    <div class="radio-group">
+                        <label><input type="radio" name="tipo" value="energias-renovables" checked>Energías renovables</label>
+                        <label><input type="radio" name="tipo" value="agroalimentacion">Agroalimentación</label>
+                        <label><input type="radio" name="tipo" value="automocion"> Automoción</label>
+                        <label><input type="radio" name="tipo" value="alimentacion"> Alimentación</label>
+                     
+                    </div>
+
+                    <textarea name="mensaje" placeholder="Mensaje..." rows="6" required></textarea>
+                    
+                     <button type="submit" class="btn-solid-nwhite">Enviar</button>
+                    
+                    </form>
+            </div>
+
+            <div class="contact-info-col">
+                <div class="info-block">
+                    <h3>Ubicación</h3>
+                    Plataforma Logística Plaza <br>
+                    C/ Castillo de Capua, Nº 10 Nave 2<br>
+                    50197 Zaragoza
+                </div>
+                
+                <div class="info-block">
+                    <h3>Teléfono</h3>
+                    <p>Tel.  +34 876 246 161</p>
+                    <p>Fax.  +34 876 246 159</p>
+                </div>
+
+                <div class="info-block no-border">
+                            <h3>Redes Sociales</h3>
+                            <p>Correo electrónico: saitim@saitim.com </p>
+                 
+                            <a href="https://www.youtube.com/watch?v=4eRTi04gtao" class="social-icon youtube">
+                                <svg viewBox="0 0 24 24" fill="#056976" width="24" height="24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                              </a> 
+                                <a href="https://www.linkedin.com/company/saitim-s-l/posts/?feedView=all" class="social-icon linkedin">    
+                                <svg href="#" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#34ACB4" width="24" height="24"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+                    </a>
+                </div>   
+        </div>
+    </div>
+            </div>
+</section>
+
+<footer class="site-footer">
+    <div class="footer-top">
+        <div class="footer-grid">
+            
+            <div class="footer-col about-col">
+                <img src="images/Saitim-sincolor.png" alt="Logo Footer" class="footer-logo">
+                <p> Diseñamos, construimos y apoyamos proyectos y aplicaciones para clientes de todo el mundo. <br> Ayudamos a que su negocio funcione.<br> ¿Interesado?<br> Llámenos. </p>
+                <a href="#contacto" class="btn-outline-white">Contacto</a>
+            </div>
+
+            <div class="footer-col">
+                <h4><a href="proyectos.html">Proyectos</a></h4>
+                <ul>
+                   
+                    <li><a href="meda-detalle.html">Proyecto Medio Ambiente</a></li>
+                    <li><a href="auto-detalle.html">Proyecto Automoción</a></li>
+                    <li><a href="fabpi-detalle.html">Proyecto Agroalimentario</a></li>
+                    <li><a href="foto-detalle.html">Proyecto Fotovoltaico</a></li>
+                 
+                </ul>
+            </div>
+
+            <div class="footer-col">
+              <h4><a href="sectores.html">Sectores</a></h4>
+                <ul>
+                      <li><a href="sectores.html#energias-renovables">Energías renovables</a></li>
+                    <li><a href="sectores.html#reciclaje">Reciclaje y RCV</a></li>
+                    <li><a href="sectores.html#meda">Medio ambiente</a></li>
+                    <li><a href="sectores.html#agroalimentacion">Agroalimentación</a></li>
+                    <li><a href="sectores.html#alimentacion">Alimentación</a></li>
+                <li><a href="sectores.html#ceraridos">Ceramicas y Áridos</a></li>
+                    <li><a href="sectores.html#automocion">Automoción</a></li>
+                    <li><a href="sectores.html#elbe">Elevación y bienes de equipos</a></li>
+                    
+                
+                </ul>
+            </div>
+
+             
+    
+          <div class="footer-col form-col">
+                        <h4>¿Nos necesitas?</h4>
+                          <form action="https://formsubmit.co/hmolwilcau@gmail.com" method="POST">
+                    <input type="text" name="nombre" placeholder="Nombre de la Empresa" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                     <textarea placeholder="¿Cómo podemos ayudarte?" rows="3" required></textarea>
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://saitim.netlify.app/gracias-form.html">
+                      <button type="submit" class="btn-outline-white">Enviar</button>
+                    
+                    </form>
+                    </div>
+                
+            <div class="footer-col">
+                <h4>Mapa Web</h4>
+                <ul>
+                     <li><a href="#">Inicio</a></li>
+                    <li><a href="sectores.html">Sectores</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="proyectos.html">Proyectos</a></li>
+                    <li><a href="equipo.html">Nuestro equipo</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="bottom-container">
+           <div class="container">
+          <div class="row row-15 justify-content-lg-between">
+            <div class="col-lg-6 col-xl-6 text-lg-left">
+            <p class="rights" style="margin-bottom: 25px;"><span>&copy;&nbsp;</span><span class="copyright-year"></span> Saitim Energy S.L.</p>
+           
+        </div>
+    </div>
+            </div>
+             </div>
+         </div>
+</footer>
+    </main>
+    <!-- VENTANA FLOTANTE DE RESULTADOS DE BÚSQUEDA -->
+<div id="search-modal" class="search-modal-hidden">
+    <div class="search-modal-content">
+        <div class="search-header">
+            <h3>Resultados de la búsqueda</h3>
+            <button id="close-search" class="close-btn">&times;</button>
+        </div>
+        <div id="search-results-container">
+            <!-- Los resultados aparecerán aquí -->
+        </div>
+    </div>
+</div>
+    
+     <div class="back-to-top-btn" id="back-to-top-btn">
+        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+    </div>
+
+    
+    
+    <!-- 1. LLAMAMOS AL ARCHIVO DE DATOS QUE HAS CREADO -->
+    <script src="buscador-datos.js"></script>
+
+    <!-- 2. SCRIPT PRINCIPAL LIMPIO Y ORDENADO -->
+    <script>
+        // ==========================================
+        // RESTAURACIÓN DE SCROLL
+        // ==========================================
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+
+        // ==========================================
+        // AÑO DE COPYRIGHT AUTOMÁTICO
+        // ==========================================
+        const yearSpan = document.querySelector('.copyright-year');
+        if (yearSpan) {
+            yearSpan.textContent = new Date().getFullYear();
+        }
+
+        // ==========================================
+        // PANTALLA DE CARGA CON BARRA DE PROGRESO
+        // ==========================================
+        const preloader = document.getElementById('preloader');
+        const progressBar = document.getElementById('loader-progress');
+        let simulatedProgress = 0;
+
+        const loadingInterval = setInterval(() => {
+            simulatedProgress += Math.floor(Math.random() * 10) + 5; 
+            if (simulatedProgress > 85) {
+                simulatedProgress = 85; 
+            }
+            if (progressBar) {
+                progressBar.style.width = simulatedProgress + '%';
+            }
+        }, 250);
+
+        function finishPreloader() {
+            clearInterval(loadingInterval);
+            if (progressBar) {
+                progressBar.style.width = '100%'; 
+            }
+            setTimeout(() => {
+                if (preloader && !preloader.classList.contains('preloader-hidden')) {
+                    preloader.classList.add('preloader-hidden');
+                    setTimeout(() => {
+                        preloader.style.display = 'none';
+                    }, 500);
+                }
+            }, 400);
+        }
+
+        window.addEventListener('load', finishPreloader);
+        setTimeout(finishPreloader, 20000);
+
+        // ==========================================
+        // 1. MENÚ STICKY INTELIGENTE (SCROLL)
+        // ==========================================
+        const header = document.querySelector('.site-header');
+        const logoImg = document.querySelector('.logo');
+        const heroSection = document.querySelector('.tewa-hero'); 
+
+        if (header) {
+            window.addEventListener('scroll', () => {
+                let triggerHeight = heroSection ? heroSection.offsetHeight - 80 : 50;
+                if (window.scrollY > triggerHeight) {
+                    header.classList.add('scrolled'); 
+                    if (logoImg) logoImg.src = 'images/Saitim-blanco.png'; 
+                } else {
+                    header.classList.remove('scrolled'); 
+                    if (logoImg) logoImg.src = 'images/Saitim-sincolor.png'; 
+                }
+            });
+        }
+
+        // ==========================================
+        // 2. CONTROLES DEL VIDEO PRINCIPAL (TEWA)
+        // ==========================================
+        const tVideo = document.getElementById('tewa-video');
+        const tTimeText = document.getElementById('tewa-time');
+        const tProgressBar = document.getElementById('tewa-progress-bar');
+        const tProgressContainer = document.getElementById('tewa-progress-container');
+
+        function formatTime(seconds) {
+            if (isNaN(seconds)) return "00:00";
+            const min = Math.floor(seconds / 60);
+            const sec = Math.floor(seconds % 60);
+            return min.toString().padStart(2, '0') + ':' + sec.toString().padStart(2, '0');
+        }
+
+        if (tVideo) {
+            tVideo.addEventListener('loadedmetadata', function() {
+                if(tTimeText) tTimeText.textContent = "00:00 / " + formatTime(tVideo.duration);
+            });
+
+            tVideo.addEventListener('timeupdate', function() {
+                if (tVideo.duration && tTimeText) {
+                    tTimeText.textContent = formatTime(tVideo.currentTime) + ' / ' + formatTime(tVideo.duration);
+                }
+                if (tVideo.duration && tProgressBar) {
+                    const progressPercent = (tVideo.currentTime / tVideo.duration) * 100;
+                    tProgressBar.style.width = progressPercent + '%';
+                }
+            });
+
+            if (tProgressContainer) {
+                tProgressContainer.addEventListener('click', function(e) {
+                    const rect = tProgressContainer.getBoundingClientRect();
+                    const clickPosition = (e.clientX - rect.left) / rect.width;
+                    tVideo.currentTime = clickPosition * tVideo.duration;
+                });
+            }
+        }
+
+
+      // ==========================================
+        // 3. CARRUSEL DE VIDEOS INFERIOR (INTELIGENTE)
+        // ==========================================
+        let slideIndex = 1;
+        let carruselIniciado = false; // Variable para saber si ya arrancó
+        const contenedorCarrusel = document.querySelector('.hero-carousel');
+
+        function moveSlide(n) { showSlides(slideIndex += n); }
+        function currentSlide(n) { showSlides(slideIndex = n); }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("carousel-slide");
+            let dots = document.getElementsByClassName("dot");
+            
+            if (!slides || slides.length === 0) return; 
+            
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            
+            for (i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("active");
+                if(dots[i]) dots[i].classList.remove("active");
+                
+                let vid = slides[i].querySelector(".bg-video");
+                let bar = slides[i].querySelector(".progress-bar");
+                if (vid) {
+                    vid.pause();
+                    vid.currentTime = 0; 
+                    vid.ontimeupdate = null; 
+                    vid.onended = null;
+                }
+                if (bar) bar.style.width = "0%";
+            }
+            
+            slides[slideIndex-1].classList.add("active");
+            if(dots[slideIndex-1]) dots[slideIndex-1].classList.add("active");
+
+            let activeVideo = slides[slideIndex-1].querySelector(".bg-video");
+            let activeBar = slides[slideIndex-1].querySelector(".progress-bar");
+
+            if (activeVideo) {
+                let playPromise = activeVideo.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(error => { console.log("Autoplay bloqueado"); });
+                }
+
+                activeVideo.ontimeupdate = function() {
+                    if(activeVideo.duration && activeBar) {
+                        let percentage = (activeVideo.currentTime / activeVideo.duration) * 100;
+                        activeBar.style.width = percentage + "%";
+                    }
+                };
+
+                activeVideo.onended = function() { moveSlide(1); };
+            }
+        }
+
+        // EL "VIGILANTE": Arranca el carrusel solo cuando se ve en pantalla
+        if (contenedorCarrusel) {
+            const observer = new IntersectionObserver((entradas) => {
+                // Si el carrusel entra al menos un 30% en la pantalla y no ha empezado
+                if (entradas[0].isIntersecting && !carruselIniciado) {
+                    carruselIniciado = true;
+                    showSlides(slideIndex); // ¡Damos al Play!
+                }
+            }, { threshold: 0.3 }); // 0.3 significa 30% visible
+            
+            observer.observe(contenedorCarrusel);
+        }
+
+       const inputBuscador = document.getElementById('buscador-input');
+    const botonBuscar = document.getElementById('btn-buscar');
+    const modalBuscador = document.getElementById('search-modal');
+    const cerrarModalBtn = document.getElementById('close-search');
+    const contenedorResultados = document.getElementById('search-results-container');
+
+    function realizarBusqueda() {
+        // Si no existe el buscador en esta página, no hacemos nada
+        if (!inputBuscador) return; 
+
+        const query = inputBuscador.value.toLowerCase().trim();
+        if (query === "") return; 
+
+        contenedorResultados.innerHTML = '';
+
+        if (typeof baseDatosBuscador !== 'undefined') {
+            const resultados = baseDatosBuscador.filter(item => 
+                item.titulo.toLowerCase().includes(query) || 
+                item.contenido.toLowerCase().includes(query)
+            );
+
+            modalBuscador.classList.remove('search-modal-hidden');
+
+            if (resultados.length > 0) {
+                resultados.forEach(res => {
+                    const resultHtml = `
+                        <div class="search-result-item">
+                            <a href="${res.url}">${res.titulo}</a>
+                            <p>${res.contenido}</p>
+                        </div>
+                    `;
+                    contenedorResultados.innerHTML += resultHtml;
+                });
+            } else {
+                contenedorResultados.innerHTML = `<p class="no-results">No se encontraron resultados para "<b>${query}</b>". Prueba con palabras como 'piensos' o 'renovables'.</p>`;
+            }
+        }
+    }
+
+    if (botonBuscar) {
+        botonBuscar.addEventListener('click', realizarBusqueda);
+    }
+
+    if (inputBuscador) {
+        inputBuscador.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                realizarBusqueda();
+            }
+        });
+    }
+
+    if (cerrarModalBtn) {
+        cerrarModalBtn.addEventListener('click', () => {
+            modalBuscador.classList.add('search-modal-hidden');
+        });
+    }
+
+    window.addEventListener('click', (e) => {
+        if (e.target === modalBuscador) {
+            modalBuscador.classList.add('search-modal-hidden');
+        }
+    });
+        
+        // ==========================================
+        // 5. MENÚ MÓVIL (BOTÓN HAMBURGUESA)
+        // ==========================================
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileNav = document.querySelector('.site-nav');
+
+        if (mobileMenuBtn && mobileNav) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileNav.classList.toggle('menu-abierto');
+            });
+        }
+// ==========================================
+// BOTÓN VOLVER ARRIBA (SCROLL TO TOP)
+// ==========================================
+const backToTopBtn = document.getElementById('back-to-top-btn');
+
+if (backToTopBtn) {
+    // 1. Vigilar el scroll para mostrar/ocultar el botón
+    window.addEventListener('scroll', () => {
+        // Si el usuario baja más de 400 píxeles, aparece el botón
+        if (window.scrollY > 900) {
+            backToTopBtn.classList.add('visible');
+        } else {
+            backToTopBtn.classList.remove('visible');
+        }
+    });
+
+    // 2. Acción de subir suavemente al hacer clic
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // Esto hace que la subida sea fluida, no un salto brusco
+        });
+    });
+}
+    </script>
+</body>
+</html>
+

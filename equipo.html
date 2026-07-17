@@ -64,6 +64,7 @@
         <nav class="lateral-nav">
             <ul>
                 <li><a href="index.html">Inicio</a></li>
+                 <li><a href="sectores.html">Sectores</a></li>
                 <li><a href="servicios.html">Servicios</a></li>
 
                 <li class="has-dropdown">
@@ -72,29 +73,16 @@
                     <button class="dropdown-toggle" data-target="menu-proyectos">▼</button>
                     </div>
                     <ul class="dropdown-menu" id="menu-proyectos">
-                        <li><a href="piensa.html">Proyecto Piensa</a></li>
-                        <li><a href="piensa-solar.html">Proyecto Piensa Solar</a></li>
-                        <li><a href="meda-detalle.html">Proyecto Medio Ambiente</a></li>
-                        <li><a href="auto-detalle.html">Proyecto Automoción</a></li>
-                        <li><a href="fabpi-detalle.html">Proyecto Agroalimentario</a></li>
+                          <li><a href="meda-detalle.html">Proyecto Medio Ambiente</a></li>
+                    <li><a href="auto-detalle.html">Proyecto Automoción</a></li>
+                    <li><a href="fabpi-detalle.html">Proyecto Agroalimentario</a></li>
+                    <li><a href="foto-detalle.html">Proyecto Fotovoltaico</a></li>
+                 
                     </ul>
+
                 </li>
 
                 <li><a href="equipo.html">Nuestro equipo</a></li>
-
-                <li class="has-dropdown">
-                    <div class="nav-link-container">
-                    <a href="noticias.html">Noticias</a>
-                    <button class="dropdown-toggle" data-target="menu-noticias">▼</button>
-                    </div>
-                    <ul class="dropdown-menu" id="menu-noticias">
-                        <li><a href="noticia1.html">Planta Solar en Burundi</a></li>
-                        <li><a href="noticia2.html">SAITIM está en FIGAN</a></li>
-                        <li><a href="noticia3.html">Sistemas de Control Matadero</a></li> 
-                        <li><a href="noticia4.html">Automatización Piensos Ulises </a></li> 
-                        <li><a href="noticia5.html">Automatización planta de piensos en Vigo</a></li>
-                    </ul>
-                </li>
                 <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </nav>
@@ -111,25 +99,45 @@
             <nav class="site-nav">
                 <ul>
                     <li><a href="index.html">Inicio</a></li>
+                     <li class="navbar"><a class="link navbar" href="sectores.html">Sectores</a></li>
                     <li class="navbar"><a class="link navbar" href="servicios.html">Servicios</a></li>
                     <li class="navbar"><a class="link navbar" href="proyectos.html">Proyectos</a></li>
                     <li class="navbar"><a class="link navbar" href="#">Nuestro equipo</a></li>
-                    <li class="navbar"><a class="link navbar" href="noticias.html">Noticias</a></li>
+                 
                     <li class="navbar"><a class="link navbar" href="contacto.html">Contacto</a></li>
                 </ul>
             </nav>
-            <div class="header-icons">
-                <div class="search-container">
-                    <input type="text" class="search-input" placeholder="Buscar...">
-                    <button class="search-btn minimal-search-btn">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="search-icon-svg">
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                        </svg>
-                    </button>
-                </div>
+              <div class="header-icons">
+<div class="language-selector">
+    <a href="equipo.html" class="lang-active">ES</a>
+    <span class="lang-divider">|</span> 
+    <a href="en/equipo.html">EN</a>
+    <span class="lang-divider">|</span> 
+    <a href="fr/equipo.html">FR</a>    
+       
+</div>
+            <div class="search-container">
+                <input type="text" class="search-input" id="buscador-input" placeholder="Buscar...">
+                <button id="btn-buscar" class="search-btn minimal-search-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="search-icon-svg">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                </button>
             </div>
+            
+            <button id="mobile-menu-btn" class="mobile-menu-btn">
+                <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
         </div>
+        </div>
+
+
+
        
     </header>
 
@@ -155,10 +163,13 @@
                     <h3 class="leader-name-text">Eduardo Marco García</h3>
                     <span class="leader-role-text">Director ejecutivo<br> Director de sistemas <br> CEO<br></span>
                     <div class="team-socials-leader">
-                    <a href="" class="social-icon linkedin">                  
-                        <svg href="#" xmlns="http://www.w3.org/2000/svg" fill= "currentColor" viewBox="0 0 448 512" width="24" height="24"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>                             
-                        </a>                
-                    </div>  
+                        <a href="mailto:info@saitim.com" class="email-link">                             
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mail-icon">       
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>          
+                                <polyline points="22,6 12,13 2,6"></polyline></svg> <br>info@saitim.com </a>  
+                   
+                </div>             
+                   
                      </div>  
                 </div>
                 
@@ -168,10 +179,12 @@
                 <div class="leader-text-info">
                     <h3 class="leader-name-text">Fernando Laínez Salvo</h3>
                     <span class="leader-role-text">Director ejecutivo<br> Director de operaciones <br> CEO<br></span>
-                    <div class="team-socials-leader">
-                      <a href="https://www.linkedin.com/in/fernando-lainez-salvo-847a234b/" class="social-icon linkedin">    
-                                <svg href="#" xmlns="http://www.w3.org/2000/svg" fill= "currentColor" viewBox="0 0 448 512" width="24" height="24"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
-                            </a> 
+                     <div class="team-socials-leader">
+                        <a href="mailto:info@saitim.com" class="email-link">                              
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mail-icon">       
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>                         
+                                <polyline points="22,6 12,13 2,6"></polyline></svg> <br>info@saitim.com </a>  
+                   
                 </div>
                
                 </div>
@@ -192,9 +205,10 @@
                     <h3>Adrian Alonso Garcia</h3>
                     <span class="team-role">departamento<br>Cargo</span>
                     <div class="team-socials">
-                        <a href="" class="social-icon linkedin">  
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill= "currentColor" width="24" height="24"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>                        
-                        </a>   
+                        <a href="mailto:info@saitim.com" class="email-link">                       
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mail-icon">      
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>                      
+                                <polyline points="22,6 12,13 2,6"></polyline></svg> <br>info@saitim.com </a>  
                     </div>            
                 </div>
 
@@ -205,9 +219,10 @@
                     <h3>Beatriz Ballesteros Castelreanas</h3>
                      <span class="team-role">departamento<br>Cargo</span>
                     <div class="team-socials">
-                        <a href="" class="social-icon linkedin">                   
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill= "currentColor" width="24" height="24"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>                
-                        </a>             
+                        <a href="mailto:info@saitim.com" class="email-link">     
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mail-icon">      
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>      
+                                <polyline points="22,6 12,13 2,6"></polyline></svg> <br>info@saitim.com </a>  
                     </div>            
                 </div>
 
@@ -216,9 +231,10 @@
                     <h3>Bryan David Alomoto</h3>
                      <span class="team-role">departamento<br>Cargo</span>
                     <div class="team-socials">
-                        <a href="" class="social-icon linkedin">             
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill= "currentColor" width="24" height="24"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>                 
-                        </a>          
+                          <a href="mailto:info@saitim.com" class="email-link">     
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mail-icon">      
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>      
+                                <polyline points="22,6 12,13 2,6"></polyline></svg> <br>info@saitim.com </a>           
                     </div>            
                 </div>
 
@@ -227,21 +243,23 @@
                     <h3>David Guijarro Gonzalez</h3>
                      <span class="team-role">departamento<br>Cargo</span>
                     <div class="team-socials">
-                        <a href="" class="social-icon linkedin">      
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill= "currentColor" width="24" height="24"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>        
-                        </a>             
-                    </div>            
+                          <a href="mailto:info@saitim.com" class="email-link">     
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mail-icon">   
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>      
+                                <polyline points="22,6 12,13 2,6"></polyline></svg> <br>info@saitim.com </a>           
+                    </div>              
                 </div>
 
                 <div class="team-card">
                     <img src="images/miembro4.jpg" alt="Miembro del equipo">
                     <h3>Dorin Radu Barna</h3>
                      <span class="team-role">departamento<br>Cargo</span>
-                    <div class="team-socials">
-                        <a href="" class="social-icon linkedin">               
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill= "currentColor" width="24" height="24"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>                     
-                        </a>             
-                    </div>            
+                     <div class="team-socials">
+                          <a href="mailto:info@saitim.com" class="email-link">     
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mail-icon">   
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>      
+                                <polyline points="22,6 12,13 2,6"></polyline></svg> <br>info@saitim.com </a>           
+                    </div>                  
                 </div>
 
                 <div class="team-card">
@@ -249,10 +267,11 @@
                     <h3>Ionut Darius Barna</h3>
                      <span class="team-role">departamento<br>Cargo</span>
                     <div class="team-socials">
-                        <a href="" class="social-icon linkedin">           
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill= "currentColor" width="24" height="24"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>                  
-                        </a>           
-                    </div>            
+                          <a href="mailto:info@saitim.com" class="email-link">     
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mail-icon">   
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>      
+                                <polyline points="22,6 12,13 2,6"></polyline></svg> <br>info@saitim.com </a>           
+                    </div>                
                 </div>
             </div> 
             
@@ -262,44 +281,48 @@
                     <img src="images/miembro3.jpg" alt="Miembro del equipo">
                     <h3>Javier Belsué Pastora</h3>
                      <span class="team-role">departamento<br>Cargo</span>
-                    <div class="team-socials">
-                        <a href="" class="social-icon linkedin">        
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill= "currentColor" width="24" height="24"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>                 
-                        </a>           
-                    </div>            
+                 <div class="team-socials">
+                          <a href="mailto:info@saitim.com" class="email-link">     
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mail-icon">   
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>      
+                                <polyline points="22,6 12,13 2,6"></polyline></svg> <br>info@saitim.com </a>           
+                    </div>                       
                 </div>
 
                 <div class="team-card">
                     <img src="images/miembro4.jpg" alt="Miembro del equipo">
                     <h3>Javier Huerta García</h3>
                      <span class="team-role">departamento<br>Cargo</span>
-                    <div class="team-socials">
-                        <a href="" class="social-icon linkedin">             
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill= "currentColor" width="24" height="24"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>                        
-                        </a>                 
-                    </div>            
+                     <div class="team-socials">
+                          <a href="mailto:info@saitim.com" class="email-link">     
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mail-icon">   
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>      
+                                <polyline points="22,6 12,13 2,6"></polyline></svg> <br>info@saitim.com </a>           
+                    </div>              
                 </div>
 
                 <div class="team-card">
                     <img src="images/miembro4.jpg" alt="Miembro del equipo">
                     <h3>Jorge Williams Molina García</h3>
                      <span class="team-role">departamento<br>Cargo</span>
-                    <div class="team-socials">
-                        <a href="" class="social-icon linkedin">         
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill= "currentColor" width="24" height="24"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>        
-                        </a>             
-                    </div>            
+                     <div class="team-socials">
+                          <a href="mailto:info@saitim.com" class="email-link">     
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mail-icon">   
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>      
+                                <polyline points="22,6 12,13 2,6"></polyline></svg> <br>info@saitim.com </a>           
+                    </div>                      
                 </div>
 
                 <div class="team-card">
                     <img src="images/miembro4.jpg" alt="Miembro del equipo">
                     <h3>Marcos García Tremps</h3>
                      <span class="team-role">departamento<br>Cargo</span>
-                    <div class="team-socials">
-                        <a href="" class="social-icon linkedin">                    
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill= "currentColor" width="24" height="24"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>                  
-                        </a>             
-                    </div>            
+                  <div class="team-socials">
+                          <a href="mailto:info@saitim.com" class="email-link">     
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mail-icon">   
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>      
+                                <polyline points="22,6 12,13 2,6"></polyline></svg> <br>info@saitim.com </a>           
+                    </div>                    
                 </div>
 
                 <div class="team-card">
@@ -307,21 +330,23 @@
                     <h3>Nelson Logedi Abuga</h3>
                      <span class="team-role">departamento<br>Cargo</span>
                     <div class="team-socials">
-                        <a href="" class="social-icon linkedin">               
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill= "currentColor" width="24" height="24"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>                     
-                        </a>             
-                    </div>            
+                          <a href="mailto:info@saitim.com" class="email-link">     
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mail-icon">   
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>      
+                                <polyline points="22,6 12,13 2,6"></polyline></svg> <br>info@saitim.com </a>           
+                    </div>                      
                 </div>
 
                 <div class="team-card">
                     <img src="images/miembro4.jpg" alt="Miembro del equipo">
                     <h3>Oscar Gallego Campodarve</h3>
                      <span class="team-role">departamento<br>Cargo</span>
-                    <div class="team-socials">
-                        <a href="" class="social-icon linkedin">            
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill= "currentColor" width="24" height="24"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>                      
-                        </a>             
-                    </div>            
+                   <div class="team-socials">
+                          <a href="mailto:info@saitim.com" class="email-link">     
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mail-icon">   
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>      
+                                <polyline points="22,6 12,13 2,6"></polyline></svg> <br>info@saitim.com </a>           
+                    </div>              
                 </div>
 
                 <div class="team-card">
@@ -329,10 +354,11 @@
                     <h3>Roberto Rodriguez Amador</h3>
                      <span class="team-role">departamento<br>Cargo</span>
                     <div class="team-socials">
-                        <a href="" class="social-icon linkedin">        
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill= "currentColor" width="24" height="24"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>          
-                        </a>             
-                    </div>            
+                          <a href="mailto:info@saitim.com" class="email-link">     
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mail-icon">   
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>      
+                                <polyline points="22,6 12,13 2,6"></polyline></svg> <br>info@saitim.com </a>           
+                    </div>                        
                 </div>
             </div>
             
@@ -345,10 +371,11 @@
                     <h3>Roberto Valero Gracia</h3>
                      <span class="team-role">departamento<br>Cargo</span>
                     <div class="team-socials">
-                        <a href="" class="social-icon linkedin">         
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill= "currentColor" width="24" height="24"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>        
-                        </a>             
-                    </div>            
+                          <a href="mailto:info@saitim.com" class="email-link">     
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mail-icon">   
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>      
+                                <polyline points="22,6 12,13 2,6"></polyline></svg> <br>info@saitim.com </a>           
+                    </div>                         
                 </div>
 
                 <div class="team-card">
@@ -356,21 +383,23 @@
                     <h3>Sebastian Garces Gomez</h3>
                      <span class="team-role">departamento<br>Cargo</span>
                     <div class="team-socials">
-                        <a href="" class="social-icon linkedin">                    
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill= "currentColor" width="24" height="24"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>                  
-                        </a>             
-                    </div>            
+                          <a href="mailto:info@saitim.com" class="email-link">     
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mail-icon">   
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>      
+                                <polyline points="22,6 12,13 2,6"></polyline></svg> <br>info@saitim.com </a>           
+                    </div>                         
                 </div>
 
                 <div class="team-card">
                     <img src="images/miembro4.jpg" alt="Miembro del equipo">
                     <h3>Sergio Diaz Lezcano</h3>
                      <span class="team-role">departamento<br>Cargo</span>
-                    <div class="team-socials">
-                        <a href="" class="social-icon linkedin">               
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill= "currentColor" width="24" height="24"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>                     
-                        </a>             
-                    </div>            
+                  <div class="team-socials">
+                          <a href="mailto:info@saitim.com" class="email-link">     
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mail-icon">   
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>      
+                                <polyline points="22,6 12,13 2,6"></polyline></svg> <br>info@saitim.com </a>           
+                    </div>                  
                 </div>
 
                 <div class="team-card">
@@ -378,32 +407,35 @@
                     <h3>Susana Garcia Garcia</h3>
                      <span class="team-role">departamento<br>Cargo</span>
                     <div class="team-socials">
-                        <a href="" class="social-icon linkedin">            
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill= "currentColor" width="24" height="24"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>                      
-                        </a>             
-                    </div>            
+                          <a href="mailto:info@saitim.com" class="email-link">     
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mail-icon">   
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>      
+                                <polyline points="22,6 12,13 2,6"></polyline></svg> <br>info@saitim.com </a>           
+                    </div>                          
                 </div>
 
                 <div class="team-card">
                     <img src="images/miembro4.jpg" alt="Miembro del equipo">
                     <h3>Victor Da Lima Silva</h3>
                      <span class="team-role">departamento<br>Cargo</span>
-                    <div class="team-socials">
-                        <a href="" class="social-icon linkedin">        
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill= "currentColor" width="24" height="24"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>          
-                        </a>             
-                    </div>            
+                   <div class="team-socials">
+                          <a href="mailto:info@saitim.com" class="email-link">     
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mail-icon">   
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>      
+                                <polyline points="22,6 12,13 2,6"></polyline></svg> <br>info@saitim.com </a>           
+                    </div>                    
                 </div>
 
                 <div class="team-card">
                     <img src="images/miembro4.jpg" alt="Miembro del equipo">
                     <h3>Yeraldo Jose Garrido Rodriguez</h3>
                      <span class="team-role">departamento<br>Cargo</span>
-                    <div class="team-socials">
-                        <a href="" class="social-icon linkedin">                    
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill= "currentColor" width="24" height="24"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>                  
-                        </a>             
-                    </div>            
+                   <div class="team-socials">
+                          <a href="mailto:info@saitim.com" class="email-link">     
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mail-icon">   
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>      
+                                <polyline points="22,6 12,13 2,6"></polyline></svg> <br>info@saitim.com </a>           
+                    </div>                       
                 </div>
             </div> 
             </div>
@@ -420,31 +452,34 @@
                 <a href="#contacto" class="btn-outline-white">Contacto</a>
             </div>
 
-                       <div class="footer-col">
+            <div class="footer-col">
                 <h4><a href="proyectos.html">Proyectos</a></h4>
                 <ul>
-                    <li><a href="piensa.html">Proyecto Piensa</a></li>
-                    <li><a href="piensa-solar.html">Proyecto Piensa Solar</a></li>
+                   
                     <li><a href="meda-detalle.html">Proyecto Medio Ambiente</a></li>
                     <li><a href="auto-detalle.html">Proyecto Automoción</a></li>
                     <li><a href="fabpi-detalle.html">Proyecto Agroalimentario</a></li>
+                    <li><a href="foto-detalle.html">Proyecto Fotovoltaico</a></li>
                  
                 </ul>
             </div>
 
-            <div class="footer-col">
-              <h4><a href="servicios.html">Servicios</a></h4>
+   <div class="footer-col">
+              <h4><a href="sectores.html">Sectores</a></h4>
                 <ul>
-                      <li><a href="servicios.html">Energías renovables</a></li>
-                    <li><a href="servicios.html">Sector agroalimentario</a></li>
-                    <li><a href="servicios.html">Automoción</a></li>
-                    <li><a href="servicios.html">Software a medida</a></li>
-                    <li><a href="servicios.html">Medio ambiente</a></li>
-                    <li><a href="servicios.html">Ceramicas y Áridos</a></li>
-                    <li><a href="servicios.html">Elevación y bienes de equipo</a></li>
+                      <li><a href="sectores.html#energias-renovables">Energías renovables</a></li>
+                    <li><a href="sectores.html#reciclaje">Reciclaje y RCV</a></li>
+                    <li><a href="sectores.html#meda">Medio ambiente</a></li>
+                    <li><a href="sectores.html#agroalimentacion">Agroalimentación</a></li>
+                    <li><a href="sectores.html#alimentacion">Alimentación</a></li>
+                <li><a href="sectores.html#ceraridos">Ceramicas y Áridos</a></li>
+                    <li><a href="sectores.html#automocion">Automoción</a></li>
+                    <li><a href="sectores.html#elbe">Elevación y bienes de equipos</a></li>
+                    
                 
                 </ul>
             </div>
+
 
 
 
@@ -465,10 +500,10 @@
                 <h4>Mapa Web</h4>
                 <ul>
                      <li><a href="#">Inicio</a></li>
+                    <li><a href="sectores.html">Sectores</a></li>
                     <li><a href="servicios.html">Servicios</a></li>
                     <li><a href="proyectos.html">Proyectos</a></li>
                     <li><a href="equipo.html">Nuestro equipo</a></li>
-                    <li><a href="noticias.html">Noticias</a></li>
                     <li><a href="contacto.html">Contacto</a></li>
                 </ul>
             </div>
@@ -489,7 +524,25 @@
 </div>
 </div>
 </div>
+  
+    <!-- VENTANA FLOTANTE DE RESULTADOS DE BÚSQUEDA -->
+<div id="search-modal" class="search-modal-hidden">
+    <div class="search-modal-content">
+        <div class="search-header">
+            <h3>Resultados de la búsqueda</h3>
+            <button id="close-search" class="close-btn">&times;</button>
+        </div>
+        <div id="search-results-container">
+            <!-- Los resultados aparecerán aquí -->
+        </div>
+    </div>
+</div>
     
+   
+    
+    
+    <!-- 1. LLAMAMOS AL ARCHIVO DE DATOS QUE HAS CREADO -->
+    <script src="buscador-datos.js"></script>  
  <script>
     // ==========================================
     // AÑO DE COPYRIGHT AUTOMÁTICO
@@ -568,19 +621,7 @@
     
     // Abrir el menú lateral
     const btnMenu = document.getElementById('lateral-menu-btn');
-    if (btnMenu) {
-        btnMenu.addEventListener('click', function() {
-            document.getElementById('lateral-dropdown').classList.add('open');
-        });
-    }
-
-    // Cerrar el menú lateral (botón de la X)
-    const btnClose = document.getElementById('close-menu-btn');
-    if (btnClose) {
-        btnClose.addEventListener('click', function() {
-            document.getElementById('lateral-dropdown').classList.remove('open');
-        });
-    }
+    
 
     // Funcionalidad de la flecha para subir suavemente
     const btnTop = document.getElementById('back-to-top-btn');
@@ -618,6 +659,152 @@
                 }
             });
         });
+     
+       const inputBuscador = document.getElementById('buscador-input');
+    const botonBuscar = document.getElementById('btn-buscar');
+    const modalBuscador = document.getElementById('search-modal');
+    const cerrarModalBtn = document.getElementById('close-search');
+    const contenedorResultados = document.getElementById('search-results-container');
+
+    function realizarBusqueda() {
+        // Si no existe el buscador en esta página, no hacemos nada
+        if (!inputBuscador) return; 
+
+        const query = inputBuscador.value.toLowerCase().trim();
+        if (query === "") return; 
+
+        contenedorResultados.innerHTML = '';
+
+        if (typeof baseDatosBuscador !== 'undefined') {
+            const resultados = baseDatosBuscador.filter(item => 
+                item.titulo.toLowerCase().includes(query) || 
+                item.contenido.toLowerCase().includes(query)
+            );
+
+            modalBuscador.classList.remove('search-modal-hidden');
+
+            if (resultados.length > 0) {
+                resultados.forEach(res => {
+                    const resultHtml = `
+                        <div class="search-result-item">
+                            <a href="${res.url}">${res.titulo}</a>
+                            <p>${res.contenido}</p>
+                        </div>
+                    `;
+                    contenedorResultados.innerHTML += resultHtml;
+                });
+            } else {
+                contenedorResultados.innerHTML = `<p class="no-results">No se encontraron resultados para "<b>${query}</b>". Prueba con palabras como 'piensos' o 'renovables'.</p>`;
+            }
+        }
+    }
+
+    if (botonBuscar) {
+        botonBuscar.addEventListener('click', realizarBusqueda);
+    }
+
+    if (inputBuscador) {
+        inputBuscador.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                realizarBusqueda();
+            }
+        });
+    }
+
+    if (cerrarModalBtn) {
+        cerrarModalBtn.addEventListener('click', () => {
+            modalBuscador.classList.add('search-modal-hidden');
+        });
+    }
+
+    window.addEventListener('click', (e) => {
+        if (e.target === modalBuscador) {
+            modalBuscador.classList.add('search-modal-hidden');
+        }
+    });
+  // =================================================================
+        // SISTEMA INTELIGENTE DE MENÚS (Evita colisiones y auto-cierre)
+        // =================================================================
+        
+        // 1. Seleccionamos todos los elementos implicados
+        const btnMenuMovil = document.getElementById('mobile-menu-btn');
+        const navSuperior = document.querySelector('.site-nav');
+        
+        const btnMenuLateral = document.getElementById('lateral-menu-btn');
+        const navLateral = document.getElementById('lateral-dropdown');
+        const btnCerrarLateral = document.getElementById('close-menu-btn');
+
+        // 2. Función para abrir el menú superior (y cerrar el lateral si estuviera abierto)
+        if (btnMenuMovil && navSuperior) {
+            btnMenuMovil.addEventListener('click', (e) => {
+                e.stopPropagation(); // Evita que el clic se propague al documento
+                navSuperior.classList.toggle('menu-abierto');
+                
+                // Si el menú lateral está abierto, lo cerramos
+                if (navLateral && navLateral.classList.contains('open')) {
+                    navLateral.classList.remove('open');
+                }
+            });
+        }
+
+        // 3. Función para abrir el menú lateral (y cerrar el superior si estuviera abierto)
+        if (btnMenuLateral && navLateral) {
+            btnMenuLateral.addEventListener('click', (e) => {
+                e.stopPropagation();
+                navLateral.classList.add('open');
+                
+                // Si el menú superior está abierto, lo cerramos
+                if (navSuperior && navSuperior.classList.contains('menu-abierto')) {
+                    navSuperior.classList.remove('menu-abierto');
+                }
+            });
+        }
+
+        // 4. Botón físico (la X) para cerrar el menú lateral
+        if (btnCerrarLateral && navLateral) {
+            btnCerrarLateral.addEventListener('click', () => {
+                navLateral.classList.remove('open');
+            });
+        }
+
+        // 5. CERRAR AL HACER CLIC FUERA DE LOS MENÚS
+        document.addEventListener('click', (e) => {
+            // Comprobamos el menú superior
+            if (navSuperior && navSuperior.classList.contains('menu-abierto')) {
+                // Si el clic NO fue dentro del menú ni en su botón, lo cerramos
+                if (!navSuperior.contains(e.target) && !btnMenuMovil.contains(e.target)) {
+                    navSuperior.classList.remove('menu-abierto');
+                }
+            }
+            
+            // Comprobamos el menú lateral
+            if (navLateral && navLateral.classList.contains('open')) {
+                if (!navLateral.contains(e.target) && !btnMenuLateral.contains(e.target)) {
+                    navLateral.classList.remove('open');
+                }
+            }
+        });
+
+        // 6. CERRAR AL HACER SCROLL (Bajar o subir por la página)
+        window.addEventListener('scroll', () => {
+            if (navSuperior && navSuperior.classList.contains('menu-abierto')) {
+                navSuperior.classList.remove('menu-abierto');
+            }
+            if (navLateral && navLateral.classList.contains('open')) {
+                navLateral.classList.remove('open');
+            }
+        }, { passive: true });
+
+        // 7. CERRAR AL HACER CLIC EN CUALQUIER ENLACE DEL MENÚ
+        // Seleccionamos todos los enlaces de ambos menús, excluyendo los botones desplegables de "Proyectos"
+        const enlacesMenus = document.querySelectorAll('.site-nav a, .lateral-nav a:not(.dropdown-toggle)');
+        enlacesMenus.forEach(enlace => {
+            enlace.addEventListener('click', () => {
+                if (navSuperior) navSuperior.classList.remove('menu-abierto');
+                if (navLateral) navLateral.classList.remove('open');
+            });
+        });      
+        
 </script>
 </body>
 </html>

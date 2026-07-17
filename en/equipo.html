@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestro Equipo - Saitim Energy S.L. </title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    
+    
+    <style>
+          body {font-family: 'Montserrat', sans-serif;}
+        /* Asegúrate de tener esto en tu CSS para que el menú funcione */
+      .dropdown-menu { display: none; list-style: none; padding-left: 20px; margin-top: 10px; }
+        .dropdown-menu.show { display: block; }
+        .has-dropdown { display: flex; flex-direction: column; align-items: flex-start; }
+        .dropdown-toggle { background: none; border: none; color: white; cursor: pointer; font-size: 12px; padding: 5px 10px; margin-left: auto; }
+        .dropdown-toggle:hover { color: #C4EFF2; }
+        .nav-link-container { display: flex; align-items: center; width: 100%; justify-content: space-between; }
+        .lateral-nav ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 25px; }
+        .lateral-nav ul li a { color: white; font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 500; text-decoration: none; transition: color 0.3s ease; }
+        .dropdown-menu li a { font-size: 14px !important; color: #C4EFF2 !important; }
+        /* Solo necesitamos el CSS de la imagen, tu cabecera ya tiene su estilo en tu style.css */
+        
+
+        .parallax-hero {
+            height: 100vh; /* Ocupa toda la altura de la pantalla */
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            background-color: #000; /* Fondo negro por si la imagen tarda en cargar */
+        }
+
+        #parallax-img {
+            width: 100%;
+            height: 120%; /* Más grande que el contenedor para poder moverse */
+            object-fit: cover;
+            display: block;
+            position: absolute; /* Para que el transform funcione perfecto */
+            top: 0;
+            left: 0;
+        }
+    h1 {
+        font-family:'Bauhaus  Light Regular ', sans-serif;
+         }
+    </style>
+    
+   
+</head>
+
+<body>
+    <!-- =========================================
+         ELEMENTOS LATERALES FLOTANTES
+         ========================================= -->
+    <!-- Botón para abrir el menú -->
+    <div class="lateral-menu-btn" id="lateral-menu-btn">
+        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    </div>
+
+   <div class="lateral-dropdown" id="lateral-dropdown">
+        <button class="close-menu-btn" id="close-menu-btn">&times;</button>
+        <nav class="lateral-nav">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                 <li><a href="sectores.html">Sectores</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+
+                <li class="has-dropdown">
+                    <div class="nav-link-container">
+                    <a href="proyectos.html">Proyectos</a>
+                    <button class="dropdown-toggle" data-target="menu-proyectos">▼</button>
+                    </div>
+                    <ul class="dropdown-menu" id="menu-proyectos">
+                          <li><a href="meda-detalle.html">Proyecto Medio Ambiente</a></li>
+                    <li><a href="auto-detalle.html">Proyecto Automoción</a></li>
+                    <li><a href="fabpi-detalle.html">Proyecto Agroalimentario</a></li>
+                    <li><a href="foto-detalle.html">Proyecto Fotovoltaico</a></li>
+                 
+                    </ul>
+
+                </li>
+
+                <li><a href="equipo.html">Nuestro equipo</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="back-to-top-btn" id="back-to-top-btn">
+        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+    </div>
+    
+    <header class="site-header-eqp">
+        <div class="header-container">
+            <a href="index.html" class="logo-link">
+                <img class="logo" src="images/Saitim-sincolor.png" alt="Saitim Energy" width="211" height="72" />
+            </a>
+            <nav class="site-nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                     <li class="navbar"><a class="link navbar" href="sectores.html">Sectores</a></li>
+                    <li class="navbar"><a class="link navbar" href="servicios.html">Servicios</a></li>
+                    <li class="navbar"><a class="link navbar" href="proyectos.html">Proyectos</a></li>
+                    <li class="navbar"><a class="link navbar" href="#">Nuestro equipo</a></li>
+                 
+                    <li class="navbar"><a class="link navbar" href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+              <div class="header-icons">
+<div class="language-selector">
+    <a href="index.html" class="lang-active">ES</a>
+    <span class="lang-divider">|</span> 
+    <a href="en/index.html">EN</a>
+    <span class="lang-divider">|</span> 
+    <a href="fr/index.html">FR</a>    
+       
+</div>
+            <div class="search-container">
+                <input type="text" class="search-input" id="buscador-input" placeholder="Buscar...">
+                <button id="btn-buscar" class="search-btn minimal-search-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="search-icon-svg">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                </button>
+            </div>
+            
+            <button id="mobile-menu-btn" class="mobile-menu-btn">
+                <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        </div>
+
+
+
+       
+    </header>
+
+    <section class="parallax-hero">
+        
+        <img src="images/equipo.jpg" alt="Equipo" id="parallax-img">
+
+        <div class="hero-text-container">
+            <h1>Nuestro Equipo</h1>
+        </div>
+    </section>
+        
+  <!-- =========================================
+         SECCIÓN EXCLUSIVA: DIRECTIVOS (Estilo Editorial)
+         ========================================= -->
+    <section class="editorial-leaders-section">
+        <div class="editorial-leaders-container">
+            
+            <!-- Jefe 1 -->
+            <div class="editorial-leader-profile">
+                <img src="images/jefe1.jpg" alt="Manager 1">
+                <div class="leader-text-info">
+                    <h3 class="leader-name-text">Eduardo Marco García</h3>
+                    <span class="leader-role-text">Director ejecutivo<br> Director de sistemas <br> CEO<br></span>
+                    <div class="team-socials-leader">
+                        <a href="mailto:info@saitim.com" class="email-link">                             
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mail-icon">       
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>          
+                                <polyline points="22,6 12,13 2,6"></polyline></svg> <br>info@saitim.com </a>  
+                   
+                </div>             
+                   
+                     </div>  
+                </div>
+                
+            <!-- Jefe 2 -->
+            <div class="editorial-leader-profile">
+                <img src="images/jefe2.jpg" alt="Fernando">
+                <div class="leader-text-info">
+                    <h3 class="leader-name-text">Fernando Laínez Salvo</h3>
+                    <span class="leader-role-text">Director ejecutivo<br> Director de operaciones <br> CEO<br></span>
+                     <div class="team-socials-leader">
+                        <a href="mailto:info@saitim.com" class="email-link">                              
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mail-icon">       
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>                         
+                                <polyline points="22,6 12,13 2,6"></polyline></svg> <br>info@saitim.com </a>  
+                   
+                </div>
+               
+                </div>
+            </div>
+ </div>  
+     
+        <!-- La franja de color inferior -->
+        <div class="editorial-bottom-bar"></div>
+    </section>
+    
+    <section class="team-parallax-section">
+        <div class="team-container">
+            
+            <div class="team-column col-left">
+                
+                <div class="team-card">
+                    <img src="images/miembro1.png" alt="Miembro del equipo">
+                    <h3>Adrian Alonso Garcia</h3>
+                    <span class="team-role">departamento<br>Cargo</span>
+                    <div class="team-socials">
+                        <a href="mailto:info@saitim.com" class="email-link">                       
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mail-icon">      
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>                      
+                                <polyline points="22,6 12,13 2,6"></polyline></svg> <br>info@saitim.com </a>  
+                    </div>            
+                </div>
+
+                
+
+                <div class="team-card">
+                    <img src="images/miembro4.jpg" alt="Miembro del equipo">
+                    <h3>Beatriz Ballesteros Castelreanas</h3>
+                     <span class="team-role">departamento<br>Cargo</span>
+                    <div class="team-socials">
+                        <a href="mailto:info@saitim.com" class="email-link">     
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mail-icon">      
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>      
+                                <polyline points="22,6 12,13 2,6"></polyline></svg> <br>info@saitim.com </a>  
+                    </div>            
+                </div>
+
+                <div class="team-card">
+                    <img src="images/miembro4.jpg" alt="Miembro del equipo">
+                    <h3>Bryan David Alomoto</h3>
+                     <span class="team-role">departamento<br>Cargo</span>
+                    <div class="team-socials">
+                          <a href="mailto:info@saitim.com" class="email-link">     
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mail-icon">      
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>      
+                                <polyline points="22,6 12,13 2,6"></polyline></svg> <br>info@saitim.com </a>           
+                    </div>            
+                </div>
+
+                <div class="team-card">
+                    <img src="images/miembro4.jpg" alt="Miembro del equipo">
+                    <h3>David Guijarro Gonzalez</h3>
+                     <span class="team-role">departamento<br>Cargo</span>
+                    <div class="team-socials">
+                          <a href="mailto:info@saitim.com" class="email-link">     
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mail-icon">   
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>      
+                                <polyline points="22,6 12,13 2,6"></polyline></svg> <br>info@saitim.com </a>           
+                    </div>              
+                </div>
+
+                <div class="team-card">
+                    <img src="images/miembro4.jpg" alt="Miembro del equipo">
+                    <h3>Dorin Radu Barna</h3>
+                     <span class="team-role">departamento<br>Cargo</span>
+                     <div class="team-socials">
+                          <a href="mailto:info@saitim.com" class="email-link">     
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mail-icon">   
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>      
+                                <polyline points="22,6 12,13 2,6"></polyline></svg> <br>info@saitim.com </a>           
+                    </div>                  
+                </div>
+
+                <div class="team-card">
+                    <img src="images/miembro4.jpg" alt="Miembro del equipo">
+                    <h3>Ionut Darius Barna</h3>
+                     <span class="team-role">departamento<br>Cargo</span>
+                    <div class="team-socials">
+                          <a href="mailto:info@saitim.com" class="email-link">     
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mail-icon">   
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>      
+                                <polyline points="22,6 12,13 2,6"></polyline></svg> <br>info@saitim.com </a>           
+                    </div>                
+                </div>
+            </div> 
+            
+         <div class="team-column col-center">
+                   
+         <div class="team-card">
+                    <img src="images/miembro3.jpg" alt="Miembro del equipo">
+                    <h3>Javier Belsué Pastora</h3>
+                     <span class="team-role">departamento<br>Cargo</span>
+                 <div class="team-socials">
+                          <a href="mailto:info@saitim.com" class="email-link">     
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mail-icon">   
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>      
+                                <polyline points="22,6 12,13 2,6"></polyline></svg> <br>info@saitim.com </a>           
+                    </div>                       
+                </div>
+
+                <div class="team-card">
+                    <img src="images/miembro4.jpg" alt="Miembro del equipo">
+                    <h3>Javier Huerta García</h3>
+                     <span class="team-role">departamento<br>Cargo</span>
+                     <div class="team-socials">
+                          <a href="mailto:info@saitim.com" class="email-link">     
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mail-icon">   
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>      
+                                <polyline points="22,6 12,13 2,6"></polyline></svg> <br>info@saitim.com </a>           
+                    </div>              
+                </div>
+
+                <div class="team-card">
+                    <img src="images/miembro4.jpg" alt="Miembro del equipo">
+                    <h3>Jorge Williams Molina García</h3>
+                     <span class="team-role">departamento<br>Cargo</span>
+                     <div class="team-socials">
+                          <a href="mailto:info@saitim.com" class="email-link">     
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mail-icon">   
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>      
+                                <polyline points="22,6 12,13 2,6"></polyline></svg> <br>info@saitim.com </a>           
+                    </div>                      
+                </div>
+
+                <div class="team-card">
+                    <img src="images/miembro4.jpg" alt="Miembro del equipo">
+                    <h3>Marcos García Tremps</h3>
+                     <span class="team-role">departamento<br>Cargo</span>
+                  <div class="team-socials">
+                          <a href="mailto:info@saitim.com" class="email-link">     
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mail-icon">   
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>      
+                                <polyline points="22,6 12,13 2,6"></polyline></svg> <br>info@saitim.com </a>           
+                    </div>                    
+                </div>
+
+                <div class="team-card">
+                    <img src="images/miembro4.jpg" alt="Miembro del equipo">
+                    <h3>Nelson Logedi Abuga</h3>
+                     <span class="team-role">departamento<br>Cargo</span>
+                    <div class="team-socials">
+                          <a href="mailto:info@saitim.com" class="email-link">     
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mail-icon">   
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>      
+                                <polyline points="22,6 12,13 2,6"></polyline></svg> <br>info@saitim.com </a>           
+                    </div>                      
+                </div>
+
+                <div class="team-card">
+                    <img src="images/miembro4.jpg" alt="Miembro del equipo">
+                    <h3>Oscar Gallego Campodarve</h3>
+                     <span class="team-role">departamento<br>Cargo</span>
+                   <div class="team-socials">
+                          <a href="mailto:info@saitim.com" class="email-link">     
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mail-icon">   
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>      
+                                <polyline points="22,6 12,13 2,6"></polyline></svg> <br>info@saitim.com </a>           
+                    </div>              
+                </div>
+
+                <div class="team-card">
+                    <img src="images/miembro4.jpg" alt="Miembro del equipo">
+                    <h3>Roberto Rodriguez Amador</h3>
+                     <span class="team-role">departamento<br>Cargo</span>
+                    <div class="team-socials">
+                          <a href="mailto:info@saitim.com" class="email-link">     
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mail-icon">   
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>      
+                                <polyline points="22,6 12,13 2,6"></polyline></svg> <br>info@saitim.com </a>           
+                    </div>                        
+                </div>
+            </div>
+            
+            <div class="team-column col-right">
+                
+               
+
+                <div class="team-card">
+                    <img src="images/miembro4.jpg" alt="Miembro del equipo">
+                    <h3>Roberto Valero Gracia</h3>
+                     <span class="team-role">departamento<br>Cargo</span>
+                    <div class="team-socials">
+                          <a href="mailto:info@saitim.com" class="email-link">     
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mail-icon">   
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>      
+                                <polyline points="22,6 12,13 2,6"></polyline></svg> <br>info@saitim.com </a>           
+                    </div>                         
+                </div>
+
+                <div class="team-card">
+                    <img src="images/miembro4.jpg" alt="Miembro del equipo">
+                    <h3>Sebastian Garces Gomez</h3>
+                     <span class="team-role">departamento<br>Cargo</span>
+                    <div class="team-socials">
+                          <a href="mailto:info@saitim.com" class="email-link">     
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mail-icon">   
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>      
+                                <polyline points="22,6 12,13 2,6"></polyline></svg> <br>info@saitim.com </a>           
+                    </div>                         
+                </div>
+
+                <div class="team-card">
+                    <img src="images/miembro4.jpg" alt="Miembro del equipo">
+                    <h3>Sergio Diaz Lezcano</h3>
+                     <span class="team-role">departamento<br>Cargo</span>
+                  <div class="team-socials">
+                          <a href="mailto:info@saitim.com" class="email-link">     
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mail-icon">   
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>      
+                                <polyline points="22,6 12,13 2,6"></polyline></svg> <br>info@saitim.com </a>           
+                    </div>                  
+                </div>
+
+                <div class="team-card">
+                    <img src="images/miembro4.jpg" alt="Miembro del equipo">
+                    <h3>Susana Garcia Garcia</h3>
+                     <span class="team-role">departamento<br>Cargo</span>
+                    <div class="team-socials">
+                          <a href="mailto:info@saitim.com" class="email-link">     
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mail-icon">   
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>      
+                                <polyline points="22,6 12,13 2,6"></polyline></svg> <br>info@saitim.com </a>           
+                    </div>                          
+                </div>
+
+                <div class="team-card">
+                    <img src="images/miembro4.jpg" alt="Miembro del equipo">
+                    <h3>Victor Da Lima Silva</h3>
+                     <span class="team-role">departamento<br>Cargo</span>
+                   <div class="team-socials">
+                          <a href="mailto:info@saitim.com" class="email-link">     
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mail-icon">   
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>      
+                                <polyline points="22,6 12,13 2,6"></polyline></svg> <br>info@saitim.com </a>           
+                    </div>                    
+                </div>
+
+                <div class="team-card">
+                    <img src="images/miembro4.jpg" alt="Miembro del equipo">
+                    <h3>Yeraldo Jose Garrido Rodriguez</h3>
+                     <span class="team-role">departamento<br>Cargo</span>
+                   <div class="team-socials">
+                          <a href="mailto:info@saitim.com" class="email-link">     
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mail-icon">   
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>      
+                                <polyline points="22,6 12,13 2,6"></polyline></svg> <br>info@saitim.com </a>           
+                    </div>                       
+                </div>
+            </div> 
+            </div>
+        
+    </section>
+    
+<footer class="site-footer">
+    <div class="footer-top">
+        <div class="footer-grid">
+            
+            <div class="footer-col about-col">
+                <img src="images/Saitim-sincolor.png" alt="Logo Footer" class="footer-logo">
+                <p> Diseñamos, construimos y apoyamos proyectos y aplicaciones para clientes de todo el mundo. <br> Ayudamos a que su negocio funcione.<br> ¿Interesado?<br> Llámenos. </p>
+                <a href="#contacto" class="btn-outline-white">Contacto</a>
+            </div>
+
+            <div class="footer-col">
+                <h4><a href="proyectos.html">Proyectos</a></h4>
+                <ul>
+                   
+                    <li><a href="meda-detalle.html">Proyecto Medio Ambiente</a></li>
+                    <li><a href="auto-detalle.html">Proyecto Automoción</a></li>
+                    <li><a href="fabpi-detalle.html">Proyecto Agroalimentario</a></li>
+                    <li><a href="foto-detalle.html">Proyecto Fotovoltaico</a></li>
+                 
+                </ul>
+            </div>
+
+   <div class="footer-col">
+              <h4><a href="sectores.html">Sectores</a></h4>
+                <ul>
+                      <li><a href="sectores.html#energias-renovables">Energías renovables</a></li>
+                    <li><a href="sectores.html#reciclaje">Reciclaje y RCV</a></li>
+                    <li><a href="sectores.html#meda">Medio ambiente</a></li>
+                    <li><a href="sectores.html#agroalimentacion">Agroalimentación</a></li>
+                    <li><a href="sectores.html#alimentacion">Alimentación</a></li>
+                <li><a href="sectores.html#ceraridos">Ceramicas y Áridos</a></li>
+                    <li><a href="sectores.html#automocion">Automoción</a></li>
+                    <li><a href="sectores.html#elbe">Elevación y bienes de equipos</a></li>
+                    
+                
+                </ul>
+            </div>
+
+
+
+
+            <div class="footer-col form-col">
+                <h4>¿Nos necesitas?</h4>
+                <form action="https://formsubmit.co/hmolwilcau@gmail.com" method="POST">
+                    <input type="text" name="nombre" placeholder="Nombre de la Empresa" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                     <textarea placeholder="¿Cómo podemos ayudarte?" rows="3" required></textarea>
+                    <input type="hidden" name="_captcha" value="false">
+                   <input type="hidden" name="_next" value="https://saitim.netlify.app/gracias-form.html">
+                    <button type="submit" class="btn-outline-white">Enviar</button>
+                    
+                    </form>
+            </div>
+
+            <div class="footer-col">
+                <h4>Mapa Web</h4>
+                <ul>
+                     <li><a href="#">Inicio</a></li>
+                    <li><a href="sectores.html">Sectores</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="proyectos.html">Proyectos</a></li>
+                    <li><a href="equipo.html">Nuestro equipo</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+</footer>
+<div class="footer-bottom">
+<div class="bottom-container">
+<div class="container">
+<div class="row row-15 justify-content-lg-between">
+<div class="col-lg-6 col-xl-6 text-lg-left">
+<p class="rights" style="margin-bottom: 25px;"><span>&copy;&nbsp;</span><span class="copyright-year"></span> Saitim Energy S.L.</p>
+           
+</div>
+</div>
+</div>
+</div>
+</div>
+  
+    <!-- VENTANA FLOTANTE DE RESULTADOS DE BÚSQUEDA -->
+<div id="search-modal" class="search-modal-hidden">
+    <div class="search-modal-content">
+        <div class="search-header">
+            <h3>Resultados de la búsqueda</h3>
+            <button id="close-search" class="close-btn">&times;</button>
+        </div>
+        <div id="search-results-container">
+            <!-- Los resultados aparecerán aquí -->
+        </div>
+    </div>
+</div>
+    
+   
+    
+    
+    <!-- 1. LLAMAMOS AL ARCHIVO DE DATOS QUE HAS CREADO -->
+    <script src="buscador-datos.js"></script>  
+ <script>
+    // ==========================================
+    // AÑO DE COPYRIGHT AUTOMÁTICO
+    // ==========================================
+    const yearSpan = document.querySelector('.copyright-year');
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+    }
+
+    // =================================================================
+    // LÓGICA DE SCROLL (Mostrar/Ocultar Menús y Parallax)
+    // =================================================================
+    window.addEventListener('scroll', function() {
+        const currentScroll = window.scrollY;
+        
+        // 1. MANEJO DE CABECERAS Y BOTONES LATERALES
+        const header = document.querySelector('.site-header-eqp');
+        const menuBtn = document.getElementById('lateral-menu-btn');
+        const topBtn = document.getElementById('back-to-top-btn');
+        
+        // Si el usuario ha bajado más de 150px
+        if (currentScroll > 150) {
+            // Ocultamos el header original permanentemente (hasta que suba del todo)
+            if (header) header.classList.add('header-hidden');
+            // Mostramos los botones laterales flotantes
+            if (menuBtn) menuBtn.classList.add('visible');
+            if (topBtn) topBtn.classList.add('visible');
+        } 
+        // Si el usuario vuelve a estar arriba del todo (menos de 150px)
+        else {
+            // Devolvemos el header principal
+            if (header) header.classList.remove('header-hidden');
+            // Ocultamos los botones flotantes
+            if (menuBtn) menuBtn.classList.remove('visible');
+            if (topBtn) topBtn.classList.remove('visible');
+        }
+
+        // 2. PARALLAX DE LA IMAGEN PRINCIPAL
+        const img = document.getElementById('parallax-img');
+        if (img) {
+            img.style.transform = `translateY(${currentScroll * 0.3}px)`;
+        }
+
+        // 3. PARALLAX DEL EQUIPO (3 columnas moviéndose a la vez)
+        if (window.innerWidth > 990) { // Lo activamos solo por encima de 990px (PCs)
+            const teamSection = document.querySelector('.team-parallax-section');
+            const colLeft = document.querySelector('.col-left');
+            const colCenter = document.querySelector('.col-center'); 
+            const colRight = document.querySelector('.col-right');
+            
+            if (teamSection) {
+                const rect = teamSection.getBoundingClientRect();
+                
+                // Si las tarjetas ya son visibles en la pantalla...
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    const scrolledInView = window.innerHeight - rect.top;
+                    
+                    // Movemos las TRES columnas a sus diferentes velocidades
+                    if (colLeft) {
+                        colLeft.style.transform = `translateY(${scrolledInView * -0.24}px)`;
+                    }
+                    if (colCenter) {
+                        colCenter.style.transform = `translateY(${scrolledInView * -0.28}px)`;
+                    }
+                    if (colRight) {
+                        colRight.style.transform = `translateY(${scrolledInView * -0.24}px)`;
+                    }
+                }
+            }
+        }
+    }); // <--- ¡AQUÍ ESTABA EL ERROR! Faltaba este cierre.
+
+    // =================================================================
+    // LÓGICA DE CLICS (Abrir panel y Subir arriba)
+    // =================================================================
+    
+    // Abrir el menú lateral
+    const btnMenu = document.getElementById('lateral-menu-btn');
+    if (btnMenu) {
+        btnMenu.addEventListener('click', function() {
+            document.getElementById('lateral-dropdown').classList.add('open');
+        });
+    }
+
+    // Cerrar el menú lateral (botón de la X)
+    const btnClose = document.getElementById('close-menu-btn');
+    if (btnClose) {
+        btnClose.addEventListener('click', function() {
+            document.getElementById('lateral-dropdown').classList.remove('open');
+        });
+    }
+
+    // Funcionalidad de la flecha para subir suavemente
+    const btnTop = document.getElementById('back-to-top-btn');
+    if (btnTop) {
+        btnTop.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' // Hace que el scroll hacia arriba sea un deslizamiento
+            });
+        });
+    }
+             const lateralBtn = document.getElementById('lateral-menu-btn');
+        const closeBtn = document.getElementById('close-menu-btn');
+        const lateralDropdown = document.getElementById('lateral-dropdown');
+
+        if (lateralBtn) {
+            lateralBtn.addEventListener('click', () => lateralDropdown.classList.add('open'));
+        }
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => lateralDropdown.classList.remove('open'));
+        }
+
+        // 2. Desplegables de Proyectos y Noticias
+        document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+            toggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const targetId = this.getAttribute('data-target');
+                const menu = document.getElementById(targetId);
+                
+                if (menu) {
+                    menu.classList.toggle('show');
+                    this.textContent = menu.classList.contains('show') ? '▲' : '▼';
+                }
+            });
+        });
+     
+       const inputBuscador = document.getElementById('buscador-input');
+    const botonBuscar = document.getElementById('btn-buscar');
+    const modalBuscador = document.getElementById('search-modal');
+    const cerrarModalBtn = document.getElementById('close-search');
+    const contenedorResultados = document.getElementById('search-results-container');
+
+    function realizarBusqueda() {
+        // Si no existe el buscador en esta página, no hacemos nada
+        if (!inputBuscador) return; 
+
+        const query = inputBuscador.value.toLowerCase().trim();
+        if (query === "") return; 
+
+        contenedorResultados.innerHTML = '';
+
+        if (typeof baseDatosBuscador !== 'undefined') {
+            const resultados = baseDatosBuscador.filter(item => 
+                item.titulo.toLowerCase().includes(query) || 
+                item.contenido.toLowerCase().includes(query)
+            );
+
+            modalBuscador.classList.remove('search-modal-hidden');
+
+            if (resultados.length > 0) {
+                resultados.forEach(res => {
+                    const resultHtml = `
+                        <div class="search-result-item">
+                            <a href="${res.url}">${res.titulo}</a>
+                            <p>${res.contenido}</p>
+                        </div>
+                    `;
+                    contenedorResultados.innerHTML += resultHtml;
+                });
+            } else {
+                contenedorResultados.innerHTML = `<p class="no-results">No se encontraron resultados para "<b>${query}</b>". Prueba con palabras como 'piensos' o 'renovables'.</p>`;
+            }
+        }
+    }
+
+    if (botonBuscar) {
+        botonBuscar.addEventListener('click', realizarBusqueda);
+    }
+
+    if (inputBuscador) {
+        inputBuscador.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                realizarBusqueda();
+            }
+        });
+    }
+
+    if (cerrarModalBtn) {
+        cerrarModalBtn.addEventListener('click', () => {
+            modalBuscador.classList.add('search-modal-hidden');
+        });
+    }
+
+    window.addEventListener('click', (e) => {
+        if (e.target === modalBuscador) {
+            modalBuscador.classList.add('search-modal-hidden');
+        }
+    });
+        
+        // ==========================================
+        // 5. MENÚ MÓVIL (BOTÓN HAMBURGUESA)
+        // ==========================================
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileNav = document.querySelector('.site-nav');
+
+        if (mobileMenuBtn && mobileNav) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileNav.classList.toggle('menu-abierto');
+            });
+        }
+</script>
+</body>
+</html>

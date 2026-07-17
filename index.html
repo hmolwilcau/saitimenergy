@@ -57,11 +57,25 @@
             opacity: 0;
             visibility: hidden;
         }
+        
+        @media (min-width:768px) {
+            .tewa-hero {
+            padding-top:60px;
+                
+                }
+            }
+        
+        @media (max-height:700px) {
+            .tewa-hero {
+            padding-top:50px;
+                
+                }
+            }
     </style>
 </head>
     
 <body>
-    
+
    <div id="preloader">
         <div class="preloader-content">
             <img src="images/Saitim-blanco.png" alt="Cargando Saitim Energy" class="loader-logo">
@@ -70,7 +84,7 @@
             </div>
         </div>
     </div>
-    
+        
 <header class="site-header">
     <div class="header-container">
         <a href="#" class="logo-link">
@@ -87,20 +101,38 @@
             </ul>
         </nav>
         <div class="header-icons">
+<div class="language-selector">
+    <a href="index.html" class="lang-active">ES</a>
+    <span class="lang-divider">|</span> 
+    <a href="en/index.html">EN</a>
+    <span class="lang-divider">|</span> 
+    <a href="fr/index.html">FR</a>    
+       
+</div>
             <div class="search-container">
                 <input type="text" class="search-input" id="buscador-input" placeholder="Buscar...">
-                <button id= btn-buscar class="search-btn minimal-search-btn">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="search-icon-svg">
-                        <circle cx="11" cy="11" r="8"></circle>
-                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                    </svg>
+                <button id="btn-buscar" class="search-btn minimal-search-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="search-icon-svg">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
                 </button>
             </div>
+            
+            <button id="mobile-menu-btn" class="mobile-menu-btn">
+                <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
         </div>
-    </div>
+        </div>
+
 </header>
 
 <main>
+    
     <section class="tewa-hero">
         
         <video id="tewa-video" class="tewa-bg-video" autoplay loop muted playsinline>
@@ -111,11 +143,6 @@
 
 
 
-            
-            <div class="tewa-controls-wrapper">
-              
-               
-            </div>
    
     </section>
     
@@ -173,7 +200,7 @@
                 <div class="progress-bar-container"><div class="progress-bar"></div></div>
                 <div class="text-content">
                     <h2 class="slide-title">Alimentación</h2>
-                    <p class="slide-text">texto alimentación</p>
+                    <p class="slide-text">Especialistas en la automatización de fábricas de piensos y correctores. Optimizamos su producción y garantizamos una trazabilidad total, desde la recepción de la materia prima hasta la granja.</p>
                 </div>
             </div>
         </div>
@@ -228,7 +255,7 @@
                 <div class="progress-bar-container"><div class="progress-bar"></div></div>
                 <div class="text-content">
                     <h2 class="slide-title">Recicladora y RCV</h2>
-                    <p class="slide-text">texto recicladora y rcv</p>
+                    <p class="slide-text">Automatizamos plantas de reciclaje y tratamiento de residuos. Implementamos sistemas SCADA a medida para controlar de forma segura procesos de basuras, cintas de transporte y grúas.</p>
                 </div>
             </div>
         </div>
@@ -324,25 +351,27 @@
             <div class="footer-col">
                 <h4><a href="proyectos.html">Proyectos</a></h4>
                 <ul>
-                    <li><a href="piensa.html">Proyecto Piensa</a></li>
-                    <li><a href="piensa-solar.html">Proyecto Piensa Solar</a></li>
+                   
                     <li><a href="meda-detalle.html">Proyecto Medio Ambiente</a></li>
                     <li><a href="auto-detalle.html">Proyecto Automoción</a></li>
                     <li><a href="fabpi-detalle.html">Proyecto Agroalimentario</a></li>
+                    <li><a href="foto-detalle.html">Proyecto Fotovoltaico</a></li>
                  
                 </ul>
             </div>
 
             <div class="footer-col">
-              <h4><a href="servicios.html">Servicios</a></h4>
+              <h4><a href="sectores.html">Sectores</a></h4>
                 <ul>
-                      <li><a href="servicios.html">Energías renovables</a></li>
-                    <li><a href="servicios.html">Sector agroalimentario</a></li>
-                    <li><a href="servicios.html">Automoción</a></li>
-                    <li><a href="servicios.html">Software a medida</a></li>
-                    <li><a href="servicios.html">Medio ambiente</a></li>
-                    <li><a href="servicios.html">Ceramicas y Áridos</a></li>
-                    <li><a href="servicios.html">Elevación y bienes de equipo</a></li>
+                      <li><a href="sectores.html#energias-renovables">Energías renovables</a></li>
+                    <li><a href="sectores.html#reciclaje">Reciclaje y RCV</a></li>
+                    <li><a href="sectores.html#meda">Medio ambiente</a></li>
+                    <li><a href="sectores.html#agroalimentacion">Agroalimentación</a></li>
+                    <li><a href="sectores.html#alimentacion">Alimentación</a></li>
+                <li><a href="sectores.html#ceraridos">Ceramicas y Áridos</a></li>
+                    <li><a href="sectores.html#automocion">Automoción</a></li>
+                    <li><a href="sectores.html#elbe">Elevación y bienes de equipos</a></li>
+                    
                 
                 </ul>
             </div>
@@ -366,10 +395,10 @@
                 <h4>Mapa Web</h4>
                 <ul>
                      <li><a href="#">Inicio</a></li>
+                    <li><a href="sectores.html">Sectores</a></li>
                     <li><a href="servicios.html">Servicios</a></li>
                     <li><a href="proyectos.html">Proyectos</a></li>
                     <li><a href="equipo.html">Nuestro equipo</a></li>
-                    <li><a href="noticias.html">Noticias</a></li>
                     <li><a href="contacto.html">Contacto</a></li>
                 </ul>
             </div>
@@ -390,192 +419,383 @@
              </div>
          </div>
 </footer>
+    </main>
+    <!-- VENTANA FLOTANTE DE RESULTADOS DE BÚSQUEDA -->
+<div id="search-modal" class="search-modal-hidden">
+    <div class="search-modal-content">
+        <div class="search-header">
+            <h3>Resultados de la búsqueda</h3>
+            <button id="close-search" class="close-btn">&times;</button>
+        </div>
+        <div id="search-results-container">
+            <!-- Los resultados aparecerán aquí -->
+        </div>
+    </div>
+</div>
     
-<script>
+     <div class="back-to-top-btn" id="back-to-top-btn">
+        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+    </div>
+
+    
+    
+    <!-- 1. LLAMAMOS AL ARCHIVO DE DATOS QUE HAS CREADO -->
+    <script src="buscador-datos.js"></script>
+
+    <!-- 2. SCRIPT PRINCIPAL LIMPIO Y ORDENADO -->
+    <script>
+        // ==========================================
+        // RESTAURACIÓN DE SCROLL
+        // ==========================================
         if ('scrollRestoration' in history) {
-        history.scrollRestoration = 'manual';
-    }
-    // ==========================================
-    // AÑO DE COPYRIGHT AUTOMÁTICO
-    // ==========================================
-    const yearSpan = document.querySelector('.copyright-year');
-    if (yearSpan) {
-        yearSpan.textContent = new Date().getFullYear();
-    }
-  // ==========================================
-    // PANTALLA DE CARGA CON BARRA DE PROGRESO
-    // ==========================================
-    const preloader = document.getElementById('preloader');
-    const progressBar = document.getElementById('loader-progress');
-    let simulatedProgress = 0;
-
-    // 1. Simular carga progresiva (avanza al azar hasta el 85%)
-    const loadingInterval = setInterval(() => {
-        simulatedProgress += Math.floor(Math.random() * 10) + 5; 
-        if (simulatedProgress > 85) {
-            simulatedProgress = 85; 
+            history.scrollRestoration = 'manual';
         }
-        if (progressBar) {
-            progressBar.style.width = simulatedProgress + '%';
+
+        // ==========================================
+        // AÑO DE COPYRIGHT AUTOMÁTICO
+        // ==========================================
+        const yearSpan = document.querySelector('.copyright-year');
+        if (yearSpan) {
+            yearSpan.textContent = new Date().getFullYear();
         }
-    }, 250);
 
-    // 2. Función para completar al 100% y ocultar
-    function finishPreloader() {
-        clearInterval(loadingInterval); // Detenemos la simulación
-        
-        if (progressBar) {
-            progressBar.style.width = '100%'; // Llenamos la barra por completo
+        // ==========================================
+        // PANTALLA DE CARGA CON BARRA DE PROGRESO
+        // ==========================================
+        const preloader = document.getElementById('preloader');
+        const progressBar = document.getElementById('loader-progress');
+        let simulatedProgress = 0;
+
+        const loadingInterval = setInterval(() => {
+            simulatedProgress += Math.floor(Math.random() * 10) + 5; 
+            if (simulatedProgress > 85) {
+                simulatedProgress = 85; 
+            }
+            if (progressBar) {
+                progressBar.style.width = simulatedProgress + '%';
+            }
+        }, 250);
+
+        function finishPreloader() {
+            clearInterval(loadingInterval);
+            if (progressBar) {
+                progressBar.style.width = '100%'; 
+            }
+            setTimeout(() => {
+                if (preloader && !preloader.classList.contains('preloader-hidden')) {
+                    preloader.classList.add('preloader-hidden');
+                    setTimeout(() => {
+                        preloader.style.display = 'none';
+                    }, 500);
+                }
+            }, 400);
         }
-        
-        // Esperamos un instante para que el usuario vea la barra al 100% antes de ocultarla
-        setTimeout(() => {
-            if (preloader && !preloader.classList.contains('preloader-hidden')) {
-                preloader.classList.add('preloader-hidden');
-                setTimeout(() => {
-                    preloader.style.display = 'none';
-                }, 500);
-            }
-        }, 400);
-    }
 
-    // Cuando todo esté cargado de verdad, terminamos
-    window.addEventListener('load', finishPreloader);
+        window.addEventListener('load', finishPreloader);
+        setTimeout(finishPreloader, 20000);
 
-    // Plan B: Si la carga se atasca más de 3 segundos, lo quitamos a la fuerza
-    setTimeout(finishPreloader, 20000);
-    // ==========================================
-    // 1. MENÚ STICKY INTELIGENTE (SCROLL)
-    // ==========================================
-    const header = document.querySelector('.site-header');
-    const logoImg = document.querySelector('.logo');
-    const heroSection = document.querySelector('.tewa-hero'); 
+        // ==========================================
+        // 1. MENÚ STICKY INTELIGENTE (SCROLL)
+        // ==========================================
+        const header = document.querySelector('.site-header');
+        const logoImg = document.querySelector('.logo');
+        const heroSection = document.querySelector('.tewa-hero'); 
 
-    if (header) {
-        window.addEventListener('scroll', () => {
-            let triggerHeight = heroSection ? heroSection.offsetHeight - 80 : 50;
-
-            if (window.scrollY > triggerHeight) {
-                header.classList.add('scrolled'); 
-                // Cambia al logo oscuro cuando el fondo del menú se vuelve blanco
-                if (logoImg) logoImg.src = 'images/Saitim-blanco.png'; 
-            } else {
-                header.classList.remove('scrolled'); 
-                // Vuelve al logo blanco cuando estás arriba del todo (fondo transparente)
-                if (logoImg) logoImg.src = 'images/Saitim-sincolor.png'; 
-            }
-        });
-    }
-
-    // ==========================================
-    // 2. CONTROLES DEL VIDEO PRINCIPAL (TEWA)
-    // ==========================================
-    const tVideo = document.getElementById('tewa-video');
-    const tTimeText = document.getElementById('tewa-time');
-    const tMuteBtn = document.getElementById('tewa-mute-btn');
-    const tSpeedBtn = document.getElementById('tewa-speed-btn');
-    const tFullscreenBtn = document.getElementById('tewa-fullscreen-btn');
-    const tProgressBar = document.getElementById('tewa-progress-bar');
-    const tProgressContainer = document.getElementById('tewa-progress-container');
-
-    function formatTime(seconds) {
-        if (isNaN(seconds)) return "00:00";
-        const min = Math.floor(seconds / 60);
-        const sec = Math.floor(seconds % 60);
-        return min.toString().padStart(2, '0') + ':' + sec.toString().padStart(2, '0');
-    }
-
-    if (tVideo) {
-        tVideo.addEventListener('loadedmetadata', function() {
-            if(tTimeText) tTimeText.textContent = "00:00 / " + formatTime(tVideo.duration);
-        });
-
-        tVideo.addEventListener('timeupdate', function() {
-            if (tVideo.duration && tTimeText) {
-                tTimeText.textContent = formatTime(tVideo.currentTime) + ' / ' + formatTime(tVideo.duration);
-            }
-            if (tVideo.duration && tProgressBar) {
-                const progressPercent = (tVideo.currentTime / tVideo.duration) * 100;
-                tProgressBar.style.width = progressPercent + '%';
-            }
-        });
-
-        if (tProgressContainer) {
-            tProgressContainer.addEventListener('click', function(e) {
-                const rect = tProgressContainer.getBoundingClientRect();
-                const clickPosition = (e.clientX - rect.left) / rect.width;
-                tVideo.currentTime = clickPosition * tVideo.duration;
+        if (header) {
+            window.addEventListener('scroll', () => {
+                let triggerHeight = heroSection ? heroSection.offsetHeight - 80 : 50;
+                if (window.scrollY > triggerHeight) {
+                    header.classList.add('scrolled'); 
+                    if (logoImg) logoImg.src = 'images/Saitim-blanco.png'; 
+                } else {
+                    header.classList.remove('scrolled'); 
+                    if (logoImg) logoImg.src = 'images/Saitim-sincolor.png'; 
+                }
             });
         }
 
-    
+        // ==========================================
+        // 2. CONTROLES DEL VIDEO PRINCIPAL (TEWA)
+        // ==========================================
+        const tVideo = document.getElementById('tewa-video');
+        const tTimeText = document.getElementById('tewa-time');
+        const tProgressBar = document.getElementById('tewa-progress-bar');
+        const tProgressContainer = document.getElementById('tewa-progress-container');
 
-    }
-
-    // ==========================================
-    // 3. CARRUSEL DE VIDEOS INFERIOR
-    // ==========================================
-    let slideIndex = 1;
-    setTimeout(() => {
-        showSlides(slideIndex);
-    }, 100);
-
-    function moveSlide(n) { showSlides(slideIndex += n); }
-    function currentSlide(n) { showSlides(slideIndex = n); }
-
-    function showSlides(n) {
-        let i;
-        let slides = document.getElementsByClassName("carousel-slide");
-        let dots = document.getElementsByClassName("dot");
-        
-        if (!slides || slides.length === 0) return; 
-        
-        if (n > slides.length) {slideIndex = 1}
-        if (n < 1) {slideIndex = slides.length}
-        
-        for (i = 0; i < slides.length; i++) {
-            slides[i].classList.remove("active");
-            if(dots[i]) dots[i].classList.remove("active");
-            
-            let vid = slides[i].querySelector(".bg-video");
-            let bar = slides[i].querySelector(".progress-bar");
-            if (vid) {
-                vid.pause();
-                vid.currentTime = 0; 
-                vid.ontimeupdate = null; 
-                vid.onended = null;
-            }
-            if (bar) bar.style.width = "0%";
+        function formatTime(seconds) {
+            if (isNaN(seconds)) return "00:00";
+            const min = Math.floor(seconds / 60);
+            const sec = Math.floor(seconds % 60);
+            return min.toString().padStart(2, '0') + ':' + sec.toString().padStart(2, '0');
         }
-        
-        slides[slideIndex-1].classList.add("active");
-        if(dots[slideIndex-1]) dots[slideIndex-1].classList.add("active");
 
-        let activeVideo = slides[slideIndex-1].querySelector(".bg-video");
-        let activeBar = slides[slideIndex-1].querySelector(".progress-bar");
+        if (tVideo) {
+            tVideo.addEventListener('loadedmetadata', function() {
+                if(tTimeText) tTimeText.textContent = "00:00 / " + formatTime(tVideo.duration);
+            });
 
-        if (activeVideo) {
-            let playPromise = activeVideo.play();
-            if (playPromise !== undefined) {
-                playPromise.catch(error => { console.log("Autoplay bloqueado"); });
-            }
-
-            activeVideo.ontimeupdate = function() {
-                if(activeVideo.duration && activeBar) {
-                    let percentage = (activeVideo.currentTime / activeVideo.duration) * 100;
-                    activeBar.style.width = percentage + "%";
+            tVideo.addEventListener('timeupdate', function() {
+                if (tVideo.duration && tTimeText) {
+                    tTimeText.textContent = formatTime(tVideo.currentTime) + ' / ' + formatTime(tVideo.duration);
                 }
-            };
+                if (tVideo.duration && tProgressBar) {
+                    const progressPercent = (tVideo.currentTime / tVideo.duration) * 100;
+                    tProgressBar.style.width = progressPercent + '%';
+                }
+            });
 
-            activeVideo.onended = function() { moveSlide(1); };
+            if (tProgressContainer) {
+                tProgressContainer.addEventListener('click', function(e) {
+                    const rect = tProgressContainer.getBoundingClientRect();
+                    const clickPosition = (e.clientX - rect.left) / rect.width;
+                    tVideo.currentTime = clickPosition * tVideo.duration;
+                });
+            }
+        }
+
+
+      // ==========================================
+        // 3. CARRUSEL DE VIDEOS INFERIOR (INTELIGENTE)
+        // ==========================================
+        let slideIndex = 1;
+        let carruselIniciado = false; // Variable para saber si ya arrancó
+        const contenedorCarrusel = document.querySelector('.hero-carousel');
+
+        function moveSlide(n) { showSlides(slideIndex += n); }
+        function currentSlide(n) { showSlides(slideIndex = n); }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("carousel-slide");
+            let dots = document.getElementsByClassName("dot");
+            
+            if (!slides || slides.length === 0) return; 
+            
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            
+            for (i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("active");
+                if(dots[i]) dots[i].classList.remove("active");
+                
+                let vid = slides[i].querySelector(".bg-video");
+                let bar = slides[i].querySelector(".progress-bar");
+                if (vid) {
+                    vid.pause();
+                    vid.currentTime = 0; 
+                    vid.ontimeupdate = null; 
+                    vid.onended = null;
+                }
+                if (bar) bar.style.width = "0%";
+            }
+            
+            slides[slideIndex-1].classList.add("active");
+            if(dots[slideIndex-1]) dots[slideIndex-1].classList.add("active");
+
+            let activeVideo = slides[slideIndex-1].querySelector(".bg-video");
+            let activeBar = slides[slideIndex-1].querySelector(".progress-bar");
+
+            if (activeVideo) {
+                let playPromise = activeVideo.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(error => { console.log("Autoplay bloqueado"); });
+                }
+
+                activeVideo.ontimeupdate = function() {
+                    if(activeVideo.duration && activeBar) {
+                        let percentage = (activeVideo.currentTime / activeVideo.duration) * 100;
+                        activeBar.style.width = percentage + "%";
+                    }
+                };
+
+                activeVideo.onended = function() { moveSlide(1); };
+            }
+        }
+
+        // EL "VIGILANTE": Arranca el carrusel solo cuando se ve en pantalla
+        if (contenedorCarrusel) {
+            const observer = new IntersectionObserver((entradas) => {
+                // Si el carrusel entra al menos un 30% en la pantalla y no ha empezado
+                if (entradas[0].isIntersecting && !carruselIniciado) {
+                    carruselIniciado = true;
+                    showSlides(slideIndex); // ¡Damos al Play!
+                }
+            }, { threshold: 0.3 }); // 0.3 significa 30% visible
+            
+            observer.observe(contenedorCarrusel);
+        }
+
+       const inputBuscador = document.getElementById('buscador-input');
+    const botonBuscar = document.getElementById('btn-buscar');
+    const modalBuscador = document.getElementById('search-modal');
+    const cerrarModalBtn = document.getElementById('close-search');
+    const contenedorResultados = document.getElementById('search-results-container');
+
+    function realizarBusqueda() {
+        // Si no existe el buscador en esta página, no hacemos nada
+        if (!inputBuscador) return; 
+
+        const query = inputBuscador.value.toLowerCase().trim();
+        if (query === "") return; 
+
+        contenedorResultados.innerHTML = '';
+
+        if (typeof baseDatosBuscador !== 'undefined') {
+            const resultados = baseDatosBuscador.filter(item => 
+                item.titulo.toLowerCase().includes(query) || 
+                item.contenido.toLowerCase().includes(query)
+            );
+
+            modalBuscador.classList.remove('search-modal-hidden');
+
+            if (resultados.length > 0) {
+                resultados.forEach(res => {
+                    const resultHtml = `
+                        <div class="search-result-item">
+                            <a href="${res.url}">${res.titulo}</a>
+                            <p>${res.contenido}</p>
+                        </div>
+                    `;
+                    contenedorResultados.innerHTML += resultHtml;
+                });
+            } else {
+                contenedorResultados.innerHTML = `<p class="no-results">No se encontraron resultados para "<b>${query}</b>". Prueba con palabras como 'piensos' o 'renovables'.</p>`;
+            }
         }
     }
-<script async src="https://cse.google.com/cse.js?cx=461f65c55477f41bb">
-</script>
-<div class="gcse-search"></div>
 
+    if (botonBuscar) {
+        botonBuscar.addEventListener('click', realizarBusqueda);
+    }
 
-</main>
+    if (inputBuscador) {
+        inputBuscador.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                realizarBusqueda();
+            }
+        });
+    }
+
+    if (cerrarModalBtn) {
+        cerrarModalBtn.addEventListener('click', () => {
+            modalBuscador.classList.add('search-modal-hidden');
+        });
+    }
+
+    window.addEventListener('click', (e) => {
+        if (e.target === modalBuscador) {
+            modalBuscador.classList.add('search-modal-hidden');
+        }
+    });
+        
+       
+// ==========================================
+// BOTÓN VOLVER ARRIBA (SCROLL TO TOP)
+// ==========================================
+const backToTopBtn = document.getElementById('back-to-top-btn');
+
+if (backToTopBtn) {
+    // 1. Vigilar el scroll para mostrar/ocultar el botón
+    window.addEventListener('scroll', () => {
+        // Si el usuario baja más de 400 píxeles, aparece el botón
+        if (window.scrollY > 900) {
+            backToTopBtn.classList.add('visible');
+        } else {
+            backToTopBtn.classList.remove('visible');
+        }
+    });
+
+    // 2. Acción de subir suavemente al hacer clic
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // Esto hace que la subida sea fluida, no un salto brusco
+        });
+    });
+}
+        // =================================================================
+        // SISTEMA INTELIGENTE DE MENÚS (Evita colisiones y auto-cierre)
+        // =================================================================
+        
+        // 1. Seleccionamos todos los elementos implicados
+        const btnMenuMovil = document.getElementById('mobile-menu-btn');
+        const navSuperior = document.querySelector('.site-nav');
+        
+        const btnMenuLateral = document.getElementById('lateral-menu-btn');
+        const navLateral = document.getElementById('lateral-dropdown');
+        const btnCerrarLateral = document.getElementById('close-menu-btn');
+
+        // 2. Función para abrir el menú superior (y cerrar el lateral si estuviera abierto)
+        if (btnMenuMovil && navSuperior) {
+            btnMenuMovil.addEventListener('click', (e) => {
+                e.stopPropagation(); // Evita que el clic se propague al documento
+                navSuperior.classList.toggle('menu-abierto');
+                
+                // Si el menú lateral está abierto, lo cerramos
+                if (navLateral && navLateral.classList.contains('open')) {
+                    navLateral.classList.remove('open');
+                }
+            });
+        }
+
+        // 3. Función para abrir el menú lateral (y cerrar el superior si estuviera abierto)
+        if (btnMenuLateral && navLateral) {
+            btnMenuLateral.addEventListener('click', (e) => {
+                e.stopPropagation();
+                navLateral.classList.add('open');
+                
+                // Si el menú superior está abierto, lo cerramos
+                if (navSuperior && navSuperior.classList.contains('menu-abierto')) {
+                    navSuperior.classList.remove('menu-abierto');
+                }
+            });
+        }
+
+        // 4. Botón físico (la X) para cerrar el menú lateral
+        if (btnCerrarLateral && navLateral) {
+            btnCerrarLateral.addEventListener('click', () => {
+                navLateral.classList.remove('open');
+            });
+        }
+
+        // 5. CERRAR AL HACER CLIC FUERA DE LOS MENÚS
+        document.addEventListener('click', (e) => {
+            // Comprobamos el menú superior
+            if (navSuperior && navSuperior.classList.contains('menu-abierto')) {
+                // Si el clic NO fue dentro del menú ni en su botón, lo cerramos
+                if (!navSuperior.contains(e.target) && !btnMenuMovil.contains(e.target)) {
+                    navSuperior.classList.remove('menu-abierto');
+                }
+            }
+            
+            // Comprobamos el menú lateral
+            if (navLateral && navLateral.classList.contains('open')) {
+                if (!navLateral.contains(e.target) && !btnMenuLateral.contains(e.target)) {
+                    navLateral.classList.remove('open');
+                }
+            }
+        });
+
+        // 6. CERRAR AL HACER SCROLL (Bajar o subir por la página)
+        window.addEventListener('scroll', () => {
+            if (navSuperior && navSuperior.classList.contains('menu-abierto')) {
+                navSuperior.classList.remove('menu-abierto');
+            }
+            if (navLateral && navLateral.classList.contains('open')) {
+                navLateral.classList.remove('open');
+            }
+        }, { passive: true });
+
+        // 7. CERRAR AL HACER CLIC EN CUALQUIER ENLACE DEL MENÚ
+        // Seleccionamos todos los enlaces de ambos menús, excluyendo los botones desplegables de "Proyectos"
+        const enlacesMenus = document.querySelectorAll('.site-nav a, .lateral-nav a:not(.dropdown-toggle)');
+        enlacesMenus.forEach(enlace => {
+            enlace.addEventListener('click', () => {
+                if (navSuperior) navSuperior.classList.remove('menu-abierto');
+                if (navLateral) navLateral.classList.remove('open');
+            });
+        });
+    </script>
 </body>
 </html>
 
