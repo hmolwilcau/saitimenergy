@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-<html lang="fr-FR">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Erreur 500 - Saitim Energy S.L.</title>
+    <title>Error 404 - Saitim Energy S.L.</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/style.css">
     <link rel="icon" type="image/png" href="/images/logo.png">
     
     <style>
+        /* Reseteamos los márgenes para que ocupe toda la pantalla */
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
         }
 
+        /* El contenedor a pantalla completa (Minimalista como la foto) */
         .error-wrapper {
             display: flex;
             flex-direction: column;
@@ -25,6 +27,8 @@
             text-align: center;
             padding: 20px;
             box-sizing: border-box;
+            
+            /* El fondo de puntitos que te gustó */
             background-color: #f8f9fa; 
             background-image: radial-gradient(#C4EFF2 1px, transparent 1px);
             background-size: 24px 24px;
@@ -44,7 +48,7 @@
         }
 
         .error-title span {
-            color: #1D7F86; /* Azul oscuro para variar del 404 */
+            color: #0093A3; /* El turquesa para destacar el error */
         }
 
         .error-text {
@@ -57,22 +61,23 @@
         }
 
         .error-btn {
-            background-color: #004047; /* Botón oscuro para el error de servidor */
+            background-color: #0093A3;
             color: #ffffff !important;
             padding: 15px 40px;
             text-decoration: none;
             font-family: 'Montserrat', sans-serif;
             font-weight: 600;
             font-size: 15px;
-            border-radius: 4px; 
+            border-radius: 4px; /* Un pelín redondeado, como en tu imagen */
             transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
         .error-btn:hover {
-            background-color: #0093A3;
+            background-color: #004047;
             transform: translateY(-3px);
         }
 
+        /* Ajustes para móviles */
         @media (max-width: 768px) {
             .error-logo { width: 180px; margin-bottom: 30px; }
             .error-title { font-size: 38px; }
@@ -83,13 +88,17 @@
 <body>
 
     <div class="error-wrapper">
+        <!-- Logo centrado (Usamos el que tiene color para que contraste con el fondo claro) -->
         <img src="/images/Saitim-blanco.png" alt="Saitim Energy" class="error-logo">
         
-        <h1 class="error-title"><span>500</span> - Erreur de connexion !</h1>
+        <!-- Título principal -->
+        <h1 class="error-title"><span>404</span> - ¡Página no encontrada!</h1>
         
-        <p class="error-text">Oups, il semble que nos serveurs rencontrent un léger problème technique. Ce n'est pas de votre faute. Veuillez réessayer dans quelques minutes.</p>
+        <!-- Texto explicativo -->
+        <p class="error-text">El enlace que has seguido está roto o la página ha sido eliminada. No te preocupes, puedes volver al inicio y seguir navegando.</p>
         
-        <a href="/fr/index.html" class="error-btn">Retour à l'accueil</a>
+        <!-- Botón -->
+        <a href="/fr/index.html" class="error-btn">Volver al inicio</a>
     </div>
 
 </body>

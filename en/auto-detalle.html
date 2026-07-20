@@ -7,8 +7,8 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" type="image/png" href="/images/logo.png">
        
         <style>
 
@@ -45,11 +45,11 @@
         </nav>
         <div class="header-icons">
 <div class="language-selector">
-    <a href="/autodetalle.html" class="lang-active">ES</a>
+ <a href="/auto-detalle.html" class="lang-active" onclick="event.preventDefault();">ES</a>
     <span class="lang-divider">|</span> 
-    <a href="en/autodetalle.html">EN</a>
+    <a href="/en/auto-detalle.html">EN</a>
     <span class="lang-divider">|</span> 
-    <a href="fr/autodetalle.html">FR</a>    
+    <a href="/fr/auto-detalle.html">FR</a>    
        
 </div>
             <div class="search-container">
@@ -356,25 +356,36 @@
     const header = document.querySelector('.site-header-proyectos');
 
     // --- 3. LÓGICA DE SCROLL (Mostrar todo al bajar) ---
+// 3. LÓGICA DE SCROLL (CON RETRASO PARA MEJORAR LA UX)
     window.addEventListener('scroll', () => {
-        const isScrolled = window.scrollY > 30; // Verdadero si bajamos más de 150px
+        
+        // A) Ocultar la cabecera superior rápido (a los 30px)
+        if (header) {
+            if (window.scrollY > 30) {
+                header.classList.add('header-hidden');
+            } else {
+                header.classList.remove('header-hidden');
+            }
+        }
 
-        // Toggle aplica la clase si es verdadero, y la quita si es falso. ¡Súper limpio!
-        if (header) header.classList.toggle('header-hidden', isScrolled);
-        if (btnMenu) btnMenu.classList.toggle('visible', isScrolled);
-        if (btnTop) btnTop.classList.toggle('visible', isScrolled);
-        if (navProyectos) navProyectos.classList.toggle('visible', isScrolled);
-    });
+        // B) Mostrar los botones flotantes MUCHO más abajo (Cambia el 400 por el número que prefieras)
+        const mostrarFlotantes = window.scrollY > 150;
+        
+        if (btnMenuLateral) btnMenuLateral.classList.toggle('visible', mostrarFlotantes);
+        
+        const btnTop = document.getElementById('back-to-top-btn');
+        if (btnTop) btnTop.classList.toggle('visible', mostrarFlotantes);
+        
+        const navProyectos = document.getElementById('floating-project-nav');
+        if (navProyectos) navProyectos.classList.toggle('visible', mostrarFlotantes);
 
-    // --- 4. LÓGICA DE CLICS ---
-    if (btnMenu) {
-        btnMenu.addEventListener('click', () => document.getElementById('lateral-dropdown').classList.add('open'));
-    }
-    
-    const btnClose = document.getElementById('close-menu-btn');
-    if (btnClose) {
-        btnClose.addEventListener('click', () => document.getElementById('lateral-dropdown').classList.remove('open'));
-    }
+        // C) Auto-cierre de los menús al hacer scroll
+        if (window.scrollY > 30) {
+            if (typeof navSuperior !== 'undefined' && navSuperior) navSuperior.classList.remove('menu-abierto');
+            if (typeof navLateral !== 'undefined' && navLateral) navLateral.classList.remove('open');
+        }
+    }, { passive: true });
+  
 
     if (btnTop) {
         btnTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
@@ -542,17 +553,7 @@
         }
     });
         
-        // ==========================================
-        // 5. MENÚ MÓVIL (BOTÓN HAMBURGUESA)
-        // ==========================================
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileNav = document.querySelector('.site-nav');
-
-        if (mobileMenuBtn && mobileNav) {
-            mobileMenuBtn.addEventListener('click', () => {
-                mobileNav.classList.toggle('menu-abierto');
-            });
-        }
+    
         // ==========================================
         // 4. GESTOS TÁCTILES (SWIPE) PARA EL CARRUSEL
         // ==========================================
@@ -588,6 +589,108 @@
                 moveSlide(-1);
             }
         }
+// =================================================================
+        // SISTEMA INTELIGENTE DE MENÚS (Evita colisiones y auto-cierre)
+        // =================================================================
+        
+        // 1. Seleccionamos todos los elementos implicados
+        const btnMenuMovil = document.getElementById('mobile-menu-btn');
+        const navSuperior = document.querySelector('.site-nav');
+        
+        const btnMenuLateral = document.getElementById('lateral-menu-btn');
+        const navLateral = document.getElementById('lateral-dropdown');
+        const btnCerrarLateral = document.getElementById('close-menu-btn');
+
+        // NUEVO: Variables del selector de idiomas
+        const langSelector = document.querySelector('.language-selector');
+        const langActive = document.querySelector('.lang-active');
+
+        // 2. Función para abrir el menú superior
+        if (btnMenuMovil && navSuperior) {
+            btnMenuMovil.addEventListener('click', (e) => {
+                e.stopPropagation(); 
+                navSuperior.classList.toggle('menu-abierto');
+                
+                // Cerramos los demás
+                if (navLateral && navLateral.classList.contains('open')) navLateral.classList.remove('open');
+                if (langSelector && langSelector.classList.contains('desplegado')) langSelector.classList.remove('desplegado');
+            });
+        }
+
+        // 3. Función para abrir el menú lateral
+        if (btnMenuLateral && navLateral) {
+            btnMenuLateral.addEventListener('click', (e) => {
+                e.stopPropagation();
+                navLateral.classList.add('open');
+                
+                // Cerramos los demás
+                if (navSuperior && navSuperior.classList.contains('menu-abierto')) navSuperior.classList.remove('menu-abierto');
+                if (langSelector && langSelector.classList.contains('desplegado')) langSelector.classList.remove('desplegado');
+            });
+        }
+
+        // 4. Botón físico (la X) para cerrar el menú lateral
+        if (btnCerrarLateral && navLateral) {
+            btnCerrarLateral.addEventListener('click', () => {
+                navLateral.classList.remove('open');
+            });
+        }
+
+        // NUEVO 4.5: Función para abrir el menú de IDIOMAS
+        if (langSelector && langActive) {
+            langActive.addEventListener('click', (e) => {
+                if (window.innerWidth <= 1200) {
+                    e.preventDefault();
+                    e.stopPropagation(); // Clave: Evita que el clic lo cierre al instante
+                    langSelector.classList.toggle('desplegado');
+
+                    // Cerramos los demás
+                    if (navSuperior && navSuperior.classList.contains('menu-abierto')) navSuperior.classList.remove('menu-abierto');
+                    if (navLateral && navLateral.classList.contains('open')) navLateral.classList.remove('open');
+                }
+            });
+        }
+
+        // 5. CERRAR AL HACER CLIC FUERA DE LOS MENÚS
+        document.addEventListener('click', (e) => {
+            // Comprobamos el menú superior
+            if (navSuperior && navSuperior.classList.contains('menu-abierto')) {
+                if (!navSuperior.contains(e.target) && !btnMenuMovil.contains(e.target)) {
+                    navSuperior.classList.remove('menu-abierto');
+                }
+            }
+            
+            // Comprobamos el menú lateral
+            if (navLateral && navLateral.classList.contains('open')) {
+                if (!navLateral.contains(e.target) && !btnMenuLateral.contains(e.target)) {
+                    navLateral.classList.remove('open');
+                }
+            }
+
+            // NUEVO: Comprobamos el selector de idiomas
+            if (langSelector && langSelector.classList.contains('desplegado')) {
+                if (!langSelector.contains(e.target)) {
+                    langSelector.classList.remove('desplegado');
+                }
+            }
+        });
+
+        // 6. CERRAR AL HACER SCROLL (Bajar o subir por la página)
+        window.addEventListener('scroll', () => {
+            if (navSuperior && navSuperior.classList.contains('menu-abierto')) navSuperior.classList.remove('menu-abierto');
+            if (navLateral && navLateral.classList.contains('open')) navLateral.classList.remove('open');
+            if (langSelector && langSelector.classList.contains('desplegado')) langSelector.classList.remove('desplegado'); // Se cierra al scrollear
+        }, { passive: true });
+
+        // 7. CERRAR AL HACER CLIC EN CUALQUIER ENLACE DEL MENÚ
+        const enlacesMenus = document.querySelectorAll('.site-nav a, .lateral-nav a:not(.dropdown-toggle)');
+        enlacesMenus.forEach(enlace => {
+            enlace.addEventListener('click', () => {
+                if (navSuperior) navSuperior.classList.remove('menu-abierto');
+                if (navLateral) navLateral.classList.remove('open');
+                if (langSelector) langSelector.classList.remove('desplegado');
+            });
+        });
 </script>
 </body>
 </html>

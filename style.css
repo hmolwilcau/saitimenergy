@@ -2914,10 +2914,9 @@ position: absolute !important;
     /* --- 3. LA MAGIA: SELECTOR DE IDIOMAS DESPLEGABLE --- */
     .language-selector {
         position: relative !important;
-        flex-direction: column !important;
+      
         align-items: center !important;
-        /* Hacemos la caja pequeña para que solo se vea el primer idioma (ES) */
-        height: 22px !important; 
+ 
         overflow: hidden !important; 
         transition: all 0.3s ease !important;
         padding: 5px 10px !important;
@@ -2925,14 +2924,7 @@ position: absolute !important;
         background: transparent !important;
         gap: 12px !important; /* Separación vertical entre ES, EN, FR */
     }
-    
-    /* Al tocar o pasar el ratón, la caja crece hacia abajo */
-    .language-selector:hover,
-    .language-selector:focus-within {
-        height: 95px !important; /* Despliega el espacio para los 3 idiomas */
-        background-color: #ffffff !important; /* Fondo blanco para que se lea */
-        box-shadow: 0 5px 15px rgba(0,0,0,0.2) !important;
-    }
+   
 .site-header-contact  .language-selector a.lang-active { color: #004047 !important; }
 .site-header-proyectos  .language-selector a.lang-active { color: #004047 !important; }
     
@@ -2944,7 +2936,55 @@ position: absolute !important;
     .language-selector:hover a { color: #004047 !important; }
     .language-selector a.lang-active { color: #0093A3 !important; } /* ES en turquesa */
     
+/* =========================================
+   SOLO MÓVILES: SELECTOR DE IDIOMAS DESPLEGABLE
+   ========================================= */
+@media (max-width: 1200px) {
+    .language-selector {
+        position: relative !important;
+        flex-direction: column !important;
+        height: 25px !important; /* Altura del menú cerrado */
+        overflow: hidden !important;
+        padding: 5px 10px !important;
+        border-radius: 6px !important;
+        background: transparent !important;
+        gap: 12px !important;
+        transition: height 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease !important;
+        cursor: pointer;
+    }
 
+    /* 1. Ocultar la barra separadora ( | ) en móvil */
+    .language-selector .lang-divider {
+        display: none !important;
+    }
+
+    /* 2. Añadir flechita al idioma seleccionado */
+    .language-selector a.lang-active::after {
+        content: " ▼";
+        font-size: 10px;
+        margin-left: 6px;
+        opacity: 0.8;
+    }
+
+    /* 3. Estado abierto (activado por JavaScript) */
+    .language-selector.desplegado {
+        height: 105px !important; /* Altura suficiente para ES, EN, FR */
+        background-color: #ffffff !important;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.15) !important;
+    }
+
+    /* 4. Asegurar que las letras sean oscuras al abrirse sobre fondo blanco */
+    .language-selector.desplegado a {
+        color: #004047 !important; 
+    }
+    .language-selector.desplegado a.lang-active {
+        color: #0093A3 !important; 
+    }
+    /* Obliga al idioma activo a ponerse siempre el primero de la lista */
+    .language-selector a.lang-active {
+        order: -1 !important;
+    }
+}
     /* --- 4. LA MAGIA: BUSCADOR FLOTANTE --- */
     .search-container {
         position: static !important; /* Liberamos la caja */

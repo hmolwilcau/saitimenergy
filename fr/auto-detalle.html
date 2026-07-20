@@ -1,593 +1,818 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Proyecto Automoción - Saitim Energy S.L.</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="images/logo.png">
-       
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Proyecto Automoción - Saitim Energy S.L.</title>
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+            rel="stylesheet" />
+
+        <link rel="stylesheet" href="/style.css" />
+        <link rel="icon" type="image/png" href="/images/logo.png" />
+
         <style>
+            body {
+                font-family: "Montserrat", sans-serif;
+            }
+            /* Asegúrate de tener esto en tu CSS para que el menú funcione */
+            .dropdown-menu {
+                display: none;
+                list-style: none;
+                padding-left: 20px;
+                margin-top: 10px;
+            }
+            .dropdown-menu.show {
+                display: block;
+            }
+            .has-dropdown {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .dropdown-toggle {
+                background: none;
+                border: none;
+                color: white;
+                cursor: pointer;
+                font-size: 12px;
+                padding: 5px 10px;
+                margin-left: auto;
+            }
+            .dropdown-toggle:hover {
+                color: #c4eff2;
+            }
+            .nav-link-container {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                justify-content: space-between;
+            }
+            .lateral-nav ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                gap: 25px;
+            }
+            .lateral-nav ul li a {
+                color: white;
+                font-family: "Montserrat", sans-serif;
+                font-size: 18px;
+                font-weight: 500;
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+            .dropdown-menu li a {
+                font-size: 14px !important;
+                color: #c4eff2 !important;
+            }
+        </style>
+    </head>
 
-     body {font-family: 'Montserrat', sans-serif;}
-        /* Asegúrate de tener esto en tu CSS para que el menú funcione */
-      .dropdown-menu { display: none; list-style: none; padding-left: 20px; margin-top: 10px; }
-        .dropdown-menu.show { display: block; }
-        .has-dropdown { display: flex; flex-direction: column; align-items: flex-start; }
-        .dropdown-toggle { background: none; border: none; color: white; cursor: pointer; font-size: 12px; padding: 5px 10px; margin-left: auto; }
-        .dropdown-toggle:hover { color: #C4EFF2; }
-        .nav-link-container { display: flex; align-items: center; width: 100%; justify-content: space-between; }
-        .lateral-nav ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 25px; }
-        .lateral-nav ul li a { color: white; font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 500; text-decoration: none; transition: color 0.3s ease; }
-        .dropdown-menu li a { font-size: 14px !important; color: #C4EFF2 !important; }
-    </style>
-</head>
+    <body>
+        <header class="site-header-proyectos">
+            <div class="header-container-proyectos">
+                <a href="index.html">
+                    <img class="logo" src="images/Saitim-sincolor.png" alt="Saitim Energy" width="211" height="72" />
+                </a>
+                <nav class="site-nav">
+                    <ul>
+                        <li class="navbar"><a class="link navbar" href="index.html">Inicio</a></li>
+                        <li class="navbar"><a class="link navbar" href="sectores.html">Sectores</a></li>
+                        <li class="navbar"><a class="link navbar" href="servicios.html">Servicios</a></li>
+                        <li class="navbar"><a class="link navbar" href="proyectos.html">Proyectos</a></li>
+                        <li class="navbar"><a class="link navbar" href="equipo.html">Nuestro equipo</a></li>
+                        <li class="navbar"><a class="link navbar" href="contacto.html">Contacto</a></li>
+                    </ul>
+                </nav>
+                <div class="header-icons">
+                    <div class="language-selector">
+                        <a href="/auto-detalle.html" class="lang-active" onclick="event.preventDefault();">ES</a>
+                        <span class="lang-divider">|</span>
+                        <a href="/en/auto-detalle.html">EN</a>
+                        <span class="lang-divider">|</span>
+                        <a href="/fr/auto-detalle.html">FR</a>
+                    </div>
+                    <div class="search-container">
+                        <input type="text" class="search-input" id="buscador-input" placeholder="Buscar..." />
+                        <button id="btn-buscar" class="search-btn minimal-search-btn">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="search-icon-svg">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                        </button>
+                    </div>
 
-<body>
-
-<header class="site-header-proyectos">
-    <div class="header-container-proyectos">
-       <a href="index.html">
-    <img class="logo" src="images/Saitim-sincolor.png" alt="Saitim Energy" width="211" height="72" />
-</a>
-        <nav class="site-nav">
-            <ul>
-                 <li class="navbar"><a class="link navbar" href="index.html">Inicio</a></li>
-                <li class="navbar"><a class="link navbar" href="sectores.html">Sectores</a></li>
-                <li class="navbar"><a class="link navbar" href="servicios.html">Servicios</a></li>
-                <li class="navbar"><a class="link navbar" href="proyectos.html">Proyectos</a></li>
-                <li class="navbar"><a class="link navbar" href="equipo.html">Nuestro equipo</a></li>
-                <li class="navbar"><a class="link navbar" href="contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
-        <div class="header-icons">
-<div class="language-selector">
-    <a href="/autodetalle.html" class="lang-active">ES</a>
-    <span class="lang-divider">|</span> 
-    <a href="en/autodetalle.html">EN</a>
-    <span class="lang-divider">|</span> 
-    <a href="fr/autodetalle.html">FR</a>    
-       
-</div>
-            <div class="search-container">
-                <input type="text" class="search-input" id="buscador-input" placeholder="Buscar...">
-                <button id="btn-buscar" class="search-btn minimal-search-btn">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="search-icon-svg">
-                <circle cx="11" cy="11" r="8"></circle>
-                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                </svg>
-                </button>
+                    <button id="mobile-menu-btn" class="mobile-menu-btn">
+                        <svg
+                            viewBox="0 0 24 24"
+                            width="28"
+                            height="28"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                            fill="none"
+                            stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
             </div>
-            
-            <button id="mobile-menu-btn" class="mobile-menu-btn">
-                <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="3" y1="12" x2="21" y2="12"></line>
-                    <line x1="3" y1="6" x2="21" y2="6"></line>
-                    <line x1="3" y1="18" x2="21" y2="18"></line>
-                </svg>
-            </button>
-        </div>
-        
-
-
-
-    </div>
-    <!-- =========================================
+            <!-- =========================================
          BARRA SECUNDARIA (VOLVER A PROYECTOS)
          ========================================= -->
-    <!-- 1. El contenedor exterior: Ocupa el 100% de la pantalla para el color -->
-    <div class="top-nav-full-width">
-        
-        <!-- 2. El contenedor interior: Alinea el contenido con el resto de la web -->
-        <div class="project-container top-nav-content">
-            
-            <a href="proyectos.html" class="boton-volver">
-                <span class="flecha">←</span>
-                <span class="texto">Volver a Proyectos</span>
-            </a>
-            
-            <div class="prev-next-links">
-                <a href="#" class="nav-arrow" title="Proyecto Anterior">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-                </a>
-                <a href="#" class="nav-arrow" title="Siguiente Proyecto">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-                </a>
-            </div>
-            
-        </div>
-        
-    </div>
-</header>
-    <section class="project-header-section">
-        <div class="project-container">
-            
-            <div class="project-badges">
-                <span class="badge dark">Automoción</span>
-                <span class="badge light">Completado</span>
-                <span class="badge text">2018</span>
-            </div>
+            <!-- 1. El contenedor exterior: Ocupa el 100% de la pantalla para el color -->
+            <div class="top-nav-full-width">
+                <!-- 2. El contenedor interior: Alinea el contenido con el resto de la web -->
+                <div class="project-container top-nav-content">
+                    <a href="proyectos.html" class="boton-volver">
+                        <span class="flecha">←</span>
+                        <span class="texto">Volver a Proyectos</span>
+                    </a>
 
-            <h1 class="project-main-title">Konsberg Automotive</h1>
-
-            <div class="project-meta-grid">
-                <div class="meta-item">
-                    <span class="meta-label">Trabajo a realizar</span>
-                    <span class="meta-value">Sistema de etiquetado</span>
-                </div>
-                <div class="meta-item">
-                    <span class="meta-label">Ubicación</span>
-                    <span class="meta-value">Epila, Zaragoza, España.</span>
-                </div>
-               
-            </div>
-
-            <p class="project-description">
-               descripción del proyecto
-            </p>
-        </div>
-            </section>
-
-
-       <section>
-    <div class="hero-carousel-proyectos">
-        
-        <div class="carousel-slide-project active"><img src="images/kongsberg1.jpg" alt="Automoción 1"></div>
-        <div class="carousel-slide-project"><img src="images/kongsberg2.PNG" alt="Automoción 2"></div>
-        <div class="carousel-slide-project"><img src="images/kongsberg3.png" alt="Automoción 3"></div>
-        
-      
-
-        <button class="carousel-control-project prev" onclick="moveSlide(-1)">&#10094;</button>
-        <button class="carousel-control-project next" onclick="moveSlide(1)">&#10095;</button>
-
-        <div class="carousel-dots">
-            <span class="dot active" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
-        
-        </div>
-    </div>
-</section>     
-            
-      
-
-
-    <section class="project-info-section">
-        <div class="project-container info-cards-grid">
-            
-            <div class="info-card">
-                <h3>Servicios Prestados</h3>
-                <ul class="check-list">
-                    <li>Estudios de prediseño AT y MT</li>
-                    <li>Ingeniería de la propiedad</li>
-                    <li>Automatización de PLC y SCADA</li>
-                    <li>Gestión del proceso de conexión</li>
-                </ul>
-            </div>
-
-            <div class="info-card">
-                <h3>Destacados</h3>
-                <ul class="star-list">
-                    <li>Conexión de 225 kV</li>
-                    <li>Proyecto referente en economía circular</li>
-                    <li>Ahorro energético del 35% en planta</li>
-                </ul>
-            </div>
-
-        </div>
-    </section>
-    
-    <div class="floating-project-nav" id="floating-project-nav">
-    <a href="proyectos.html" class="float-btn" title="Volver a Proyectos">
-        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="3" width="7" height="7"></rect>
-            <rect x="14" y="3" width="7" height="7"></rect>
-            <rect x="14" y="14" width="7" height="7"></rect>
-            <rect x="3" y="14" width="7" height="7"></rect>
-        </svg>
-    </a>
-    <a class="float-btn" title="Proyecto Anterior">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="15 18 9 12 15 6"></polyline>
-        </svg>
-    </a>
-    <a class="float-btn" title="Proyecto Siguiente">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="9 18 15 12 9 6"></polyline>
-        </svg>
-    </a>
-    
-</div>
-        <div class="lateral-menu-btn" id="lateral-menu-btn">
-        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-    </div>
-    
- <div class="lateral-dropdown" id="lateral-dropdown">
-        <button class="close-menu-btn" id="close-menu-btn">&times;</button>
-        <nav class="lateral-nav">
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="sectores.html">Sectores</a></li>
-                <li><a href="servicios.html">Servicios</a></li>
-                 
-                <li class="has-dropdown">
-                    <div class="nav-link-container">
-                    <a href="proyectos.html">Proyectos</a>
-                    <button class="dropdown-toggle" data-target="menu-proyectos">▼</button>
+                    <div class="prev-next-links">
+                        <a href="#" class="nav-arrow" title="Proyecto Anterior">
+                            <svg
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polyline points="15 18 9 12 15 6"></polyline>
+                            </svg>
+                        </a>
+                        <a href="#" class="nav-arrow" title="Siguiente Proyecto">
+                            <svg
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </a>
                     </div>
-                    <ul class="dropdown-menu" id="menu-proyectos">
-                    <li><a href="meda-detalle.html">Proyecto Medio Ambiente</a></li>
-                    <li><a href="auto-detalle.html">Proyecto Automoción</a></li>
-                    <li><a href="fabpi-detalle.html">Proyecto Agroalimentario</a></li>
-                    <li><a href="foto-detalle.html">Proyecto Fotovoltaico</a></li>
-           
+                </div>
+            </div>
+        </header>
+        <section class="project-header-section">
+            <div class="project-container">
+                <div class="project-badges">
+                    <span class="badge dark">Automoción</span>
+                    <span class="badge light">Completado</span>
+                    <span class="badge text">2018</span>
+                </div>
+
+                <h1 class="project-main-title">Konsberg Automotive</h1>
+
+                <div class="project-meta-grid">
+                    <div class="meta-item">
+                        <span class="meta-label">Trabajo a realizar</span>
+                        <span class="meta-value">Sistema de etiquetado</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Ubicación</span>
+                        <span class="meta-value">Epila, Zaragoza, España.</span>
+                    </div>
+                </div>
+
+                <p class="project-description">descripción del proyecto</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="hero-carousel-proyectos">
+                <div class="carousel-slide-project active"><img src="images/kongsberg1.jpg" alt="Automoción 1" /></div>
+                <div class="carousel-slide-project"><img src="images/kongsberg2.PNG" alt="Automoción 2" /></div>
+                <div class="carousel-slide-project"><img src="images/kongsberg3.png" alt="Automoción 3" /></div>
+
+                <button class="carousel-control-project prev" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="carousel-control-project next" onclick="moveSlide(1)">&#10095;</button>
+
+                <div class="carousel-dots">
+                    <span class="dot active" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-info-section">
+            <div class="project-container info-cards-grid">
+                <div class="info-card">
+                    <h3>Servicios Prestados</h3>
+                    <ul class="check-list">
+                        <li>Estudios de prediseño AT y MT</li>
+                        <li>Ingeniería de la propiedad</li>
+                        <li>Automatización de PLC y SCADA</li>
+                        <li>Gestión del proceso de conexión</li>
                     </ul>
-                </li>
+                </div>
 
-                <li><a href="equipo.html">Nuestro equipo</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
-    </div>
-    <div class="back-to-top-btn" id="back-to-top-btn">
-        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
-    </div>
-
-   
-        
-<footer class="site-footer">
-    <div class="footer-top">
-        <div class="footer-grid">
-            
-            <div class="footer-col about-col">
-                <img src="images/Saitim-sincolor.png" alt="Logo Footer" class="footer-logo">
-                <p> Diseñamos, construimos y apoyamos proyectos y aplicaciones para clientes de todo el mundo. <br> Ayudamos a que su negocio funcione.<br> ¿Interesado?<br> Llámenos. </p>
-                <a href="contacto.html" class="btn-outline-white">Contacto</a>
+                <div class="info-card">
+                    <h3>Destacados</h3>
+                    <ul class="star-list">
+                        <li>Conexión de 225 kV</li>
+                        <li>Proyecto referente en economía circular</li>
+                        <li>Ahorro energético del 35% en planta</li>
+                    </ul>
+                </div>
             </div>
+        </section>
 
-       <div class="footer-col">
-                <h4><a href="proyectos.html">Proyectos</a></h4>
-                <ul>
-                   
-                    <li><a href="meda-detalle.html">Proyecto Medio Ambiente</a></li>
-                    <li><a href="auto-detalle.html">Proyecto Automoción</a></li>
-                    <li><a href="fabpi-detalle.html">Proyecto Agroalimentario</a></li>
-                    <li><a href="foto-detalle.html">Proyecto Fotovoltaico</a></li>
-                 
-                </ul>
-            </div>
+        <div class="floating-project-nav" id="floating-project-nav">
+            <a href="proyectos.html" class="float-btn" title="Volver a Proyectos">
+                <svg
+                    viewBox="0 0 24 24"
+                    width="24"
+                    height="24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <rect x="3" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="14" width="7" height="7"></rect>
+                    <rect x="3" y="14" width="7" height="7"></rect>
+                </svg>
+            </a>
+            <a class="float-btn" title="Proyecto Anterior">
+                <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </a>
+            <a class="float-btn" title="Proyecto Siguiente">
+                <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </a>
+        </div>
+        <div class="lateral-menu-btn" id="lateral-menu-btn">
+            <svg
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+                stroke="currentColor"
+                stroke-width="2"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </div>
 
-       <div class="footer-col">
-              <h4><a href="sectores.html">Sectores</a></h4>
-                <ul>
-                      <li><a href="sectores.html#energias-renovables">Energías renovables</a></li>
-                    <li><a href="sectores.html#reciclaje">Reciclaje y RCV</a></li>
-                    <li><a href="sectores.html#meda">Medio ambiente</a></li>
-                    <li><a href="sectores.html#agroalimentacion">Agroalimentación</a></li>
-                    <li><a href="sectores.html#alimentacion">Alimentación</a></li>
-                <li><a href="sectores.html#ceraridos">Ceramicas y Áridos</a></li>
-                    <li><a href="sectores.html#automocion">Automoción</a></li>
-                    <li><a href="sectores.html#elbe">Elevación y bienes de equipos</a></li>
-                    
-                
-                </ul>
-            </div>
-
-
-            <div class="footer-col form-col">
-                <h4>¿Nos necesitas?</h4>
-                <form action="https://formsubmit.co/hmolwilcau@gmail.com" method="POST">
-                    <input type="text" name="nombre" placeholder="Nombre de la Empresa" required>
-                    <input type="email" name="email" placeholder="Email" required>
-                     <textarea placeholder="¿Cómo podemos ayudarte?" rows="3" required></textarea>
-                    <input type="hidden" name="_captcha" value="false">
-                   <input type="hidden" name="_next" value="https://saitim.netlify.app/gracias-form.html">
-                     <button type="submit" class="btn-outline-white">Enviar</button>
-                    
-                    </form>
-            </div>
-
-            <div class="footer-col">
-                <h4>Mapa Web</h4>
+        <div class="lateral-dropdown" id="lateral-dropdown">
+            <button class="close-menu-btn" id="close-menu-btn">&times;</button>
+            <nav class="lateral-nav">
                 <ul>
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="sectores.html">Sectores</a></li>
                     <li><a href="servicios.html">Servicios</a></li>
-                    <li><a href="proyectos.html">Proyectos</a></li>
+
+                    <li class="has-dropdown">
+                        <div class="nav-link-container">
+                            <a href="proyectos.html">Proyectos</a>
+                            <button class="dropdown-toggle" data-target="menu-proyectos">▼</button>
+                        </div>
+                        <ul class="dropdown-menu" id="menu-proyectos">
+                            <li><a href="meda-detalle.html">Proyecto Medio Ambiente</a></li>
+                            <li><a href="auto-detalle.html">Proyecto Automoción</a></li>
+                            <li><a href="fabpi-detalle.html">Proyecto Agroalimentario</a></li>
+                            <li><a href="foto-detalle.html">Proyecto Fotovoltaico</a></li>
+                        </ul>
+                    </li>
+
                     <li><a href="equipo.html">Nuestro equipo</a></li>
                     <li><a href="contacto.html">Contacto</a></li>
-                
                 </ul>
+            </nav>
+        </div>
+        <div class="back-to-top-btn" id="back-to-top-btn">
+            <svg
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+                stroke="currentColor"
+                stroke-width="2"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="18 15 12 9 6 15"></polyline>
+            </svg>
+        </div>
+
+        <footer class="site-footer">
+            <div class="footer-top">
+                <div class="footer-grid">
+                    <div class="footer-col about-col">
+                        <img src="images/Saitim-sincolor.png" alt="Logo Footer" class="footer-logo" />
+                        <p>
+                            Diseñamos, construimos y apoyamos proyectos y aplicaciones para clientes de todo el mundo.
+                            <br />
+                            Ayudamos a que su negocio funcione.<br />
+                            ¿Interesado?<br />
+                            Llámenos.
+                        </p>
+                        <a href="contacto.html" class="btn-outline-white">Contacto</a>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4><a href="proyectos.html">Proyectos</a></h4>
+                        <ul>
+                            <li><a href="meda-detalle.html">Proyecto Medio Ambiente</a></li>
+                            <li><a href="auto-detalle.html">Proyecto Automoción</a></li>
+                            <li><a href="fabpi-detalle.html">Proyecto Agroalimentario</a></li>
+                            <li><a href="foto-detalle.html">Proyecto Fotovoltaico</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4><a href="sectores.html">Sectores</a></h4>
+                        <ul>
+                            <li><a href="sectores.html#energias-renovables">Energías renovables</a></li>
+                            <li><a href="sectores.html#reciclaje">Reciclaje y RCV</a></li>
+                            <li><a href="sectores.html#meda">Medio ambiente</a></li>
+                            <li><a href="sectores.html#agroalimentacion">Agroalimentación</a></li>
+                            <li><a href="sectores.html#alimentacion">Alimentación</a></li>
+                            <li><a href="sectores.html#ceraridos">Ceramicas y Áridos</a></li>
+                            <li><a href="sectores.html#automocion">Automoción</a></li>
+                            <li><a href="sectores.html#elbe">Elevación y bienes de equipos</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col form-col">
+                        <h4>¿Nos necesitas?</h4>
+                        <form action="https://formsubmit.co/hmolwilcau@gmail.com" method="POST">
+                            <input type="text" name="nombre" placeholder="Nombre de la Empresa" required />
+                            <input type="email" name="email" placeholder="Email" required />
+                            <textarea placeholder="¿Cómo podemos ayudarte?" rows="3" required></textarea>
+                            <input type="hidden" name="_captcha" value="false" />
+                            <input type="hidden" name="_next" value="https://saitim.netlify.app/gracias-form.html" />
+                            <button type="submit" class="btn-outline-white">Enviar</button>
+                        </form>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Mapa Web</h4>
+                        <ul>
+                            <li><a href="index.html">Inicio</a></li>
+                            <li><a href="sectores.html">Sectores</a></li>
+                            <li><a href="servicios.html">Servicios</a></li>
+                            <li><a href="proyectos.html">Proyectos</a></li>
+                            <li><a href="equipo.html">Nuestro equipo</a></li>
+                            <li><a href="contacto.html">Contacto</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
-        </div>
-    </div>
-
-    <div class="footer-bottom">
-        <div class="bottom-container">
-           <div class="container">
-          <div class="row row-15 justify-content-lg-between">
-            <div class="col-lg-6 col-xl-6 text-lg-left">
-            <p class="rights" style="margin-bottom: 25px;"><span>&copy;&nbsp;</span><span class="copyright-year"></span> Saitim Energy S.L.</p>
-           
-        </div>
-    </div>
+            <div class="footer-bottom">
+                <div class="bottom-container">
+                    <div class="container">
+                        <div class="row row-15 justify-content-lg-between">
+                            <div class="col-lg-6 col-xl-6 text-lg-left">
+                                <p class="rights" style="margin-bottom: 25px">
+                                    <span>&copy;&nbsp;</span><span class="copyright-year"></span> Saitim Energy S.L.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-             </div>
-         </div>
-</footer>
-    
-    <!-- VENTANA FLOTANTE DE RESULTADOS DE BÚSQUEDA -->
-<div id="search-modal" class="search-modal-hidden">
-    <div class="search-modal-content">
-        <div class="search-header">
-            <h3>Resultados de la búsqueda</h3>
-            <button id="close-search" class="close-btn">&times;</button>
+        </footer>
+
+        <!-- VENTANA FLOTANTE DE RESULTADOS DE BÚSQUEDA -->
+        <div id="search-modal" class="search-modal-hidden">
+            <div class="search-modal-content">
+                <div class="search-header">
+                    <h3>Resultados de la búsqueda</h3>
+                    <button id="close-search" class="close-btn">&times;</button>
+                </div>
+                <div id="search-results-container">
+                    <!-- Los resultados aparecerán aquí -->
+                </div>
+            </div>
         </div>
-        <div id="search-results-container">
-            <!-- Los resultados aparecerán aquí -->
-        </div>
-    </div>
-</div>
-    
-  
-    
-    
-    <!-- 1. LLAMAMOS AL ARCHIVO DE DATOS QUE HAS CREADO -->
-    <script src="buscador-datos.js"></script>
-    
-    <script>
-          // Desactiva la memoria de scroll del navegador para esta página
-    if ('scrollRestoration' in history) {
-        history.scrollRestoration = 'manual';
-    }
-    // --- 1. AÑO DEL COPYRIGHT ---
-    const yearSpan = document.querySelector('.copyright-year');
-    if (yearSpan) yearSpan.textContent = new Date().getFullYear();
 
-    // --- 2. VARIABLES DE ELEMENTOS FLOTANTES ---
-    const btnMenu = document.getElementById('lateral-menu-btn');
-    const btnTop = document.getElementById('back-to-top-btn');
-    const navProyectos = document.getElementById('floating-project-nav');
-    const header = document.querySelector('.site-header-proyectos');
+        <!-- 1. LLAMAMOS AL ARCHIVO DE DATOS QUE HAS CREADO -->
+        <script src="buscador-datos.js"></script>
 
-    // --- 3. LÓGICA DE SCROLL (Mostrar todo al bajar) ---
-    window.addEventListener('scroll', () => {
-        const isScrolled = window.scrollY > 30; // Verdadero si bajamos más de 150px
+        <script>
+            // Desactiva la memoria de scroll del navegador para esta página
+            if ("scrollRestoration" in history) {
+                history.scrollRestoration = "manual";
+            }
+            // --- 1. AÑO DEL COPYRIGHT ---
+            const yearSpan = document.querySelector(".copyright-year");
+            if (yearSpan) yearSpan.textContent = new Date().getFullYear();
 
-        // Toggle aplica la clase si es verdadero, y la quita si es falso. ¡Súper limpio!
-        if (header) header.classList.toggle('header-hidden', isScrolled);
-        if (btnMenu) btnMenu.classList.toggle('visible', isScrolled);
-        if (btnTop) btnTop.classList.toggle('visible', isScrolled);
-        if (navProyectos) navProyectos.classList.toggle('visible', isScrolled);
-    });
+            // --- 2. VARIABLES DE ELEMENTOS FLOTANTES ---
+            const btnMenu = document.getElementById("lateral-menu-btn");
+            const btnTop = document.getElementById("back-to-top-btn");
+            const navProyectos = document.getElementById("floating-project-nav");
+            const header = document.querySelector(".site-header-proyectos");
 
-    // --- 4. LÓGICA DE CLICS ---
-    if (btnMenu) {
-        btnMenu.addEventListener('click', () => document.getElementById('lateral-dropdown').classList.add('open'));
-    }
-    
-    const btnClose = document.getElementById('close-menu-btn');
-    if (btnClose) {
-        btnClose.addEventListener('click', () => document.getElementById('lateral-dropdown').classList.remove('open'));
-    }
+            // --- 3. LÓGICA DE SCROLL (Mostrar todo al bajar) ---
+            // 3. LÓGICA DE SCROLL (CON RETRASO PARA MEJORAR LA UX)
+            window.addEventListener(
+                "scroll",
+                () => {
+                    // A) Ocultar la cabecera superior rápido (a los 30px)
+                    if (header) {
+                        if (window.scrollY > 30) {
+                            header.classList.add("header-hidden");
+                        } else {
+                            header.classList.remove("header-hidden");
+                        }
+                    }
 
-    if (btnTop) {
-        btnTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-    }
+                    // B) Mostrar los botones flotantes MUCHO más abajo (Cambia el 400 por el número que prefieras)
+                    const mostrarFlotantes = window.scrollY > 150;
 
-    // --- 5. CARRUSEL (Protegido contra errores) ---
-    let slideIndex = 1;
-    
-    function moveSlide(n) { showSlides(slideIndex += n); }
-    function currentSlide(n) { showSlides(slideIndex = n); }
+                    if (btnMenuLateral) btnMenuLateral.classList.toggle("visible", mostrarFlotantes);
 
-    function showSlides(n) {
-        let slides = document.getElementsByClassName("carousel-slide-project");
-        let dots = document.getElementsByClassName("dot");
-        
-        // Si no hay slides en la página, detenemos la función para evitar errores
-        if (!slides || slides.length === 0) return; 
-        
-        if (n > slides.length) { slideIndex = 1 }
-        if (n < 1) { slideIndex = slides.length }
-        
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].classList.remove("active");
-            if(dots[i]) dots[i].classList.remove("active");
-        }
-        
-        slides[slideIndex-1].classList.add("active");
-        if(dots[slideIndex-1]) dots[slideIndex-1].classList.add("active");
-    }
+                    const btnTop = document.getElementById("back-to-top-btn");
+                    if (btnTop) btnTop.classList.toggle("visible", mostrarFlotantes);
 
-   // Inicializar carrusel
-    showSlides(slideIndex);
-     // 1. Escribe aquí el nombre EXACTO de tus archivos
-    const listaProyectos = [
-       
-        'meda-detalle.html',
-        'auto-detalle.html',
-        'fabpi-detalle.html',
-        'foto-detalle.html'
-    ];
+                    const navProyectos = document.getElementById("floating-project-nav");
+                    if (navProyectos) navProyectos.classList.toggle("visible", mostrarFlotantes);
 
-    // 2. Extraemos el nombre real del archivo limpiando rastros raros de la URL (como # o ?)
-    let paginaActual = window.location.pathname.split('/').pop().split('#')[0].split('?')[0];
-
-    // Prevención de errores en local
-    if (!paginaActual || paginaActual === '') {
-        paginaActual = 'fabpi-detalle.html'; // Cambia esto al archivo en el que estás ahora
-    }
-
-    // 3. Buscamos la página en la lista
-    const indiceActual = listaProyectos.indexOf(paginaActual);
-
-    // 4. Si la encuentra, aplicamos las rutas a TODOS los botones
-    if (indiceActual !== -1) {
-        
-        let indiceAnterior = (indiceActual === 0) ? listaProyectos.length - 1 : indiceActual - 1;
-        let indiceSiguiente = (indiceActual === listaProyectos.length - 1) ? 0 : indiceActual + 1;
-
-        // A. Flechas de ARRIBA (Navbar) - Son 2 botones
-        const flechasTop = document.querySelectorAll('.prev-next-links .nav-arrow');
-        if (flechasTop.length === 2) {
-            flechasTop[0].href = listaProyectos[indiceAnterior];
-            flechasTop[1].href = listaProyectos[indiceSiguiente];
-        }
-
-        // B. Flechas de ABAJO (Flotantes) - Son 3 botones (Volver, Anterior, Siguiente)
-        const flechasBottom = document.querySelectorAll('.floating-project-nav .float-btn');
-        if (flechasBottom.length === 3) {
-            flechasBottom[1].href = listaProyectos[indiceAnterior]; // El 1 es la flecha izquierda
-            flechasBottom[2].href = listaProyectos[indiceSiguiente]; // El 2 es la flecha derecha
-        }
-
-    } else {
-        // Chivato por si falla: presiona F12 y ve a la "Consola" para ver si el nombre coincide.
-        console.error("⚠️ El archivo actual ('" + paginaActual + "') no coincide con los nombres de 'listaProyectos'.");
-    }
-                const lateralBtn = document.getElementById('lateral-menu-btn');
-        const closeBtn = document.getElementById('close-menu-btn');
-        const lateralDropdown = document.getElementById('lateral-dropdown');
-
-        if (lateralBtn) {
-            lateralBtn.addEventListener('click', () => lateralDropdown.classList.add('open'));
-        }
-        if (closeBtn) {
-            closeBtn.addEventListener('click', () => lateralDropdown.classList.remove('open'));
-        }
-
-        // 2. Desplegables de Proyectos y Noticias
-        document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
-            toggle.addEventListener('click', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                
-                const targetId = this.getAttribute('data-target');
-                const menu = document.getElementById(targetId);
-                
-                if (menu) {
-                    menu.classList.toggle('show');
-                    this.textContent = menu.classList.contains('show') ? '▲' : '▼';
-                }
-            });
-        });
-        
-        
-       const inputBuscador = document.getElementById('buscador-input');
-    const botonBuscar = document.getElementById('btn-buscar');
-    const modalBuscador = document.getElementById('search-modal');
-    const cerrarModalBtn = document.getElementById('close-search');
-    const contenedorResultados = document.getElementById('search-results-container');
-
-    function realizarBusqueda() {
-        // Si no existe el buscador en esta página, no hacemos nada
-        if (!inputBuscador) return; 
-
-        const query = inputBuscador.value.toLowerCase().trim();
-        if (query === "") return; 
-
-        contenedorResultados.innerHTML = '';
-
-        if (typeof baseDatosBuscador !== 'undefined') {
-            const resultados = baseDatosBuscador.filter(item => 
-                item.titulo.toLowerCase().includes(query) || 
-                item.contenido.toLowerCase().includes(query)
+                    // C) Auto-cierre de los menús al hacer scroll
+                    if (window.scrollY > 30) {
+                        if (typeof navSuperior !== "undefined" && navSuperior)
+                            navSuperior.classList.remove("menu-abierto");
+                        if (typeof navLateral !== "undefined" && navLateral) navLateral.classList.remove("open");
+                    }
+                },
+                { passive: true }
             );
 
-            modalBuscador.classList.remove('search-modal-hidden');
+            if (btnTop) {
+                btnTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+            }
 
-            if (resultados.length > 0) {
-                resultados.forEach(res => {
-                    const resultHtml = `
+            // --- 5. CARRUSEL (Protegido contra errores) ---
+            let slideIndex = 1;
+
+            function moveSlide(n) {
+                showSlides((slideIndex += n));
+            }
+            function currentSlide(n) {
+                showSlides((slideIndex = n));
+            }
+
+            function showSlides(n) {
+                let slides = document.getElementsByClassName("carousel-slide-project");
+                let dots = document.getElementsByClassName("dot");
+
+                // Si no hay slides en la página, detenemos la función para evitar errores
+                if (!slides || slides.length === 0) return;
+
+                if (n > slides.length) {
+                    slideIndex = 1;
+                }
+                if (n < 1) {
+                    slideIndex = slides.length;
+                }
+
+                for (let i = 0; i < slides.length; i++) {
+                    slides[i].classList.remove("active");
+                    if (dots[i]) dots[i].classList.remove("active");
+                }
+
+                slides[slideIndex - 1].classList.add("active");
+                if (dots[slideIndex - 1]) dots[slideIndex - 1].classList.add("active");
+            }
+
+            // Inicializar carrusel
+            showSlides(slideIndex);
+            // 1. Escribe aquí el nombre EXACTO de tus archivos
+            const listaProyectos = [
+                "meda-detalle.html",
+                "auto-detalle.html",
+                "fabpi-detalle.html",
+                "foto-detalle.html"
+            ];
+
+            // 2. Extraemos el nombre real del archivo limpiando rastros raros de la URL (como # o ?)
+            let paginaActual = window.location.pathname.split("/").pop().split("#")[0].split("?")[0];
+
+            // Prevención de errores en local
+            if (!paginaActual || paginaActual === "") {
+                paginaActual = "fabpi-detalle.html"; // Cambia esto al archivo en el que estás ahora
+            }
+
+            // 3. Buscamos la página en la lista
+            const indiceActual = listaProyectos.indexOf(paginaActual);
+
+            // 4. Si la encuentra, aplicamos las rutas a TODOS los botones
+            if (indiceActual !== -1) {
+                let indiceAnterior = indiceActual === 0 ? listaProyectos.length - 1 : indiceActual - 1;
+                let indiceSiguiente = indiceActual === listaProyectos.length - 1 ? 0 : indiceActual + 1;
+
+                // A. Flechas de ARRIBA (Navbar) - Son 2 botones
+                const flechasTop = document.querySelectorAll(".prev-next-links .nav-arrow");
+                if (flechasTop.length === 2) {
+                    flechasTop[0].href = listaProyectos[indiceAnterior];
+                    flechasTop[1].href = listaProyectos[indiceSiguiente];
+                }
+
+                // B. Flechas de ABAJO (Flotantes) - Son 3 botones (Volver, Anterior, Siguiente)
+                const flechasBottom = document.querySelectorAll(".floating-project-nav .float-btn");
+                if (flechasBottom.length === 3) {
+                    flechasBottom[1].href = listaProyectos[indiceAnterior]; // El 1 es la flecha izquierda
+                    flechasBottom[2].href = listaProyectos[indiceSiguiente]; // El 2 es la flecha derecha
+                }
+            } else {
+                // Chivato por si falla: presiona F12 y ve a la "Consola" para ver si el nombre coincide.
+                console.error(
+                    "⚠️ El archivo actual ('" + paginaActual + "') no coincide con los nombres de 'listaProyectos'."
+                );
+            }
+            const lateralBtn = document.getElementById("lateral-menu-btn");
+            const closeBtn = document.getElementById("close-menu-btn");
+            const lateralDropdown = document.getElementById("lateral-dropdown");
+
+            if (lateralBtn) {
+                lateralBtn.addEventListener("click", () => lateralDropdown.classList.add("open"));
+            }
+            if (closeBtn) {
+                closeBtn.addEventListener("click", () => lateralDropdown.classList.remove("open"));
+            }
+
+            // 2. Desplegables de Proyectos y Noticias
+            document.querySelectorAll(".dropdown-toggle").forEach((toggle) => {
+                toggle.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    const targetId = this.getAttribute("data-target");
+                    const menu = document.getElementById(targetId);
+
+                    if (menu) {
+                        menu.classList.toggle("show");
+                        this.textContent = menu.classList.contains("show") ? "▲" : "▼";
+                    }
+                });
+            });
+
+            const inputBuscador = document.getElementById("buscador-input");
+            const botonBuscar = document.getElementById("btn-buscar");
+            const modalBuscador = document.getElementById("search-modal");
+            const cerrarModalBtn = document.getElementById("close-search");
+            const contenedorResultados = document.getElementById("search-results-container");
+
+            function realizarBusqueda() {
+                // Si no existe el buscador en esta página, no hacemos nada
+                if (!inputBuscador) return;
+
+                const query = inputBuscador.value.toLowerCase().trim();
+                if (query === "") return;
+
+                contenedorResultados.innerHTML = "";
+
+                if (typeof baseDatosBuscador !== "undefined") {
+                    const resultados = baseDatosBuscador.filter(
+                        (item) =>
+                            item.titulo.toLowerCase().includes(query) || item.contenido.toLowerCase().includes(query)
+                    );
+
+                    modalBuscador.classList.remove("search-modal-hidden");
+
+                    if (resultados.length > 0) {
+                        resultados.forEach((res) => {
+                            const resultHtml = `
                         <div class="search-result-item">
                             <a href="${res.url}">${res.titulo}</a>
                             <p>${res.contenido}</p>
                         </div>
                     `;
-                    contenedorResultados.innerHTML += resultHtml;
+                            contenedorResultados.innerHTML += resultHtml;
+                        });
+                    } else {
+                        contenedorResultados.innerHTML = `<p class="no-results">No se encontraron resultados para "<b>${query}</b>". Prueba con palabras como 'piensos' o 'renovables'.</p>`;
+                    }
+                }
+            }
+
+            if (botonBuscar) {
+                botonBuscar.addEventListener("click", realizarBusqueda);
+            }
+
+            if (inputBuscador) {
+                inputBuscador.addEventListener("keypress", function (event) {
+                    if (event.key === "Enter") {
+                        realizarBusqueda();
+                    }
                 });
-            } else {
-                contenedorResultados.innerHTML = `<p class="no-results">No se encontraron resultados para "<b>${query}</b>". Prueba con palabras como 'piensos' o 'renovables'.</p>`;
             }
-        }
-    }
 
-    if (botonBuscar) {
-        botonBuscar.addEventListener('click', realizarBusqueda);
-    }
-
-    if (inputBuscador) {
-        inputBuscador.addEventListener('keypress', function(event) {
-            if (event.key === 'Enter') {
-                realizarBusqueda();
+            if (cerrarModalBtn) {
+                cerrarModalBtn.addEventListener("click", () => {
+                    modalBuscador.classList.add("search-modal-hidden");
+                });
             }
-        });
-    }
 
-    if (cerrarModalBtn) {
-        cerrarModalBtn.addEventListener('click', () => {
-            modalBuscador.classList.add('search-modal-hidden');
-        });
-    }
-
-    window.addEventListener('click', (e) => {
-        if (e.target === modalBuscador) {
-            modalBuscador.classList.add('search-modal-hidden');
-        }
-    });
-        
-        // ==========================================
-        // 5. MENÚ MÓVIL (BOTÓN HAMBURGUESA)
-        // ==========================================
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileNav = document.querySelector('.site-nav');
-
-        if (mobileMenuBtn && mobileNav) {
-            mobileMenuBtn.addEventListener('click', () => {
-                mobileNav.classList.toggle('menu-abierto');
+            window.addEventListener("click", (e) => {
+                if (e.target === modalBuscador) {
+                    modalBuscador.classList.add("search-modal-hidden");
+                }
             });
-        }
-        // ==========================================
-        // 4. GESTOS TÁCTILES (SWIPE) PARA EL CARRUSEL
-        // ==========================================
-        let touchstartX = 0;
-        let touchendX = 0;
 
-        // Seleccionamos los carruseles (el principal y el de proyectos si lo hubiera)
-        const carruseles = document.querySelectorAll('.hero-carousel, .hero-carousel-proyectos');
+            // ==========================================
+            // 4. GESTOS TÁCTILES (SWIPE) PARA EL CARRUSEL
+            // ==========================================
+            let touchstartX = 0;
+            let touchendX = 0;
 
-        carruseles.forEach(carrusel => {
-            // Cuando el usuario pone el dedo en la pantalla
-            carrusel.addEventListener('touchstart', function(event) {
-                touchstartX = event.changedTouches[0].screenX;
-            }, {passive: true});
+            // Seleccionamos los carruseles (el principal y el de proyectos si lo hubiera)
+            const carruseles = document.querySelectorAll(".hero-carousel, .hero-carousel-proyectos");
 
-            // Cuando el usuario levanta el dedo
-            carrusel.addEventListener('touchend', function(event) {
-                touchendX = event.changedTouches[0].screenX;
-                gestionarSwipe();
-            }, {passive: true});
-        });
+            carruseles.forEach((carrusel) => {
+                // Cuando el usuario pone el dedo en la pantalla
+                carrusel.addEventListener(
+                    "touchstart",
+                    function (event) {
+                        touchstartX = event.changedTouches[0].screenX;
+                    },
+                    { passive: true }
+                );
 
-        function gestionarSwipe() {
-            const umbral = 50; // Píxeles mínimos que debe arrastrar el dedo para que cuente
-            
-            // Si arrastra el dedo hacia la IZQUIERDA (Avanzar)
-            if (touchstartX - touchendX > umbral) {
-                moveSlide(1);
+                // Cuando el usuario levanta el dedo
+                carrusel.addEventListener(
+                    "touchend",
+                    function (event) {
+                        touchendX = event.changedTouches[0].screenX;
+                        gestionarSwipe();
+                    },
+                    { passive: true }
+                );
+            });
+
+            function gestionarSwipe() {
+                const umbral = 50; // Píxeles mínimos que debe arrastrar el dedo para que cuente
+
+                // Si arrastra el dedo hacia la IZQUIERDA (Avanzar)
+                if (touchstartX - touchendX > umbral) {
+                    moveSlide(1);
+                }
+
+                // Si arrastra el dedo hacia la DERECHA (Retroceder)
+                if (touchendX - touchstartX > umbral) {
+                    moveSlide(-1);
+                }
             }
-            
-            // Si arrastra el dedo hacia la DERECHA (Retroceder)
-            if (touchendX - touchstartX > umbral) {
-                moveSlide(-1);
+            // =================================================================
+            // SISTEMA INTELIGENTE DE MENÚS (Evita colisiones y auto-cierre)
+            // =================================================================
+
+            // 1. Seleccionamos todos los elementos implicados
+            const btnMenuMovil = document.getElementById("mobile-menu-btn");
+            const navSuperior = document.querySelector(".site-nav");
+
+            const btnMenuLateral = document.getElementById("lateral-menu-btn");
+            const navLateral = document.getElementById("lateral-dropdown");
+            const btnCerrarLateral = document.getElementById("close-menu-btn");
+
+            // NUEVO: Variables del selector de idiomas
+            const langSelector = document.querySelector(".language-selector");
+            const langActive = document.querySelector(".lang-active");
+
+            // 2. Función para abrir el menú superior
+            if (btnMenuMovil && navSuperior) {
+                btnMenuMovil.addEventListener("click", (e) => {
+                    e.stopPropagation();
+                    navSuperior.classList.toggle("menu-abierto");
+
+                    // Cerramos los demás
+                    if (navLateral && navLateral.classList.contains("open")) navLateral.classList.remove("open");
+                    if (langSelector && langSelector.classList.contains("desplegado"))
+                        langSelector.classList.remove("desplegado");
+                });
             }
-        }
-</script>
-</body>
+
+            // 3. Función para abrir el menú lateral
+            if (btnMenuLateral && navLateral) {
+                btnMenuLateral.addEventListener("click", (e) => {
+                    e.stopPropagation();
+                    navLateral.classList.add("open");
+
+                    // Cerramos los demás
+                    if (navSuperior && navSuperior.classList.contains("menu-abierto"))
+                        navSuperior.classList.remove("menu-abierto");
+                    if (langSelector && langSelector.classList.contains("desplegado"))
+                        langSelector.classList.remove("desplegado");
+                });
+            }
+
+            // 4. Botón físico (la X) para cerrar el menú lateral
+            if (btnCerrarLateral && navLateral) {
+                btnCerrarLateral.addEventListener("click", () => {
+                    navLateral.classList.remove("open");
+                });
+            }
+
+            // NUEVO 4.5: Función para abrir el menú de IDIOMAS
+            if (langSelector && langActive) {
+                langActive.addEventListener("click", (e) => {
+                    if (window.innerWidth <= 1200) {
+                        e.preventDefault();
+                        e.stopPropagation(); // Clave: Evita que el clic lo cierre al instante
+                        langSelector.classList.toggle("desplegado");
+
+                        // Cerramos los demás
+                        if (navSuperior && navSuperior.classList.contains("menu-abierto"))
+                            navSuperior.classList.remove("menu-abierto");
+                        if (navLateral && navLateral.classList.contains("open")) navLateral.classList.remove("open");
+                    }
+                });
+            }
+
+            // 5. CERRAR AL HACER CLIC FUERA DE LOS MENÚS
+            document.addEventListener("click", (e) => {
+                // Comprobamos el menú superior
+                if (navSuperior && navSuperior.classList.contains("menu-abierto")) {
+                    if (!navSuperior.contains(e.target) && !btnMenuMovil.contains(e.target)) {
+                        navSuperior.classList.remove("menu-abierto");
+                    }
+                }
+
+                // Comprobamos el menú lateral
+                if (navLateral && navLateral.classList.contains("open")) {
+                    if (!navLateral.contains(e.target) && !btnMenuLateral.contains(e.target)) {
+                        navLateral.classList.remove("open");
+                    }
+                }
+
+                // NUEVO: Comprobamos el selector de idiomas
+                if (langSelector && langSelector.classList.contains("desplegado")) {
+                    if (!langSelector.contains(e.target)) {
+                        langSelector.classList.remove("desplegado");
+                    }
+                }
+            });
+
+            // 6. CERRAR AL HACER SCROLL (Bajar o subir por la página)
+            window.addEventListener(
+                "scroll",
+                () => {
+                    if (navSuperior && navSuperior.classList.contains("menu-abierto"))
+                        navSuperior.classList.remove("menu-abierto");
+                    if (navLateral && navLateral.classList.contains("open")) navLateral.classList.remove("open");
+                    if (langSelector && langSelector.classList.contains("desplegado"))
+                        langSelector.classList.remove("desplegado"); // Se cierra al scrollear
+                },
+                { passive: true }
+            );
+
+            // 7. CERRAR AL HACER CLIC EN CUALQUIER ENLACE DEL MENÚ
+            const enlacesMenus = document.querySelectorAll(".site-nav a, .lateral-nav a:not(.dropdown-toggle)");
+            enlacesMenus.forEach((enlace) => {
+                enlace.addEventListener("click", () => {
+                    if (navSuperior) navSuperior.classList.remove("menu-abierto");
+                    if (navLateral) navLateral.classList.remove("open");
+                    if (langSelector) langSelector.classList.remove("desplegado");
+                });
+            });
+        </script>
+    </body>
 </html>

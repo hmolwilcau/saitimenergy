@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Servicios - Saitim Energy S.L. </title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
     <link rel="icon" type="image/png" href="images/logo.png">
     </head>
     
@@ -85,7 +85,7 @@
                 </button>
             
                <button class="tab-btn" data-target="panel-5">
-                Ingeniería electrónica
+                Ingeniería eléctrica
                 </button>
             </div>
         
@@ -141,7 +141,7 @@
             </div>
                <div class="tab-panel" id="panel-5">
                 <div class="panel-text-col">
-                    <h2> Ingeniería electrónica </h2>
+                    <h2> Ingeniería eléctrica </h2>
                     <p>Estudiamos sus necesidades técnicas para ofrecer la solución más eficiente mediante un asesoramiento experto y especializado. Realizamos diagnósticos avanzados, incluyendo inspecciones termográficas, análisis de corriente eléctrica, armónicos y aislamientos, para asegurar la máxima optimización energética y operativa de sus instalaciones.</p>
                     
                 </div>
@@ -308,7 +308,7 @@
         }
 
         // B) Mostrar los botones flotantes MUCHO más abajo (Cambia el 400 por el número que prefieras)
-        const mostrarFlotantes = window.scrollY > 250;
+        const mostrarFlotantes = window.scrollY > 90;
         
         if (btnMenuLateral) btnMenuLateral.classList.toggle('visible', mostrarFlotantes);
         
@@ -425,7 +425,7 @@ if (backToTopBtn) {
     // 1. Vigilar el scroll para mostrar/ocultar el botón
     window.addEventListener('scroll', () => {
         // Si el usuario baja más de 400 píxeles, aparece el botón
-        if (window.scrollY > 250) {
+        if (window.scrollY > 90) {
             backToTopBtn.classList.add('visible');
         } else {
             backToTopBtn.classList.remove('visible');
@@ -460,7 +460,7 @@ if (backToTopBtn) {
             });
         });
     });
-        // =================================================================
+   // =================================================================
         // SISTEMA INTELIGENTE DE MENÚS (Evita colisiones y auto-cierre)
         // =================================================================
         
@@ -472,29 +472,31 @@ if (backToTopBtn) {
         const navLateral = document.getElementById('lateral-dropdown');
         const btnCerrarLateral = document.getElementById('close-menu-btn');
 
-        // 2. Función para abrir el menú superior (y cerrar el lateral si estuviera abierto)
+        // NUEVO: Variables del selector de idiomas
+        const langSelector = document.querySelector('.language-selector');
+        const langActive = document.querySelector('.lang-active');
+
+        // 2. Función para abrir el menú superior
         if (btnMenuMovil && navSuperior) {
             btnMenuMovil.addEventListener('click', (e) => {
-                e.stopPropagation(); // Evita que el clic se propague al documento
+                e.stopPropagation(); 
                 navSuperior.classList.toggle('menu-abierto');
                 
-                // Si el menú lateral está abierto, lo cerramos
-                if (navLateral && navLateral.classList.contains('open')) {
-                    navLateral.classList.remove('open');
-                }
+                // Cerramos los demás
+                if (navLateral && navLateral.classList.contains('open')) navLateral.classList.remove('open');
+                if (langSelector && langSelector.classList.contains('desplegado')) langSelector.classList.remove('desplegado');
             });
         }
 
-        // 3. Función para abrir el menú lateral (y cerrar el superior si estuviera abierto)
+        // 3. Función para abrir el menú lateral
         if (btnMenuLateral && navLateral) {
             btnMenuLateral.addEventListener('click', (e) => {
                 e.stopPropagation();
                 navLateral.classList.add('open');
                 
-                // Si el menú superior está abierto, lo cerramos
-                if (navSuperior && navSuperior.classList.contains('menu-abierto')) {
-                    navSuperior.classList.remove('menu-abierto');
-                }
+                // Cerramos los demás
+                if (navSuperior && navSuperior.classList.contains('menu-abierto')) navSuperior.classList.remove('menu-abierto');
+                if (langSelector && langSelector.classList.contains('desplegado')) langSelector.classList.remove('desplegado');
             });
         }
 
@@ -505,11 +507,25 @@ if (backToTopBtn) {
             });
         }
 
+        // NUEVO 4.5: Función para abrir el menú de IDIOMAS
+        if (langSelector && langActive) {
+            langActive.addEventListener('click', (e) => {
+                if (window.innerWidth <= 1200) {
+                    e.preventDefault();
+                    e.stopPropagation(); // Clave: Evita que el clic lo cierre al instante
+                    langSelector.classList.toggle('desplegado');
+
+                    // Cerramos los demás
+                    if (navSuperior && navSuperior.classList.contains('menu-abierto')) navSuperior.classList.remove('menu-abierto');
+                    if (navLateral && navLateral.classList.contains('open')) navLateral.classList.remove('open');
+                }
+            });
+        }
+
         // 5. CERRAR AL HACER CLIC FUERA DE LOS MENÚS
         document.addEventListener('click', (e) => {
             // Comprobamos el menú superior
             if (navSuperior && navSuperior.classList.contains('menu-abierto')) {
-                // Si el clic NO fue dentro del menú ni en su botón, lo cerramos
                 if (!navSuperior.contains(e.target) && !btnMenuMovil.contains(e.target)) {
                     navSuperior.classList.remove('menu-abierto');
                 }
@@ -521,25 +537,29 @@ if (backToTopBtn) {
                     navLateral.classList.remove('open');
                 }
             }
+
+            // NUEVO: Comprobamos el selector de idiomas
+            if (langSelector && langSelector.classList.contains('desplegado')) {
+                if (!langSelector.contains(e.target)) {
+                    langSelector.classList.remove('desplegado');
+                }
+            }
         });
 
         // 6. CERRAR AL HACER SCROLL (Bajar o subir por la página)
         window.addEventListener('scroll', () => {
-            if (navSuperior && navSuperior.classList.contains('menu-abierto')) {
-                navSuperior.classList.remove('menu-abierto');
-            }
-            if (navLateral && navLateral.classList.contains('open')) {
-                navLateral.classList.remove('open');
-            }
+            if (navSuperior && navSuperior.classList.contains('menu-abierto')) navSuperior.classList.remove('menu-abierto');
+            if (navLateral && navLateral.classList.contains('open')) navLateral.classList.remove('open');
+            if (langSelector && langSelector.classList.contains('desplegado')) langSelector.classList.remove('desplegado'); // Se cierra al scrollear
         }, { passive: true });
 
         // 7. CERRAR AL HACER CLIC EN CUALQUIER ENLACE DEL MENÚ
-        // Seleccionamos todos los enlaces de ambos menús, excluyendo los botones desplegables de "Proyectos"
         const enlacesMenus = document.querySelectorAll('.site-nav a, .lateral-nav a:not(.dropdown-toggle)');
         enlacesMenus.forEach(enlace => {
             enlace.addEventListener('click', () => {
                 if (navSuperior) navSuperior.classList.remove('menu-abierto');
                 if (navLateral) navLateral.classList.remove('open');
+                if (langSelector) langSelector.classList.remove('desplegado');
             });
         });
     </script>

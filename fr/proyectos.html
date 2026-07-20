@@ -83,7 +83,7 @@
     <span class="lang-divider">|</span> 
     <a href="/en/proyectos.html">EN</a>
     <span class="lang-divider">|</span> 
-    <a href="/fr/proyectos.html" class="lang-active">FR</a>    
+   <a href="/fr/proyectos.html" class="lang-active" onclick="event.preventDefault();">FR</a>
        
 </div>
             <div class="search-container">
@@ -329,7 +329,7 @@
         }
 
         // B) Mostrar los botones flotantes MUCHO más abajo (Cambia el 400 por el número que prefieras)
-        const mostrarFlotantes = window.scrollY > 250;
+        const mostrarFlotantes = window.scrollY > 95;
         
         if (typeof btnMenuLateral !== 'undefined' && btnMenuLateral) btnMenuLateral.classList.toggle('visible', mostrarFlotantes);
         
@@ -435,17 +435,7 @@
         }
     });
         
-        // ==========================================
-        // 5. MENÚ MÓVIL (BOTÓN HAMBURGUESA)
-        // ==========================================
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileNav = document.querySelector('.site-nav');
-
-        if (mobileMenuBtn && mobileNav) {
-            mobileMenuBtn.addEventListener('click', () => {
-                mobileNav.classList.toggle('menu-abierto');
-            });
-        }   
+       
         
       // ==========================================
 // BOTÓN VOLVER ARRIBA (SCROLL TO TOP)
@@ -456,7 +446,7 @@ if (backToTopBtn) {
     // 1. Vigilar el scroll para mostrar/ocultar el botón
     window.addEventListener('scroll', () => {
         // Si el usuario baja más de 400 píxeles, aparece el botón
-        if (window.scrollY > 400) {
+        if (window.scrollY > 95) {
             backToTopBtn.classList.add('visible');
         } else {
             backToTopBtn.classList.remove('visible');
@@ -552,6 +542,30 @@ if (backToTopBtn) {
                 if (navSuperior) navSuperior.classList.remove('menu-abierto');
                 if (navLateral) navLateral.classList.remove('open');
             });
+        });
+        // ==========================================
+        // LÓGICA TÁCTIL: SELECTOR DE IDIOMAS (MÓVIL)
+        // ==========================================
+        document.addEventListener("DOMContentLoaded", () => {
+            const langSelector = document.querySelector('.language-selector');
+            const langActive = document.querySelector('.lang-active');
+
+            if (langSelector && langActive) {
+                // Al hacer CLIC en "ES ▼"
+                langActive.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 1200) {
+                        e.preventDefault(); // Evita que recargue la página
+                        langSelector.classList.toggle('desplegado'); // Abre o cierra
+                    }
+                });
+
+                // Si se hace CLIC en cualquier otra parte de la pantalla, se cierra
+                document.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 1200 && !langSelector.contains(e.target)) {
+                        langSelector.classList.remove('desplegado');
+                    }
+                });
+            }
         });
     </script>
     

@@ -161,11 +161,11 @@
         </a>
         <div class="header-icons">
             <div class="language-selector">
-                <a href="piensa-solar.html" class="lang-active">ES</a>
+               <a href="/piensa-solar.html" class="lang-active" onclick="event.preventDefault();">ES</a>
                 <span class="lang-divider">|</span> 
-                <a href="en/piensa-solar.html">EN</a>
+                <a href="/en/piensa-solar.html">EN</a>
                 <span class="lang-divider">|</span> 
-                <a href="fr/piensa-solar.html">FR</a>        
+                <a href="/fr/piensa-solar.html">FR</a>        
             </div>
             
             <div class="search-container">
@@ -651,6 +651,30 @@
                 if (navSuperior) navSuperior.classList.remove('menu-abierto');
                 if (navLateral) navLateral.classList.remove('open');
             });
+        });
+    // ==========================================
+        // LÓGICA TÁCTIL: SELECTOR DE IDIOMAS (MÓVIL)
+        // ==========================================
+        document.addEventListener("DOMContentLoaded", () => {
+            const langSelector = document.querySelector('.language-selector');
+            const langActive = document.querySelector('.lang-active');
+
+            if (langSelector && langActive) {
+                // Al hacer CLIC en "ES ▼"
+                langActive.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 1200) {
+                        e.preventDefault(); // Evita que recargue la página
+                        langSelector.classList.toggle('desplegado'); // Abre o cierra
+                    }
+                });
+
+                // Si se hace CLIC en cualquier otra parte de la pantalla, se cierra
+                document.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 1200 && !langSelector.contains(e.target)) {
+                        langSelector.classList.remove('desplegado');
+                    }
+                });
+            }
         });
 </script>
 </body>
