@@ -1380,9 +1380,19 @@ a:hover {
     color: #0093A3;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 20px;
+
 }
 
+.p-equipo {
+   
+    display: block;
+    color: #666666; /* Un color gris para que resalte menos y se diferencie */
+    font-size: 14px;
+    font-weight: 400; /* Letra normal (no negrita) */
+    text-transform: capitalize; /* Solo la primera letra en mayúscula */
+   
+    
+}
 /* --- 5. Redes Sociales --- */
 .team-socials {
     display: flex;
