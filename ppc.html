@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Piensa Solar - Saitim Energy S.L.</title>
+    <title> Piensa Solar Power Plant Controller - Saitim Energy S.L.</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -34,6 +34,12 @@
         box-shadow: 0 5px 10px rgba(0,0,0,0.1); 
         z-index: 999;
     }
+        .contact-container-indv {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 150px;
+
+}
        
         .lateral-menu-btn.visible, .back-to-top-btn.visible, .floating-project-nav.visible {
             opacity: 1 !important; visibility: visible !important; pointer-events: auto !important;
@@ -147,7 +153,33 @@
             .kolibri-text { font-size: 15px !important; }
             .split-section { padding: 90px 20px 40px 20px !important; }
             body .hero-carousel-proyectos { height: 280px !important; min-height: 280px !important; max-height: 280px !important; }
+            
+            @media (max-width: 992px) {
+                .footer-grid {
+                    flex-direction: column !important; /* Se apilan en móvil */
+                    gap: 40px !important;
+                }
+                .footer-col {
+                    flex: 1 1 100% !important;
+                }
+                .footer-col {
+                flex: 1 1 0px !important;
+                min-width: 0 !important; 
+                }
+            }
+
         }
+        .footer-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: center !important; /* Centra el contenido */
+    gap: 80px !important;               /* Da más respiro entre las columnas */
+    max-width: 1250px !important;       /* REDUCIDO: obliga a las 3 columnas a ir al centro exacto */
+    margin: 0 auto !important;          /* Centra la caja entera en la pantalla */
+    width: 100% !important;
+    padding: 0 20px !important;         /* Margen de seguridad lateral */
+}
     </style>
 </head>
 
