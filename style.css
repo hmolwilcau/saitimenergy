@@ -775,13 +775,22 @@ a:hover {
 .footer-top {
     padding: 70px 5%;
 }
-
 .footer-grid {
-    max-width: 1400px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1.5fr 1fr; /* 5 columnas proporcionadas */
-    gap: 40px;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: center !important; /* Centra el contenido */
+    gap: 80px !important;               /* Da más respiro entre las columnas */
+    max-width: 1250px !important;       /* REDUCIDO: obliga a las 3 columnas a ir al centro exacto */
+    margin: 0 auto !important;          /* Centra la caja entera en la pantalla */
+    width: 100% !important;
+    padding: 0 20px !important;         /* Margen de seguridad lateral */
+}
+
+/* Fuerza a las 3 columnas a medir exactamente lo mismo */
+.footer-col {
+    flex: 1 1 0px !important;
+    min-width: 0 !important; 
 }
 
 .footer-col h4 {
@@ -947,25 +956,16 @@ a:hover {
 /* =========================================
    RESPONSIVO (Móviles)
    ========================================= */
-@media (max-width: 990px) {
-    .contact-grid {
-        flex-direction: column;
-    }
+@media (max-width: 992px) {
     .footer-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablet */
+        flex-direction: column !important; /* Se apilan en móvil */
+        gap: 40px !important;
+    }
+    .footer-col {
+        flex: 1 1 100% !important;
     }
 }
 
-@media (max-width: 600px) {
-    .footer-grid {
-        grid-template-columns: 1fr; /* 1 columna en móvil */
-    }
-    .bottom-container {
-        flex-direction: column;
-        gap: 15px;
-        text-align: center;
-    }
-}
 @media (max-width: 768px) {
     .footer-bottom {
         padding-bottom: 70px !important; 
@@ -1183,7 +1183,8 @@ a:hover {
     
 }
 .minimal-quote-section-indv {
-    padding: 60px 5%;
+    padding-bottom: 60px 5%;
+    padding-top: 85px;
     background-color: #ffffff; /* Fondo blanco limpio */
     display: flex;
     justify-content: center;
@@ -1223,6 +1224,14 @@ a:hover {
         font-size: 20px;
         padding-left: 15px;
         border-left: 4px solid #0093A3;
+        margin-left: 20px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width:992px) {
+    .minimal-quote-text {
+         font-size: 25px;
+        margin-left: 20px;
     }
 }
 /* =========================================
@@ -4066,4 +4075,193 @@ body .hero-carousel-proyectos .carousel-dots {
     }
     body .hero-carousel-proyectos .carousel-control-project.prev { left: 5px !important; }
     body .hero-carousel-proyectos .carousel-control-project.next { right: 5px !important; }
+}
+/* =========================================
+   SECCIÓN DE RECURSOS (CARRUSEL)
+   ========================================= */
+.resources-section {
+    background-color: #004047; /* Fondo oscuro tipo PowerFactors */
+    color: #ffffff;
+    padding: 80px 20px;
+    
+    overflow: hidden; /* Evita scroll horizontal en toda la página */
+}
+
+.resources-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px auto;
+}
+
+.resources-header h2 {
+    font-size: 42px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    font-family: 'bauhaus-light', sans-serif;
+}
+
+.resources-header p {
+    font-size: 16px;
+    color: #E6FCFF;
+    line-height: 1.6;
+
+    
+}
+
+/* Contenedor del Carrusel */
+.carousel-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.resource-track {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding-bottom: 20px;
+    
+    /* Ocultar la barra de scroll nativa */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+}
+
+.resource-track::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+}
+
+/* Tarjeta individual */
+.resource-card {
+    flex: 0 0 85%; /* Ocupa el 85% para que la siguiente asome */
+    max-width: 900px;
+    background-color: #f4f5f7;
+    border-radius: 12px;
+    display: flex;
+    overflow: hidden;
+    scroll-snap-align: center; /* Centra la tarjeta al detener el scroll */
+    color: #000;
+}
+
+/* Mitad izquierda: Imagen */
+.res-image-box {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.res-image-box img {
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    border-radius: 4px;
+}
+
+/* Mitad derecha: Contenido */
+.res-content-box {
+    flex: 1.2;
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #EAF9FA;
+}
+
+.res-tag {
+    align-self: flex-start;
+    background-color: #004047;
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.res-title {
+    font-size: 32px;
+    line-height: 1.2;
+    margin: 0 0 20px 0;
+    color: #111;
+    font-family: 'bauhaus-light', sans-serif;
+}
+
+.res-desc {
+    font-size: 16px;
+    color: #000000;
+    line-height: 1.6;
+    margin: auto;
+    text-align: justify;
+    padding-right: 25px;
+}
+
+
+
+/* Controles (Botones y Puntos) */
+.res-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.res-btn {
+    background-color: #0093A3;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.res-btn:hover {
+    background-color: #00BCD1;
+}
+
+.res-dots {
+    display: flex;
+    gap: 8px;
+}
+
+.res-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+
+.res-dot.active {
+    background-color: #00BCD1;
+}
+
+/* Responsividad para móviles */
+@media (max-width: 992px) {
+    .resource-card {
+        flex-direction: column; /* Apila imagen arriba y texto abajo */
+        flex: 0 0 90%;
+    }
+    
+    .res-image-box {
+        padding: 30px;
+        min-height: 250px;
+    }
+    
+    .res-content-box {
+        padding: 30px;
+    }
+    
+    .res-title {
+        font-size: 24px;
+    }
 }
