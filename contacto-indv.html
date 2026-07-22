@@ -7,6 +7,69 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
             <link rel="icon" type="image/png" href="images/logo.png">
+        <style>
+        .footer-top{
+    margin-top: 60px;
+}
+        
+        .footer-grid {
+            display: flex !important;
+            flex-direction: row !important;
+            flex-wrap: nowrap !important;       /* LA CLAVE: Prohíbe terminantemente que se caigan abajo */
+            justify-content: flex-end !important; /* Alinea todo el bloque hacia la derecha */
+            gap: 60px !important;               /* Hueco fijo y seguro entre columnas */
+            max-width: 1300px !important;       /* Caja bien grande para que respiren */
+            margin: 0 auto !important;          
+            width: 100% !important;
+            padding: 0 40px !important;         
+            box-sizing: border-box !important;  
+        }
+
+        .footer-col {
+            flex: 0 1 auto !important;           
+            min-width: 200px !important;        /* Reducido para que quepan las 3 sin pelearse */
+            box-sizing: border-box !important;
+        }
+
+        /* Controlamos a la primera columna para que no se coma la pantalla */
+        .footer-col.about-col {
+            max-width: 380px !important;
+        }
+
+        /* =========================================
+           FOOTER MÓVIL Y TABLET (1 Columna)
+           ========================================= */
+        @media (max-width: 1024px) {
+            .footer-grid {
+                flex-direction: column !important; 
+                flex-wrap: wrap !important;        /* En móvil sí dejamos que fluyan de arriba a abajo */
+                align-items: center !important;    
+                justify-content: center !important;
+                gap: 50px !important;              
+            }
+            
+            .footer-col {
+                flex: 1 1 100% !important;         
+                width: 100% !important;
+                max-width: 450px !important;       
+                text-align: center !important;     
+            }
+            
+            .footer-col.about-col {
+                max-width: 100% !important;
+            }
+        }
+    @media (max-width:768px) {
+  .contact-container-indv  {
+    padding-top: 10px;
+}
+}
+     @media (min-width:768px) and (max-width:1200px) {
+  .contact-container-indv  {
+    padding-top: 90px;
+                    }
+    }
+        </style>
     </head>
     <body>
    
@@ -20,7 +83,7 @@
                  <li class="navbar"><a class="link navbar" href="/piensa-solar.html">Inicio</a></li>
                 <li class="navbar"><a class="link navbar" href="/arquitectura-piensa-solar.html">Arquitectura</a></li>
                 <li class="navbar"><a class="link navbar" href="/aplicaciones-piensa-solar.html">Aplicación</a></li>
-                <li class="navbar"><a class="link navbar" href="/contacto-piensa.html">Contacto</a></li>
+                <li class="navbar"><a class="link navbar" href="/contacto-indv.html">Contacto</a></li>
                 <li class="navbar"><a class="link navbar" href="/index.html">Saitim Energy</a></li>
             </ul>
         </nav>
@@ -128,86 +191,52 @@
                 
         </section>
 
-        <footer class="site-footer">
-       
-            <div class="footer-top">
-                <div class="footer-grid">
-                    
-                    <div class="footer-col about-col">
-                        <img src="images/Saitim-sincolor.png" alt="Logo Footer" class="footer-logo">
-                        <p> Diseñamos, construimos y apoyamos proyectos y aplicaciones para clientes de todo el mundo. <br> Ayudamos a que su negocio funcione.<br> ¿Interesado?<br> Llámenos. </p>
-                        <a href="#contacto" class="btn-outline-white">Contacto</a>
-                    </div>
-
-                         <div class="footer-col">
-                <h4><a href="proyectos.html">Proyectos</a></h4>
-                <ul>
-                   
-                    <li><a href="meda-detalle.html">Proyecto Medio Ambiente</a></li>
-                    <li><a href="auto-detalle.html">Proyecto Automoción</a></li>
-                    <li><a href="fabpi-detalle.html">Proyecto Agroalimentario</a></li>
-                    <li><a href="foto-detalle.html">Proyecto Fotovoltaico</a></li>
-                 
-                </ul>
+     
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="footer-top">
+        <div class="footer-grid">
+            <div class="footer-col about-col">
+                <img src="images/Saitim-sincolor.png" alt="Logo Footer" class="footer-logo">
+                <p> Diseñamos, construimos y apoyamos proyectos y aplicaciones para clientes de todo el mundo. <br> Ayudamos a que su negocio funcione.<br> ¿Interesado?<br> Llámenos. </p>
+                <a href="contacto.html" class="btn-outline-white">Contacto</a>
+           
             </div>
-                    
-             <div class="footer-col">
-              <h4><a href="sectores.html">Sectores</a></h4>
-                <ul>
-                      <li><a href="sectores.html#energias-renovables">Energías renovables</a></li>
-                    <li><a href="sectores.html#reciclaje">Reciclaje y RCV</a></li>
-                    <li><a href="sectores.html#meda">Medio ambiente</a></li>
-                    <li><a href="sectores.html#agroalimentacion">Agroalimentación</a></li>
-                    <li><a href="sectores.html#alimentacion">Alimentación</a></li>
-                <li><a href="sectores.html#ceraridos">Ceramicas y Áridos</a></li>
-                    <li><a href="sectores.html#automocion">Automoción</a></li>
-                    <li><a href="sectores.html#elbe">Elevación y bienes de equipos</a></li>
-                    
-                
-                </ul>
-            </div>
-
-
-                    <div class="footer-col form-col">
-                        <h4>¿Nos necesitas?</h4>
-                          <form action="https://formsubmit.co/hmolwilcau@gmail.com" method="POST">
+            <div class="footer-col form-col">
+                <h4>¿Nos necesitas?</h4>
+                <form action="https://formsubmit.co/hmolwilcau@gmail.com" method="POST">
                     <input type="text" name="nombre" placeholder="Nombre de la Empresa" required>
                     <input type="email" name="email" placeholder="Email" required>
-                     <textarea placeholder="¿Cómo podemos ayudarte?" rows="3" required></textarea>
+                    <textarea placeholder="¿Cómo podemos ayudarte?" rows="3" required></textarea>
                     <input type="hidden" name="_captcha" value="false">
-                   <input type="hidden" name="_next" value="gracias-form.html">
-                      <button type="submit" class="btn-outline-white">Enviar</button>
-                    
-                    </form>
-                    </div>
-
-                    <div class="footer-col">
-                        <h4>Mapa Web</h4>
-                        <ul>
-                            <li><a href="index.html">Inicio</a></li>
-                            <li><a href="sectores.html">Sectores</a></li>
-                            <li><a href="servicios.html">Servicios</a></li>
-                            <li><a href="proyectos.html">Proyectos</a></li>
-                            <li><a href="equipo.html">Nuestro equipo</a></li>
-                            <li><a href="#">Contacto</a></li>
-                        </ul>
-                    </div>
-
-                </div>
+                    <input type="hidden" name="_next" value="https://saitim.netlify.app/gracias-form.html">
+                    <button type="submit" class="btn-outline-white">Enviar</button>
+                </form>
             </div>
-
-            <div class="footer-bottom">
-                <div class="bottom-container">
-                    <div class="container">
-                        <div class="row row-15 justify-content-lg-between">
-                            <div class="col-lg-6 col-xl-6 text-lg-left">
-                                <p class="rights" style="margin-bottom: 25px;"><span>&copy;&nbsp;</span><span class="copyright-year"></span> Saitim Energy S.L.</p>
-                            </div>
-                        </div>
+            <div class="footer-col">
+                <h4>Mapa Web</h4>
+                <ul>
+                    <li><a href="piensa-solar.html">Inicio</a></li>
+                    <li><a href="arquitectura-piensa-solar.html">Arquitectura</a></li>
+                    <li><a href="proyectos-piensa-solar.html">Aplicación</a></li>
+                    <li><a href="contacto-piensa.html">Contacto</a></li>
+                    <li><a href="index.html">Saitim Energy</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="bottom-container">
+            <div class="container">
+                <div class="row row-15 justify-content-lg-between">
+                    <div class="col-lg-6 col-xl-6 text-lg-left">
+                        <p class="rights" style="margin-bottom: 25px;"><span>&copy;&nbsp;</span><span class="copyright-year"></span> Saitim Energy S.L.</p>
                     </div>
                 </div>
             </div>
-        </footer>
+        </div>
+    </div>
+</footer>
 
     <!-- VENTANA FLOTANTE DE RESULTADOS DE BÚSQUEDA -->
 <div id="search-modal" class="search-modal-hidden">

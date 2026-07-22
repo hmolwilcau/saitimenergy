@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicaciones - Saitim</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            color: #fff;
+        }
+        .tpn-center-figure img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px; /* Redondeo interior */
+            display: block; /* <--- ¡ESTO ENCIENDE LA IMAGEN! */
+        }
+
+        /* =========================================
+           1. CABECERA, IDIOMAS Y MENÚ LATERAL
+           ========================================= */
+        .site-header-proyectos { transition: transform 0.4s ease-in-out !important; }
+        .header-hidden { transform: translateY(-100%) !important; }
+        .site-header-proyectos { background-color: transparent; }
+        
+        .site-nav.menu-abierto { 
+            display: flex !important; 
+            flex-direction: column; 
+            position: absolute; 
+            top: 80px; 
+            left: 0; 
+            width: 100%; 
+            background: white; 
+            padding: 20px; 
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1); 
+            z-index: 999;
+        }
+        
+        .lateral-menu-btn.visible, .back-to-top-btn.visible, .floating-project-nav.visible {
+            opacity: 1 !important; visibility: visible !important; pointer-events: auto !important;
+        }
+
+        /* =========================================
+           SCROLL HORIZONTAL (Rectángulos interactivos)
+           ========================================= */
+        .horizontal-scroll-section {
+            /* Hacemos la sección muy alta para poder hacer mucho scroll */
+            height: 200vh; 
+            position: relative;
+            background-color: #E6FCFF; /* Fondo oscuro para destacar */
+        }
+
+        .sticky-wrapper {
+            position: -webkit-sticky; 
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden; /* Oculta lo que se sale por los lados */
+            display: flex;
+            align-items: center;
+        }
+
+        .horizontal-track {
+            display: flex;
+            gap: 15vw; /* Separación entre bloques */
+            padding: 0 50vw; /* Espacio para que el primero y último queden centrados */
+            margin-top: 170px;
+            will-change: transform; 
+        }
+
+        .scroll-panel {
+            width: 40vw; 
+            min-width: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        /* --- CONTENEDOR RECTANGULAR --- */
+        .tpn-rect-container {
+            position: relative;
+            width: 300px;  /* Ancho del rectángulo */
+            height: 400px; /* Alto del rectángulo */
+            margin-bottom: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 1000px; /* Efecto 3D opcional */
+        }
+
+        /* Figura central: Ahora es un rectángulo con padding */
+        .tpn-center-figure {
+            width: 100%;
+            height: 100%;
+            border-radius: 20px; /* Bordes redondeados del rectángulo */
+            background: linear-gradient(135deg, #222, #0093a3); 
+            box-shadow: inset -10px -10px 20px rgba(0,0,0,0.5), 0 20px 40px rgba(0,147,163,0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 80px;
+            font-weight: 600;
+            color: rgba(255,255,255,0.8);
+            
+            /* Margen interno para cuando pongas la imagen */
+            padding: 20px; 
+            box-sizing: border-box;
+
+            /* Animación de flotación */
+            animation: floatShape 6s ease-in-out infinite;
+            overflow: hidden; /* Para que la imagen no se salga del borde redondeado */
+        }
+
+        /* Estilo para las imágenes dentro del rectángulo (cuando las añadas) */
+        .tpn-center-figure img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px; /* Un poco de redondeo a la imagen interior */
+      
+        }
+
+        .panel-title {
+            font-size: 3rem;
+            font-weight: 600;
+            margin: 0;
+            letter-spacing: 2px;
+            color: #004047;
+            font-family: 'bauhaus-light';
+            
+        }
+
+        .panel-subtitle {
+            font-size: 1.1rem;
+            color: #006A75;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        @keyframes floatShape {
+            0%, 100% { transform: translateY(0) rotateX(0deg) rotateY(0deg); }
+            50% { transform: translateY(-20px) rotateX(5deg) rotateY(10deg); }
+        }
+
+        /* =========================================
+           FOOTER 
+           ========================================= */
+        @media (max-width: 992px) {
+            .footer-grid {
+                flex-direction: column !important; 
+                gap: 40px !important;
+            }
+            .footer-col {
+                flex: 1 1 100% !important;
+                min-width: 0 !important; 
+            }
+        }
+
+        .footer-grid {
+            display: flex !important;
+            flex-direction: row !important;
+            flex-wrap: nowrap !important;
+            justify-content: center !important; 
+            gap: 80px !important;               
+            max-width: 1250px !important;       
+            margin: 0 auto !important;          
+            width: 100% !important;
+            padding: 0 20px !important;         
+        }    
+        .parallax-hero {
+            height: 100vh; /* Ocupa toda la altura de la pantalla */
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            background-color: #000; /* Fondo negro por si la imagen tarda en cargar */
+        }
+
+        #parallax-img {
+            width: 100%;
+            height: 120%; /* Más grande que el contenedor para poder moverse */
+            object-fit: cover;
+            display: block;
+            position: absolute; /* Para que el transform funcione perfecto */
+            top: 0;
+            left: 0;
+        }
+
+
+    </style>
+</head>
+<body>
+    
+<header class="site-header-proyectos">
+    <div class="header-container-proyectos">
+       <a href="/index.html">
+    <img class="logo" src="/images/Saitim-sincolor.png" alt="Saitim Energy" width="211" height="72" />
+</a>
+        <nav class="site-nav">
+            <ul>
+                 <li class="navbar"><a class="link navbar" href="/piensa-solar.html">Inicio</a></li>
+                <li class="navbar"><a class="link navbar" href="/arquitectura-piensa-solar.html">Arquitectura</a></li>
+                <li class="navbar"><a class="link navbar" href="/aplicaciones-piensa-solar.html">Aplicación</a></li>
+                <li class="navbar"><a class="link navbar" href="/contacto-piensa.html">Contacto</a></li>
+                <li class="navbar"><a class="link navbar" href="/index.html">Saitim Energy</a></li>
+            </ul>
+        </nav>
+         <div class="header-icons">
+<div class="language-selector">
+    <a href="/piensa-solar.html"  class="lang-active" onclick="event.preventDefault();">ES</a>
+    <span class="lang-divider">|</span> 
+    <a href="/en/piensa-solar.html">EN</a>
+    <span class="lang-divider">|</span> 
+    <a href="/fr/piensa-solar.html">FR</a>    
+       
+</div>
+            <div class="search-container">
+                <input type="text" class="search-input" id="buscador-input" placeholder="Buscar...">
+                <button id="btn-buscar" class="search-btn minimal-search-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="search-icon-svg">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                </button>
+            </div>
+            
+            <button id="mobile-menu-btn" class="mobile-menu-btn">
+                <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        </div>
+</header>
+  <section class="parallax-hero">
+        
+        <img src="images/amanecer.jpg" alt="Servicios" id="parallax-img">
+
+        <div class="hero-text-container">
+            <h1>Piensa solar aplicado a proyectos de Saitim Energy
+            </h1>
+        </div>
+        
+    </section>
+    
+
+<!-- SECCIÓN SCROLL HORIZONTAL (Rectángulos interactivos) -->
+<section class="horizontal-scroll-section">
+    <div class="sticky-wrapper">
+        <section class="horizontal-scroll-section">
+    <div class="sticky-wrapper">
+        
+       
+
+        <div class="horizontal-track" id="h-track">
+            
+            <div class="scroll-panel">
+                <div class="tpn-rect-container">
+                    <div class="tpn-center-figure">
+                   <img src="images/scalabis.jpg" alt="Equipo Saitim">
+                    </div>
+                </div>
+                <h2 class="panel-title">Escalabis Solar Project</h2>
+                <p class="panel-subtitle">Monitorización PFV Escalabis</p>
+            </div>
+   
+            <div class="scroll-panel">
+                <div class="tpn-rect-container">
+                  <div class="tpn-center-figure">
+                        <img src="images/leen.jpg" alt="Equipo Saitim">
+                    </div>
+                </div>
+                <h2 class="panel-title">Garreenleen Solar Farm</h2>
+                <p class="panel-subtitle">Puesta en marcha en frío de cuadros de baja tensión.</p>
+            </div>
+
+            <div class="scroll-panel">
+                <div class="tpn-rect-container">
+                   <div class="tpn-center-figure">
+                        <img src="images/tu-foto-1.jpg" alt="Equipo Saitim">
+                    </div>
+                </div>
+                <h2 class="panel-title">Titulo proyecto</h2>
+                <p class="panel-subtitle">que se hizo</p>
+            </div>
+
+            <div class="scroll-panel">
+                <div class="tpn-rect-container">
+                   <div class="tpn-center-figure">
+                        <img src="images/tu-foto-1.jpg" alt="Equipo Saitim">
+                    </div>
+                </div>
+           <h2 class="panel-title">Titulo proyecto</h2>
+                <p class="panel-subtitle">que se hizo</p>
+            </div>
+            </div>
+            </div>
+</section>
+    </div>
+    </section>
+
+<!-- FOOTER -->
+<footer class="site-footer" style="background-color: #0d5c68; /* Color de fondo provisional para distinguirlo */ padding-top: 50px;">
+    <div class="footer-top">
+        <div class="footer-grid">
+            <div class="footer-col about-col">
+                <img src="images/Saitim-sincolor.png" alt="Logo Footer" class="footer-logo">
+                <p> Diseñamos, construimos y apoyamos proyectos y aplicaciones para clientes de todo el mundo. <br> Ayudamos a que su negocio funcione.<br> ¿Interesado?<br> Llámenos. </p>
+                <a href="contacto.html" class="btn-outline-white">Contacto</a>
+            
+            </div>
+            <div class="footer-col form-col">
+                <h4>¿Nos necesitas?</h4>
+                <form action="https://formsubmit.co/hmolwilcau@gmail.com" method="POST">
+                    <input type="text" name="nombre" placeholder="Nombre de la Empresa" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <textarea placeholder="¿Cómo podemos ayudarte?" rows="3" required></textarea>
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://saitim.netlify.app/gracias-form.html">
+                    <button type="submit" class="btn-outline-white">Enviar</button>
+                </form>
+            </div>
+            <div class="footer-col">
+                <h4>Mapa Web</h4>
+                <ul>
+                    <li><a href="piensa-solar.html">Inicio</a></li>
+                    <li><a href="arquitectura-piensa-solar.html">Arquitectura</a></li>
+                    <li><a href="proyectos-piensa-solar.html">Aplicación</a></li>
+                    <li><a href="contacto-piensa.html">Contacto</a></li>
+                    <li><a href="index.html">Saitim Energy</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="bottom-container">
+            <div class="container">
+                <div class="row row-15 justify-content-lg-between">
+                    <div class="col-lg-6 col-xl-6 text-lg-left">
+                        <p class="rights" style="margin-bottom: 25px;"><span>&copy;&nbsp;</span><span class="copyright-year"></span> Saitim Energy S.L.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- ELEMENTOS FLOTANTES -->
+<div class="floating-project-nav" id="floating-project-nav">
+    <a href="index.html" class="float-btn" title="Volver al Inicio">
+        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect>
+        </svg>
+    </a>
+</div>
+
+<div class="lateral-menu-btn" id="lateral-menu-btn">
+    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+</div>
+
+<div class="lateral-dropdown" id="lateral-dropdown">
+    <button class="close-menu-btn" id="close-menu-btn">&times;</button>
+    <nav class="lateral-nav">
+       
+            <ul>
+                 <li class="navbar"><a class="link navbar" href="/piensa-solar.html">Inicio</a></li>
+                <li class="navbar"><a class="link navbar" href="/arquitectura-piensa-solar.html">Arquitectura</a></li>
+                <li class="navbar"><a class="link navbar" href="/aplicaciones-piensa-solar.html">Aplicación</a></li>
+                <li class="navbar"><a class="link navbar" href="/contacto.html">Contacto</a></li>
+            </ul>
+      
+    </nav>
+</div>
+
+<div class="back-to-top-btn" id="back-to-top-btn">
+    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+</div>
+
+<!-- VENTANA FLOTANTE DE RESULTADOS DE BÚSQUEDA -->
+<div id="search-modal" class="search-modal-hidden">
+    <div class="search-modal-content">
+        <div class="search-header">
+            <h3>Resultados de la búsqueda</h3>
+            <button id="close-search" class="close-btn">&times;</button>
+        </div>
+        <div id="search-results-container">
+            <!-- Los resultados aparecerán aquí -->
+        </div>
+    </div>
+</div>
+    
+<!-- 1. LLAMAMOS AL ARCHIVO DE DATOS QUE HAS CREADO -->
+<script src="buscador-datos.js"></script>
+
+<script>
+    // ==========================================
+    // 1. AÑO DE COPYRIGHT AUTOMÁTICO
+    // ==========================================
+    const yearSpan = document.querySelector('.copyright-year');
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+    }
+    
+    // ==========================================
+    // 2. BOTÓN VOLVER ARRIBA (SCROLL TO TOP)
+    // ==========================================
+    const backToTopBtn = document.getElementById('back-to-top-btn');
+    if (backToTopBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' 
+            });
+        });
+    }
+    
+    // ==========================================
+    // 3. BUSCADOR
+    // ==========================================
+    const inputBuscador = document.getElementById('buscador-input');
+    const botonBuscar = document.getElementById('btn-buscar');
+    const modalBuscador = document.getElementById('search-modal');
+    const cerrarModalBtn = document.getElementById('close-search');
+    const contenedorResultados = document.getElementById('search-results-container');
+
+    function realizarBusqueda() {
+        if (!inputBuscador) return; 
+        const query = inputBuscador.value.toLowerCase().trim();
+        if (query === "") return; 
+        contenedorResultados.innerHTML = '';
+
+        if (typeof baseDatosBuscador !== 'undefined') {
+            const resultados = baseDatosBuscador.filter(item => 
+                item.titulo.toLowerCase().includes(query) || 
+                item.contenido.toLowerCase().includes(query)
+            );
+
+            modalBuscador.classList.remove('search-modal-hidden');
+
+            if (resultados.length > 0) {
+                resultados.forEach(res => {
+                    const resultHtml = `
+                        <div class="search-result-item">
+                            <a href="${res.url}">${res.titulo}</a>
+                            <p>${res.contenido}</p>
+                        </div>
+                    `;
+                    contenedorResultados.innerHTML += resultHtml;
+                });
+            } else {
+                contenedorResultados.innerHTML = `<p class="no-results">No se encontraron resultados para "<b>${query}</b>".</p>`;
+            }
+        }
+    }
+
+    if (botonBuscar) botonBuscar.addEventListener('click', realizarBusqueda);
+    if (inputBuscador) {
+        inputBuscador.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') realizarBusqueda();
+        });
+    }
+    if (cerrarModalBtn) cerrarModalBtn.addEventListener('click', () => modalBuscador.classList.add('search-modal-hidden'));
+    window.addEventListener('click', (e) => {
+        if (e.target === modalBuscador) modalBuscador.classList.add('search-modal-hidden');
+    });
+
+    // ==========================================
+    // 4. PARALLAX CORREGIDO (Imagen Amanecer)
+    // ==========================================
+    const parallaxHero = document.querySelector('.parallax-hero');
+    const parallaxImg = document.getElementById('parallax-img');
+
+    function updateParallax() {
+        if (!parallaxHero || !parallaxImg) return;
+        const rect = parallaxHero.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+
+        // Si la sección está visible en la pantalla
+        if (rect.top <= windowHeight && rect.bottom >= 0) {
+            const progress = (windowHeight - rect.top) / (windowHeight + rect.height);
+            const yOffset = (progress - 0.5) * 150; // Rango de movimiento controlado
+            parallaxImg.style.transform = `translateY(${yOffset}px)`;
+        }
+    }
+
+    // ==========================================
+    // 5. LOGICA SCROLL HORIZONTAL (Sección TPN)
+    // ==========================================
+    const hzSection = document.querySelector('.horizontal-scroll-section');
+    const hzTrack = document.getElementById('h-track');
+
+    function updateHorizontalScroll() {
+        if (!hzSection || !hzTrack) return;
+        const windowHeight = window.innerHeight;
+        const rect = hzSection.getBoundingClientRect();
+        
+        // Si estamos DENTRO de la sección de scroll horizontal
+        if (rect.top <= 0 && rect.bottom >= windowHeight) {
+            const totalScrollable = hzSection.clientHeight - windowHeight;
+            const currentScrolled = Math.abs(rect.top);
+            const scrollProgress = Math.min(1, Math.max(0, currentScrolled / totalScrollable));
+            
+            const trackWidth = hzTrack.scrollWidth;
+            const maxScroll = trackWidth - window.innerWidth;
+            const xOffset = -(scrollProgress * maxScroll);
+            hzTrack.style.transform = `translateX(${xOffset}px)`;
+        } 
+        else if (rect.top > 0) {
+            hzTrack.style.transform = `translateX(0px)`;
+        } 
+        else if (rect.bottom < windowHeight) {
+            const maxScroll = hzTrack.scrollWidth - window.innerWidth;
+            hzTrack.style.transform = `translateX(-${maxScroll}px)`;
+        }
+    }
+
+    // Ejecutar ambas animaciones juntas de forma fluida mediante requestAnimationFrame
+    window.addEventListener('scroll', () => {
+        requestAnimationFrame(() => {
+            updateParallax();
+            updateHorizontalScroll();
+        });
+    }, { passive: true });
+
+    // Llamadas iniciales
+    updateParallax();
+    updateHorizontalScroll();
+
+    // ==========================================
+    // 6. SISTEMA DE MENÚS Y CABECERA
+    // ==========================================
+    const btnMenuMovil = document.getElementById('mobile-menu-btn');
+    const navSuperior = document.querySelector('.site-nav');
+    const btnMenuLateral = document.getElementById('lateral-menu-btn');
+    const navLateral = document.getElementById('lateral-dropdown');
+    const btnCerrarLateral = document.getElementById('close-menu-btn');
+    const langSelector = document.querySelector('.language-selector');
+    const langActive = document.querySelector('.lang-active');
+    const header = document.querySelector('.site-header-proyectos');
+
+    if (btnMenuMovil && navSuperior) {
+        btnMenuMovil.addEventListener('click', (e) => {
+            e.stopPropagation(); 
+            navSuperior.classList.toggle('menu-abierto');
+            if (navLateral && navLateral.classList.contains('open')) navLateral.classList.remove('open');
+            if (langSelector && langSelector.classList.contains('desplegado')) langSelector.classList.remove('desplegado');
+        });
+    }
+
+    if (btnMenuLateral && navLateral) {
+        btnMenuLateral.addEventListener('click', (e) => {
+            e.stopPropagation();
+            navLateral.classList.add('open');
+            if (navSuperior && navSuperior.classList.contains('menu-abierto')) navSuperior.classList.remove('menu-abierto');
+            if (langSelector && langSelector.classList.contains('desplegado')) langSelector.classList.remove('desplegado');
+        });
+    }
+
+    if (btnCerrarLateral && navLateral) {
+        btnCerrarLateral.addEventListener('click', () => {
+            navLateral.classList.remove('open');
+        });
+    }
+
+    if (langSelector && langActive) {
+        langActive.addEventListener('click', (e) => {
+            if (window.innerWidth <= 1200) {
+                e.preventDefault();
+                e.stopPropagation();
+                langSelector.classList.toggle('desplegado');
+                if (navSuperior && navSuperior.classList.contains('menu-abierto')) navSuperior.classList.remove('menu-abierto');
+                if (navLateral && navLateral.classList.contains('open')) navLateral.classList.remove('open');
+            }
+        });
+    }
+
+    document.addEventListener('click', (e) => {
+        if (navSuperior && navSuperior.classList.contains('menu-abierto')) {
+            if (!navSuperior.contains(e.target) && !btnMenuMovil.contains(e.target)) {
+                navSuperior.classList.remove('menu-abierto');
+            }
+        }
+        if (navLateral && navLateral.classList.contains('open')) {
+            if (!navLateral.contains(e.target) && !btnMenuLateral.contains(e.target)) {
+                navLateral.classList.remove('open');
+            }
+        }
+        if (langSelector && langSelector.classList.contains('desplegado')) {
+            if (!langSelector.contains(e.target)) {
+                langSelector.classList.remove('desplegado');
+            }
+        }
+    });
+
+    window.addEventListener('scroll', () => {
+        if (header) {
+            if (window.scrollY > 30) {
+                header.classList.add('header-hidden');
+            } else {
+                header.classList.remove('header-hidden');
+            }
+        }
+
+        const mostrarFlotantes = window.scrollY > 250;
+        if (btnMenuLateral) btnMenuLateral.classList.toggle('visible', mostrarFlotantes);
+        const btnTop = document.getElementById('back-to-top-btn');
+        if (btnTop) btnTop.classList.toggle('visible', mostrarFlotantes);
+        const navProyectos = document.getElementById('floating-project-nav');
+        if (navProyectos) navProyectos.classList.toggle('visible', mostrarFlotantes);
+
+        if (window.scrollY > 30) {
+            if (navSuperior) navSuperior.classList.remove('menu-abierto');
+            if (navLateral) navLateral.classList.remove('open');
+            if (langSelector) langSelector.classList.remove('desplegado');
+        }
+    }, { passive: true });
+
+    const enlacesMenus = document.querySelectorAll('.site-nav a, .lateral-nav a:not(.dropdown-toggle)');
+    enlacesMenus.forEach(enlace => {
+        enlace.addEventListener('click', () => {
+            if (navSuperior) navSuperior.classList.remove('menu-abierto');
+            if (navLateral) navLateral.classList.remove('open');
+            if (langSelector) langSelector.classList.remove('desplegado');
+        });
+    });
+</script>
+
+</body>
+</html>
