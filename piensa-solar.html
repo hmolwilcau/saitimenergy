@@ -6,7 +6,7 @@
     <title> Piensa Solar - Saitim Energy S.L.</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
     <link rel="icon" type="image/png" href="/images/logo.png">
     
     <!-- =========================================
@@ -201,6 +201,65 @@
             
             .footer-col.about-col {
                 max-width: 100% !important;
+            }
+        }
+        @media (max-width: 768px) {
+            /* 1. Reducimos márgenes generales de la sección */
+            .resources-section {
+                padding: 50px 15px !important;
+            }
+            .resources-header h2 {
+                font-size: 28px !important;
+                line-height: 1.2 !important;
+            }
+            .resources-header p {
+                font-size: 15px !important;
+            }
+            
+            /* 2. LA CLAVE: Apilar imagen arriba y texto abajo */
+            .resource-card {
+                flex-direction: column !important; /* Cambia de fila a columna */
+                flex: 0 0 90% !important; /* La tarjeta ocupa el 90% del ancho del móvil */
+                border-radius: 16px !important;
+                height: auto !important;
+            }
+
+            /* 3. Que la imagen ocupe todo el ancho arriba */
+            .res-image-box {
+                padding: 0 !important; 
+                height: 200px !important; /* Altura perfecta para móvil */
+                min-height: 200px !important;
+                width: 100% !important;
+                display: block !important;
+            }
+            .res-image-box img {
+                width: 100% !important;
+                height: 100% !important;
+                object-fit: cover !important;
+                border-radius: 16px 16px 0 0 !important; /* Redondea solo las esquinas superiores */
+            }
+
+            /* 4. Dar espacio al texto abajo */
+            .res-content-box {
+                padding: 25px 20px !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+            }
+            .res-tag {
+                font-size: 12px !important;
+                padding: 6px 12px !important;
+                margin-bottom: 15px !important;
+                display: inline-block !important;
+            }
+            .res-title {
+                font-size: 22px !important;
+                margin-bottom: 12px !important;
+            }
+            .res-desc {
+                font-size: 14px !important;
+                line-height: 1.5 !important;
+                padding-right: 0 !important; /* Quita el margen que cortaba el texto */
+                text-align: left !important;
             }
         }
     </style>
@@ -424,7 +483,7 @@
 </section>
 
 <div class="scroll-down-container">
-    <a href="contacto.html#contacto" class="scroll-arrow-link">
+    <a href="contacto-indv.html" class="scroll-arrow-link">
         <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0093A3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline>
         </svg>
@@ -452,7 +511,7 @@
                  <li class="navbar"><a class="link navbar" href="/piensa-solar.html">Inicio</a></li>
                 <li class="navbar"><a class="link navbar" href="/arquitectura-piensa-solar.html">Arquitectura</a></li>
                 <li class="navbar"><a class="link navbar" href="/aplicaciones-piensa-solar.html">Aplicación</a></li>
-                <li class="navbar"><a class="link navbar" href="/contacto.html">Contacto</a></li>
+                <li class="navbar"><a class="link navbar" href="/contacto-indv.html">Contacto</a></li>
             </ul>
       
     </nav>
